@@ -179,10 +179,15 @@ body::-webkit-scrollbar-thumb {
 
 /* Logo */
 .logo {
-  display: flex;
+  color: var(--c-text); /* SVG унаследует цвет текста отсюда */
+  display: inline-flex;
   align-items: center;
-  text-decoration: none;
   z-index: 1200;
+}
+
+.logo svg {
+  height: 28px; /* Вы можете управлять размером здесь */
+  width: auto;
 }
 
 /* Desktop Navigation */
@@ -531,7 +536,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .theme-toggle {
-  width: 42px;
+  min-width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
   border: 1px solid var(--c-border);
@@ -563,23 +568,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .theme-toggle__icon--sun {
-  transform: scale(1) rotate(0deg);
-  opacity: 1;
-}
-
-.theme-toggle__icon--moon {
   transform: scale(0) rotate(-90deg);
   opacity: 0;
 }
-
-html[data-theme="dark"] .theme-toggle__icon--sun {
-  transform: scale(0) rotate(90deg);
-  opacity: 0;
-}
-
-html[data-theme="dark"] .theme-toggle__icon--moon {
+.theme-toggle__icon--moon {
   transform: scale(1) rotate(0deg);
   opacity: 1;
+}
+
+html[data-theme="dark"] .theme-toggle__icon--sun {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+html[data-theme="dark"] .theme-toggle__icon--moon {
+  transform: scale(0) rotate(90deg);
+  opacity: 0;
 }
 
 .lang {
@@ -675,11 +678,19 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
 .lang__list li[aria-selected="true"] button {
   font-weight: 600;
   background: var(--c-bg-alt);
+  cursor: default;
 }
 
-.lang__list button:hover {
+.lang__list li:not([aria-selected="true"]) button:hover {
   background: var(--c-accent);
   color: var(--c-accent-fg);
+}
+
+html[data-theme="dark"]
+  .lang__list
+  li:not([aria-selected="true"])
+  button:hover {
+  color: var(--c-bg);
 }
 
 html[data-theme="dark"] .lang__list button:hover {
@@ -708,6 +719,7 @@ html[data-theme="dark"] .lang__list button:hover {
     border-color 0.2s,
     box-shadow 0.25s var(--ease-standard);
   gap: 8px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -736,6 +748,16 @@ html[data-theme="dark"] .lang__list button:hover {
   outline-offset: 3px;
 }
 
+.btn-ai {
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 0 50px;
+}
+
+.ai-lottie {
+  position: absolute;
+  left: -35px;
+}
 /* Burger Menu Icon */
 .burger {
   width: 42px;
@@ -1540,4 +1562,245 @@ html[data-theme="dark"] .nl-form input {
 html[data-theme="dark"] .to-top {
   background: var(--c-bg);
   border-color: var(--c-border);
+}
+
+/* ==========================================================================
+   Стили для модального окна AI-Ассистента
+   ========================================================================== */
+
+/* Обертка для управления состоянием и позиционированием */
+.modal-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--content-padding, 24px);
+
+  /* Управляем только видимостью, без opacity */
+  visibility: hidden;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 19, 21, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+
+  /* Анимируем прозрачность самого фона */
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-standard);
+}
+
+/* Контейнер модального окна */
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 680px; /* Оптимальная ширина для чтения */
+  max-height: 90vh;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* Начальное состояние для анимации появления */
+  opacity: 0;
+  /* Transform будет управляться через JS, поэтому здесь его можно убрать */
+  transition: opacity 0.2s var(--ease-standard);
+}
+
+/* --- ВАУ-ЭФФЕКТ ПОЯВЛЕНИЯ --- */
+
+/* Состояния при открытии */
+.modal-wrapper.is-open {
+  visibility: visible;
+}
+
+.modal-wrapper.is-open .modal-overlay {
+  opacity: 1;
+}
+/* opacity для контейнера будет управляться JS */
+
+/* Анимация дочерних элементов с задержкой */
+.modal-wrapper .modal-header,
+.modal-wrapper .chat-message,
+.modal-wrapper .chat-input-area {
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.4s var(--ease-standard),
+    transform 0.4s var(--ease-standard);
+}
+
+.modal-wrapper.is-open .modal-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+.modal-wrapper.is-open .chat-message {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+.modal-wrapper.is-open .chat-input-area {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+/* --- КОНЕЦ ВАУ-ЭФФЕКТА --- */
+
+/* Кнопка закрытия */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--c-text-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+.modal-close:hover {
+  background: var(--c-accent);
+  color: var(--c-accent-fg);
+  transform: rotate(90deg);
+  border-color: var(--c-accent);
+}
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Заголовок */
+.modal-header {
+  padding: 40px 40px 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--c-text);
+}
+.modal-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-text-soft);
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Тело модального окна с чатом */
+.modal-body {
+  flex-grow: 1;
+  padding: 0 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-message {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.chat-message.ai {
+  align-self: flex-start;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-accent-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chat-bubble {
+  padding: 14px 18px;
+  background: var(--c-bg);
+  border-radius: var(--radius-lg, 16px);
+  border-bottom-left-radius: var(--radius-xs, 4px);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--c-text-soft);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Прижимает инпут к низу */
+  padding-top: 16px;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  height: 48px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md, 10px);
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--c-text);
+  transition: all 0.2s;
+}
+.chat-input-area input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 25%, transparent);
+}
+
+.chat-input-area button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--c-accent);
+  border: none;
+  border-radius: var(--radius-md, 10px);
+  color: var(--c-accent-fg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.chat-input-area button:hover {
+  background: var(--c-accent-hover);
+}
+.chat-input-area button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Класс для блокировки скролла на <body> */
+body.modal-active {
+  overflow: hidden;
 }

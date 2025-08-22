@@ -2,9 +2,6 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", () => {
-    // ========================================================================
-    // 1. УНИВЕРСАЛЬНАЯ АНИМАЦИЯ ЭЛЕМЕНТОВ ПРИ ПОЯВЛЕНИИ
-    // ========================================================================
     const animatedElements = document.querySelectorAll(
       "[data-animate], .capability-card"
     );
@@ -14,12 +11,11 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Устанавливаем задержку, если она указана в атрибуте
               const delay = entry.target.dataset.delay;
               if (delay) {
                 entry.target.style.transitionDelay = `${delay}ms`;
               }
-              entry.target.classList.add("in", "is-visible"); // Добавляем оба класса для совместимости
+              entry.target.classList.add("in", "is-visible");
               observer.unobserve(entry.target);
             }
           });
@@ -28,7 +24,6 @@
       );
 
       animatedElements.forEach((el, index) => {
-        // Добавляем staggered-задержку для карточек "Возможностей"
         if (el.classList.contains("capability-card")) {
           el.style.setProperty("--delay", `${index * 100}ms`);
         }
@@ -36,9 +31,6 @@
       });
     }
 
-    // ========================================================================
-    // 2. СЛАЙДЕР "ИЗБРАННЫЕ РАБОТЫ" (FEATURED WORKS)
-    // ========================================================================
     const sliderSection = document.querySelector(
       '[data-slider="featured-works"]'
     );
@@ -101,7 +93,6 @@
       }
       window.addEventListener("resize", onResize);
 
-      // --- Логика свайпа ---
       let isDragging = false,
         startX = 0,
         currentX = 0,
@@ -138,14 +129,10 @@
         diff = 0;
       });
 
-      // Инициализация
       readMetrics();
       goTo(0, false);
     }
 
-    // ========================================================================
-    // 3. ИНДИКАТОР ПРОГРЕССА СЕКЦИИ "ПРОЦЕСС"
-    // ========================================================================
     const processTrack = document.getElementById("processTrack");
     const progressBar = document.getElementById("processProgressBar");
     if (processTrack && progressBar) {
@@ -163,9 +150,6 @@
       updateProgress();
     }
 
-    // ========================================================================
-    // 4. 3D ЭФФЕКТ НАКЛОНА (TILT)
-    // ========================================================================
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const tiltEls = document.querySelectorAll("[data-tilt]");
       tiltEls.forEach((el) => {
@@ -182,9 +166,6 @@
       });
     }
 
-    // ========================================================================
-    // 5. АНИМАЦИЯ ЧАСТИЦ В CTA-БЛОКЕ
-    // ========================================================================
     const canvas = document.getElementById("ctaParticles");
     if (
       canvas &&

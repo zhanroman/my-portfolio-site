@@ -28,9 +28,9 @@
               Стандартные решения подводят ваш бизнес?
             </h1>
             <p class="hero__lead section-lead">
-              Я создаю уникальные инструменты и интерфейсы, которые работают.
-              Полная автоматизация, интеграции и кастомные решения под ваши
-              задачи.
+              Я&nbsp;создаю уникальные инструменты и&nbsp;интерфейсы, которые
+              работают. Полная автоматизация, интеграции и&nbsp;кастомные
+              решения под ваши задачи.
             </p>
             <div class="hero__actions">
               <button
@@ -40,12 +40,22 @@
               >
                 Написать мне
               </button>
+
               <button
                 type="button"
-                class="btn btn--ghost btn--lg"
-                data-modal-trigger="contactModal"
+                class="btn btn--lg btn-ailg"
+                data-modal-trigger="aiAssistantModal"
               >
-                Посмотреть проекты
+                <lottie-player
+                  class="ai-lottie--lg"
+                  src="assets/Loading loop animation.json"
+                  background="transparent"
+                  speed="1"
+                  loop
+                  autoplay
+                >
+                </lottie-player>
+                AI&nbsp;Pulse
               </button>
             </div>
           </div>
@@ -1069,11 +1079,74 @@
         ></canvas>
       </section>
     </main>
+
     <div id="footer-placeholder"></div>
 
-    <script src="scripts/common-scripts.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="scripts/common-scripts.js"></script>
     <script src="scripts/home-scripts.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <div class="modal-wrapper" id="aiAssistantModal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" aria-label="Закрыть окно">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <h2 id="modalTitle">Привет! Я AI-ассистент ZhanRoman</h2>
+          <p>
+            Расскажи, что тормозит твой продукт — я помогу найти слабые места,
+            предложу решение и передам это владельцу сайта.
+          </p>
+        </div>
+
+        <div class="modal-body">
+          <div class="chat-messages">
+            <div class="chat-message ai">
+              <div class="chat-avatar">AI</div>
+              <div class="chat-bubble">
+                Что сейчас больше всего мешает вашему продукту? Вы переживаете
+                за дизайн, скорость или рост?
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" placeholder="Опишите вашу проблему..." />
+            <button aria-label="Отправить сообщение">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -79,6 +79,17 @@
   box-shadow: 0 8px 20px rgba(0, 157, 144, 0.25);
 }
 
+.btn-ailg {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px 28px 70px;
+}
+
+.ai-lottie--lg {
+  position: absolute;
+  left: -45px;
+}
+
 .hero__actions {
   display: flex;
   flex-direction: row;
