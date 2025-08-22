@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Brands Section Styles (Final Version)
+   ========================================================================== */
+
+
+
+.brands__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.brands__title {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--c-text-soft);
+    font-weight: 400;
+}
+
+.brands__subtext {
+    font-size: 14px;
+    color: #b0b0b0;
+    margin: 32px 0 0;
+}
+
+.brands-slider {
+    position: relative;
+    padding-top: 30px; 
+    margin-top: -30px;
+}
+
+/* --- Стили для ДЕСКТОПА (по умолчанию) --- */
+
+.brands__logos-track {
+    display: flex;
+    flex-wrap: nowrap; /* Позволяет логотипам переноситься, если не хватает места */
+    justify-content: center; /* Центрируем логотипы по горизонтали */
+    align-items: center;
+    gap: 40px;
+}
+
+/* Скрываем дубликаты логотипов на десктопе */
+.brand-logo.is-duplicate {
+    display: none;
+}
+
+.brand-logo {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+}
+
+.brand-logo img {
+    height: 40px;
+    filter: grayscale(100%) brightness(0) saturate(0) invert(60%);     
+    transition: filter 0.3s var(--ease-standard), transform 0.3s var(--ease-standard);
+    will-change: filter, transform;
+}
+
+.brand-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+.brand-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background-color: var(--c-text);
+    color: var(--c-bg);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease-standard), transform 0.3s var(--ease-standard), visibility 0.3s;
+    z-index: 10;
+}
+
+.brand-logo:hover .brand-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* --- Стили для МОБИЛЬНЫХ УСТРОЙСТВ (до 1024px) --- */
+@media (max-width: 1024px) {
+    @keyframes infinite-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+
+    .brands-slider {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    
+    .brands__logos-track {
+        width: fit-content; /* Возвращаем ширину по контенту для анимации */
+        justify-content: flex-start; /* Убираем центрирование */
+        flex-wrap: nowrap; /* Запрещаем перенос */
+        gap: 24px;
+        animation: infinite-scroll 40s linear infinite;
+        will-change: transform;
+    }
+    
+    /* Показываем дубликаты логотипов для анимации */
+    .brand-logo.is-duplicate {
+        display: block;
+    }
+    
+    .brands-slider:hover .brands__logos-track {
+        animation-play-state: paused;
+    }
+
+    .brand-logo img {
+        height: 32px;
+    }
+
+    .brand-tooltip {
+        display: none; /* Отключаем тултипы на тач-устройствах */
+    }
+}
+
+@media (max-width: 767px) {
+    .brands {
+        padding: 40px 0;
+    }
+    .brands__title {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}
+
+

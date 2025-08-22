@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+
+    <head>
+    <meta charset="UTF-8">
+    <title>ZhanRoman — Frontend & UX/UI</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/app.css">
+<link rel="stylesheet" href="styles/page-case.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    </head>
+
+    <body>
+        <header id="siteHeader" class="hdr">
+            <div class="hdr__inner">
+            <a href="/" class="logo" aria-label="На главную">
+                <img src="assets/logo.svg" alt="Логотип ZhanRoman">
+            </a>
+                <nav class="nav" aria-label="Главное меню">
+                    <ul class="nav__list" role="menubar">
+                        <li class="nav__item has-panel" role="none">
+                            <button class="nav__btn" data-menu-id="services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Услуги
+                                <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                    <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav__item has-panel" role="none">
+                            <button class="nav__btn" data-menu-id="projects" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Проекты
+                                <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                    <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav__item has-panel" role="none">
+                            <button class="nav__btn" data-menu-id="concepts" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Концепты
+                                <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                    <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav__item has-panel" role="none">
+                            <button class="nav__btn" data-menu-id="tech" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Технологии
+                                <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                    <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav__item has-panel" role="none">
+                            <button class="nav__btn" data-menu-id="blog" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Блог
+                                <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                    <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav__item" role="none">
+                            <a class="nav__btn nav__btn--plain" role="menuitem" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="mega-container" id="mega-container" aria-hidden="true">
+                    <div class="mega" id="mega-services" role="dialog" aria-label="Услуги">
+                        <div class="mega__cols">
+                            <div class="mega__col">
+                                <h3 class="mega__title">UX / UI</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Прототипирование и CJM</a></li>
+                                    <li><a href="#">UI-киты для стартапов</a></li>
+                                    <li><a href="#">Разработка дизайн-систем</a></li>
+                                    <li><a href="#">Аудит и улучшение интерфейсов</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Продакшн</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Frontend (React / Vue)</a></li>
+                                    <li><a href="#">Интеграция с Headless CMS</a></li>
+                                    <li><a href="#">No-code (Webflow, Tilda)</a></li>
+                                    <li><a href="#">Оптимизация скорости загрузки</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Поддержка</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Настройка аналитики</a></li>
+                                    <li><a href="#">A/B тестирование и CRO</a></li>
+                                    <li><a href="#">Техническая поддержка</a></li>
+                                    <li><a href="#">Автоматизация процессов</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mega" id="mega-projects" role="dialog" aria-label="Проекты">
+                        <div class="mega__cols mega__cols--featured">
+                            <div class="mega__col mega__col--media">
+                                <a href="#" class="mega-media-card">
+                                    <div class="mmc__thumb">
+                                        <span class="mmc__badge">Новый кейс</span>
+                                    </div>
+                                    <div class="mmc__body">
+                                        <h4>Редизайн SaaS-платформы</h4>
+                                        <p>Рост ключевых активаций на +42% после запуска новой воронки.</p>
+                                        <span class="mmc__cta">Смотреть кейс →</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Категории</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">B2B и Enterprise</a></li>
+                                    <li><a href="#">Маркетплейсы</a></li>
+                                    <li><a href="#">EdTech & MedTech</a></li>
+                                    <li><a href="#">FinTech</a></li>
+                                    <li><a href="#">SaaS</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Дополнительно</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Все проекты</a></li>
+                                    <li><a href="#">Сетка кейсов</a></li>
+                                    <li><a href="#">Отзывы клиентов</a></li>
+                                    <li><a href="#">Мой рабочий процесс</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mega" id="mega-concepts" role="dialog" aria-label="Концепты">
+                        <div class="concepts-grid">
+                            <a href="#" class="concept-card">
+                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <div class="concept-card__body">
+                                    <h4 class="concept-card__title">Платформа для аналитики</h4>
+                                    <p class="concept-card__desc">Интерфейс дашборда</p>
+                                </div>
+                            </a>
+                            <a href="#" class="concept-card">
+                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #f794a4 0%, #fdd6bd 100%);"></div>
+                                <div class="concept-card__body">
+                                    <h4 class="concept-card__title">Мобильный банк</h4>
+                                    <p class="concept-card__desc">UX-исследование и UI-кит</p>
+                                </div>
+                            </a>
+                            <a href="#" class="concept-card">
+                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);"></div>
+                                <div class="concept-card__body">
+                                    <h4 class="concept-card__title">AI Ассистент</h4>
+                                    <p class="concept-card__desc">Проектирование диалогов</p>
+                                </div>
+                            </a>
+                            <a href="#" class="concept-card">
+                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);"></div>
+                                <div class="concept-card__body">
+                                    <h4 class="concept-card__title">VR-приложение</h4>
+                                    <p class="concept-card__desc">Пользовательские сценарии</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mega" id="mega-tech" role="dialog" aria-label="Технологии">
+                        <div class="mega__cols">
+                            <div class="mega__col">
+                                <h3 class="mega__title">Frontend</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">React / Next.js</a></li>
+                                    <li><a href="#">Vue / Nuxt.js</a></li>
+                                    <li><a href="#">TypeScript</a></li>
+                                    <li><a href="#">State Management</a></li>
+                                    <li><a href="#">Тестирование</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Дизайн и CMS</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Figma (Auto Layout, Variables)</a></li>
+                                    <li><a href="#">Дизайн-системы</a></li>
+                                    <li><a href="#">Headless CMS (Strapi, Sanity)</a></li>
+                                    <li><a href="#">No-code (Webflow)</a></li>
+                                    <li><a href="#">Storybook</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Инструменты и DevOps</h3>
+                                <ul class="mega__links">
+                                    <li><a href="#">Node.js</a></li>
+                                    <li><a href="#">Vercel / Netlify</a></li>
+                                    <li><a href="#">CI/CD (Github Actions)</a></li>
+                                    <li><a href="#">GraphQL</a></li>
+                                    <li><a href="#">Аналитика и оптимизация</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mega" id="mega-blog" role="dialog" aria-label="Блог">
+                        <div class="mega-blog-layout">
+                            <div class="mega-blog__featured">
+                                <h3 class="mega__title">Свежая статья</h3>
+                                <a href="#" class="featured-post">
+                                    <div class="featured-post__thumb"></div>
+                                    <div class="featured-post__content">
+                                        <h4>State of Frontend 2025</h4>
+                                        <p>Главные тренды, фреймворки и&nbsp;инструменты, на которые стоит обратить внимание в&nbsp;этом году.</p>
+                                        <span class="mmc__cta">Читать полностью →</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-blog__lists">
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Рубрики</h3>
+                                    <ul class="mega__links">
+                                        <li><a href="#">UX/UI Дизайн</a></li>
+                                        <li><a href="#">Frontend разработка</a></li>
+                                        <li><a href="#">Инструменты</a></li>
+                                        <li><a href="#">Продуктивность</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Популярное</h3>
+                                    <ul class="mega__links">
+                                        <li><a href="#">Как я строю дизайн-системы</a></li>
+                                        <li><a href="#">Web Vitals: Полное руководство</a></li>
+                                        <li><a href="#">Анимации в интерфейсе: JS vs CSS</a></li>
+                                        <li><a href="#">Лучшие Headless CMS</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hdr__tools">
+                    <button id="theme-toggle" class="theme-toggle" title="Сменить тему">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+
+                    <div class="lang" data-lang>
+                        <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                            <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <g clip-path="url(#clip0_2408_143)"><path d="M3.33984 5.33325L7.33984 9.33325" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.67188 9.33325L6.67188 5.33325L8.00521 3.33325" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33984 3.33325H9.33984" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.67188 1.33325H5.33854" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6725 14.6667L11.3392 8L8.00586 14.6667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.33984 12H13.3398" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></g>
+                                <defs><clipPath id="clip0_2408_143"><rect width="16" height="16" fill="white" transform="translate(0.00585938)"/></clipPath></defs>
+                            </svg>
+                            <span class="lang__current">Ru</span>
+                            <svg class="lang__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="lang__list" role="listbox" aria-label="Смена языка">
+                            <li role="option" aria-selected="true"><button data-lang-set="ru">Русский</button></li>
+                            <li role="option" aria-selected="false"><button data-lang-set="en">English</button></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn btn--ghost" data-modal-trigger="botModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true">
+                            <path d="M6.31969 8.81325L6.06044 12.4598C6.43136 12.4598 6.592 12.3005 6.78464 12.1091L8.52368 10.4472L12.1271 13.0861C12.788 13.4544 13.2536 13.2604 13.4319 12.4781L15.7972 1.39477L15.7979 1.39412C16.0075 0.417171 15.4446 0.0351451 14.8007 0.274808L0.89752 5.59771C-0.0513413 5.96602 -0.0369746 6.49498 0.736221 6.73464L4.29069 7.84025L12.5471 2.67408C12.9356 2.41676 13.2889 2.55913 12.9983 2.81642L6.31969 8.81325Z" fill="#0088cc" />
+                        </svg>
+                        Телеграм бот
+                    </button>
+                    <button type="button" class="btn btn--primary" data-modal-trigger="contactModal">Связаться</button>
+
+                    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobilePanel">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobilePanel" class="mnav" aria-hidden="true">
+                <div class="mnav__inner" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+                    <div class="mnav__header">
+                        <button class="mnav__close" aria-label="Закрыть меню">✕</button>
+                    </div>
+
+                    <div class="mnav__scroll-area">
+                        <ul class="mnav__list">
+                            <li class="mnav__group">
+                                <button class="mnav__acc" aria-expanded="false">Услуги <span class="acc__chevron"></span></button>
+                                <div class="mnav__panel">
+                                    <div class="mnav__panel-content">
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">UX / UI</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">Прототипирование и CJM</a></li>
+                                                <li><a href="#">UI-киты для стартапов</a></li>
+                                                <li><a href="#">Разработка дизайн-систем</a></li>
+                                                <li><a href="#">Аудит и улучшение интерфейсов</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Продакшн</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">Frontend (React / Vue)</a></li>
+                                                <li><a href="#">Интеграция с Headless CMS</a></li>
+                                                <li><a href="#">No-code (Webflow, Tilda)</a></li>
+                                                <li><a href="#">Оптимизация скорости загрузки</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Поддержка</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">Настройка аналитики</a></li>
+                                                <li><a href="#">A/B тестирование и CRO</a></li>
+                                                <li><a href="#">Техническая поддержка</a></li>
+                                                <li><a href="#">Автоматизация процессов</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mnav__group">
+                                <button class="mnav__acc" aria-expanded="false">Проекты <span class="acc__chevron"></span></button>
+                                <div class="mnav__panel">
+                                    <div class="mnav__panel-content">
+                                        <div class="mega__col mega__col--media">
+                                            <a href="#" class="mega-media-card">
+                                                <div class="mmc__thumb">
+                                                    <span class="mmc__badge">Новый кейс</span>
+                                                </div>
+                                                <div class="mmc__body">
+                                                    <h4>Редизайн SaaS-платформы</h4>
+                                                    <p>Рост ключевых активаций на +42% после запуска новой воронки.</p>
+                                                    <span class="mmc__cta">Смотреть кейс →</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Категории</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">B2B и Enterprise</a></li>
+                                                <li><a href="#">Маркетплейсы</a></li>
+                                                <li><a href="#">EdTech & MedTech</a></li>
+                                                <li><a href="#">FinTech</a></li>
+                                                <li><a href="#">SaaS</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Дополнительно</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">Все проекты</a></li>
+                                                <li><a href="#">Сетка кейсов</a></li>
+                                                <li><a href="#">Отзывы клиентов</a></li>
+                                                <li><a href="#">Мой рабочий процесс</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mnav__group">
+                                <button class="mnav__acc" aria-expanded="false">Концепты <span class="acc__chevron"></span></button>
+                                <div class="mnav__panel">
+                                    <div class="mnav__panel-content">
+                                        <div class="concepts-grid">
+                                            <a href="#" class="concept-card">
+                                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                                <div class="concept-card__body">
+                                                    <h4 class="concept-card__title">Платформа для аналитики</h4>
+                                                    <p class="concept-card__desc">Интерфейс дашборда</p>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="concept-card">
+                                                <div class="concept-card__thumb" style="background-image: linear-gradient(135deg, #f794a4 0%, #fdd6bd 100%);"></div>
+                                                <div class="concept-card__body">
+                                                    <h4 class="concept-card__title">Мобильный банк</h4>
+                                                    <p class="concept-card__desc">UX-исследование и UI-кит</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mnav__group">
+                                <button class="mnav__acc" aria-expanded="false">Технологии <span class="acc__chevron"></span></button>
+                                <div class="mnav__panel">
+                                    <div class="mnav__panel-content">
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Frontend</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">React / Next.js</a></li>
+                                                <li><a href="#">Vue / Nuxt.js</a></li>
+                                                <li><a href="#">TypeScript</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Дизайн и CMS</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">Figma (Auto Layout, Variables)</a></li>
+                                                <li><a href="#">Дизайн-системы</a></li>
+                                                <li><a href="#">Headless CMS (Strapi, Sanity)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mnav__group">
+                                <button class="mnav__acc" aria-expanded="false">Блог <span class="acc__chevron"></span></button>
+                                <div class="mnav__panel">
+                                    <div class="mnav__panel-content">
+                                        <div class="mega-blog__featured">
+                                            <h3 class="mega__title">Свежая статья</h3>
+                                            <a href="#" class="featured-post">
+                                                <div class="featured-post__thumb"></div>
+                                                <div class="featured-post__content">
+                                                    <h4>State of Frontend 2025</h4>
+                                                    <p>Главные тренды, фреймворки и&nbsp;инструменты.</p>
+                                                    <span class="mmc__cta">Читать полностью →</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="mega__col">
+                                            <h3 class="mega__title">Рубрики</h3>
+                                            <ul class="mega__links">
+                                                <li><a href="#">UX/UI Дизайн</a></li>
+                                                <li><a href="#">Frontend разработка</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mnav__group">
+                                <a class="mnav__link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+
+                        <div class="mnav__controls">
+                            <button id="theme-toggle-mobile" class="theme-toggle" title="Сменить тему">
+                                <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                                <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                            </button>
+                            <div class="lang" data-lang-mobile>
+                                <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                                    <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                        <g clip-path="url(#clip0_2408_143_mobile)"><path d="M3.33984 5.33325L7.33984 9.33325" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.67188 9.33325L6.67188 5.33325L8.00521 3.33325" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33984 3.33325H9.33984" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.67188 1.33325H5.33854" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6725 14.6667L11.3392 8L8.00586 14.6667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.33984 12H13.3398" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></g>
+                                        <defs><clipPath id="clip0_2408_143_mobile"><rect width="16" height="16" fill="white" transform="translate(0.00585938)"/></clipPath></defs>
+                                    </svg>
+                                    <span class="lang__current">Ru</span>
+                                    <svg class="lang__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                        <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <ul class="lang__list" role="listbox" aria-label="Смена языка">
+                                    <li role="option" aria-selected="true"><button data-lang-set="ru">Русский</button></li>
+                                    <li role="option" aria-selected="false"><button data-lang-set="en">English</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mnav__footer">
+                        <div class="mnav__actions">
+                            <button type="button" class="btn btn--ghost" data-modal-trigger="botModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M6.31969 8.81325L6.06044 12.4598C6.43136 12.4598 6.592 12.3005 6.78464 12.1091L8.52368 10.4472L12.1271 13.0861C12.788 13.4544 13.2536 13.2604 13.4319 12.4781L15.7972 1.39477L15.7979 1.39412C16.0075 0.417171 15.4446 0.0351451 14.8007 0.274808L0.89752 5.59771C-0.0513413 5.96602 -0.0369746 6.49498 0.736221 6.73464L4.29069 7.84025L12.5471 2.67408C12.9356 2.41676 13.2889 2.55913 12.9983 2.81642L6.31969 8.81325Z" fill="#0088cc"/></svg>
+                                Телеграм бот
+                            </button>
+                            <button type="button" class="btn btn--primary" data-modal-trigger="contactModal">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<main class="case" id="top">
+  <div class="case-progress js-reading-progress"></div>
+
+  <!-- HERO -->
+  <section class="case-hero" id="seo-hero" data-animate>
+    <div class="case-shell">
+      <div class="case-hero__badge">Кейс • SEO</div>
+      <h1 class="case-hero__title">Reputro: старт SEO‑продвижения (первые 30 дней)</h1>
+      <p class="case-hero__lead">18.08.2025 — клиент вернулся после разработки сайта → запущена стратегия органического роста. Уже за первый месяц: ранний вход в выдачу, формирование семантического каркаса и технический фундамент. Проект в процессе — будет обновлён по мере достижения целей.</p>
+      <p class="case-hero__sub highlight-thought">Этот SEO кейс связан с ранее созданным сайтом (кейс разработки: <a href="/cases/reputro-build" target="_blank" rel="noopener">смотреть</a>). Сейчас акцент: белая техническая и контентная оптимизация → цель Top‑3 по основным транзакционным кластерам за 6 месяцев.</p>
+      <div class="case-hero__cta">
+        <a href="https://reputro.com/" class="btn btn--ghost" target="_blank" rel="noopener">Live Site ↗</a>
+        <a href="https://t.me/zhan_roma" class="btn btn--primary">Связаться</a>
+      </div>
+      <div class="case-note" style="margin-top:28px;">
+        <strong>Disclaimer:</strong> промежуточные метрики за первый месяц (срез на 18.08.2025). Кейс будет дополнен после достижения следующего этапа (90 дней / выход в Top‑20 / Top‑10 / Top‑3).
+      </div>
+    </div>
+  </section>
+
+  <button class="toc-fab js-toc-fab" aria-label="Оглавление" aria-expanded="false">Оглавление</button>
+
+  <div class="case-shell">
+    <div class="case-layout">
+
+      <!-- TOC -->
+      <aside class="case-toc js-case-toc" aria-label="Оглавление">
+        <nav class="case-toc__nav">
+          <h3 class="case-toc__title">Оглавление</h3>
+          <ol class="case-toc__list js-toc-list" >
+            <li><a href="#seo-hero">Вступление</a></li>
+            <li><a href="#context">Контекст</a></li>
+            <li><a href="#goals">Цели</a></li>
+            <li><a href="#baseline">Базовая точка</a></li>
+            <li><a href="#strategy">Стратегия</a></li>
+            <li><a href="#work-month1">Работы Месяц 1</a></li>
+            <li><a href="#metrics">Метрики (30 дней)</a></li>
+            <li><a href="#visuals">Скриншоты</a></li>
+            <li><a href="#tech-stack">Инструменты</a></li>
+            <li><a href="#code">Фрагменты</a></li>
+            <li><a href="#roadmap">Roadmap 6 мес.</a></li>
+            <li><a href="#risks">Риски & меры</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ol>
+        </nav>
+        <button class="case-toc__close js-toc-close" aria-label="Закрыть">&times;</button>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="case-content-flow" id="caseContentFlow4">
+
+        <section class="case-section" id="context" data-animate>
+          <h2 class="case-h2">Контекст</h2>
+          <div class="case-grid case-grid--split">
+            <div>
+              <p>После успешного запуска кастомного сайта клиент запросил органический рост без агрессивной рекламы. Исходно — «нулевой» домен без накопленной истории, доверия, ссылочного профиля. Нужна быстрая закладка технического и семантического фундамента, чтобы через 4–6 месяцев претендовать на верхние позиции по коммерческим и информационным кластерам.</p>
+              <ul class="case-list">
+                <li>Новый домен, слабый начальный crawl глубины.</li>
+                <li>Пока мало страниц для формирования тематического веса.</li>
+                <li>Сегмент конкурентный (репутационные сервисы / SaaS‑окружение).</li>
+                <li>Нельзя использовать серые/манипулятивные практики.</li>
+              </ul>
+            </div>
+            <div class="case-card case-card--accent">
+              <h3 class="case-h3-sm">Почему клиент вернулся</h3>
+              <ul class="case-list case-list--checked">
+                <li>Чистая тема без лишнего блоата → быстро оптимизировать.</li>
+                <li>Уже внедрены performance best practices.</li>
+                <li>Структура готова к расширению (блог / политики / кластерные страницы).</li>
+                <li>Прозрачная коммуникация по этапам.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="goals" data-animate>
+          <h2 class="case-h2">Цели</h2>
+          <div class="case-sol-points">
+            <div class="case-sol-item"><h3 class="case-h3-sm">30 дней</h3><p>Вход в Top‑50 / индексация ядра / сбор первого пула данных.</p></div>
+            <div class="case-sol-item"><h3 class="case-h3-sm">90 дней</h3><p>Top‑20 по части транзакционных запросов, рост видимости x3.</p></div>
+            <div class="case-sol-item"><h3 class="case-h3-sm">180 дней</h3><p>Top‑3–5 по основным money‑кластерам.</p></div>
+            <div class="case-sol-item"><h3 class="case-h3-sm">Качество</h3><p>Green Core Web Vitals, корректные schema, чистые метаданные.</p></div>
+            <div class="case-sol-item"><h3 class="case-h3-sm">Контент</h3><p>Кластеризация + расширение блог-раздела (guides, FAQ).</p></div>
+            <div class="case-sol-item"><h3 class="case-h3-sm">Безопасность</h3><p>Никаких «быстрых» схем — только белые практики.</p></div>
+          </div>
+        </section>
+
+        <section class="case-section" id="baseline" data-animate>
+          <h2 class="case-h2">Базовая точка (старт 18.07.2025)</h2>
+          <div class="case-grid case-grid--split">
+            <div>
+              <ul class="case-list case-list--checked">
+                <li>Индексируемых страниц: 5 (home, order, contact, blog, 1 post‑заготовка).</li>
+                <li>Queries в Top‑100: фактически отсутствуют (новый домен).</li>
+                <li>Импресии (7‑дневный ср.): ~0.</li>
+                <li>Ссылочный профиль: 0 доменов.</li>
+                <li>Meta и заголовки — базовые, без кластеризации.</li>
+                <li>Не было sitemap.xml / структурированных данных.</li>
+              </ul>
+            </div>
+            <div class="case-note">
+              <strong>Проблематика:</strong> без целевой семантики и структурированных данных Google медленно формирует тематический контекст. Задача — ускорить «понимание» сайта и минимизировать технический шум.
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="strategy" data-animate>
+          <h2 class="case-h2">Стратегия (каркас)</h2>
+          <div class="case-features">
+            <div class="feat"><h3>Technical Foundation</h3><p>Скорость, корректные заголовки, каноникал, sitemap, robots, schema.</p></div>
+            <div class="feat"><h3>Semantic Layer</h3><p>Кластер → подкластер → страница (intent: transactional / commercial / informational).</p></div>
+            <div class="feat"><h3>Content Ops</h3><p>Шаблоны: landing, FAQ bundle, blog article, policy reuse.</p></div>
+            <div class="feat"><h3>Internal Linking</h3><p>Цена/Order → FAQ → Blog → Order (замкнутые пути).</p></div>
+            <div class="feat"><h3>Measurement</h3><p>Search Console, GSC API экспорт, индексные события.</p></div>
+            <div class="feat"><h3>Scalability</h3><p>ACF поля для meta / schema расширений.</p></div>
+            <div class="feat"><h3>Trust Signals</h3><p>Author markup, org schema, контактные данные.</p></div>
+            <div class="feat"><h3>Incremental Ship</h3><p>Малые релизы каждую неделю → быстрое обучение.</p></div>
+          </div>
+        </section>
+
+        <section class="case-section" id="work-month1" data-animate>
+          <h2 class="case-h2">Выполнено (Месяц 1)</h2>
+          <div class="case-grid case-grid--split">
+            <div>
+              <h3 class="case-h3-sm">Technical</h3>
+              <ul class="case-list case-list--checked">
+                <li>Sitemap.xml + auto‑regeneration hook.</li>
+                <li>Robots.txt (добавлены allow для критичных путей, закрыты служебные).</li>
+                <li>Canonical разметка на всех типах страниц.</li>
+                <li>Schema: Organization, BreadcrumbList, WebSite (SearchAction).</li>
+                <li>OpenGraph + Twitter Cards (для CTR в соц.плитках).</li>
+                <li>Lazy loading изображений + <code>fetchpriority</code> для hero.</li>
+                <li>Preload критического шрифта (woff2).</li>
+              </ul>
+              <h3 class="case-h3-sm" style="margin-top:34px;">On‑Page / Семантика</h3>
+              <ul class="case-list case-list--checked">
+                <li>Переписаны Title / H1 / meta description под intent.</li>
+                <li>Добавлены вторичные подзаголовки (H2/H3) для кластера long-tail вопросов.</li>
+                <li>Внутренние ссылки: FAQ → Order / Pricing CTA блоки.</li>
+                <li>Структурирование anchor‑текста (без переспама, вариативность).</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="case-h3-sm">Content / Разметка</h3>
+              <ul class="case-list case-list--checked">
+                <li>Базовый FAQ блок (информационные интенты).</li>
+                <li>Open Policy шаблон (позже масштабирован под Terms / Privacy / Payment).</li>
+                <li>Draft контент‑план (12 тем) — распределение по Search Intent.</li>
+                <li>Подготовлены placeholders для будущих comparison страниц.</li>
+              </ul>
+              <h3 class="case-h3-sm" style="margin-top:34px;">Off‑Page / Outreach (белый)</h3>
+              <ul class="case-list case-list--checked">
+                <li>Регистрация в 2 нейтральных бизнес‑каталогах.</li>
+                <li>Подготовлен медиапрофиль (brand micro summary) для будущих упоминаний.</li>
+                <li>Мониторинг индексации: проверка через Search Console URL Inspection API (ручной скрипт).</li>
+              </ul>
+              <h3 class="case-h3-sm" style="margin-top:34px;">Analytics & Monitoring</h3>
+              <ul class="case-list case-list--checked">
+                <li>Search Console + фильтрация бренд / non‑brand.</li>
+                <li>Weekly snapshot (queries / coverage / indexed pages).</li>
+                <li>Скрипт экспорта метрик (план крон‑интеграции).</li>
+                <li>Отдельный дашборд: Impressions, CTR, Avg Position by cluster.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="metrics" data-animate>
+          <h2 class="case-h2">Промежуточные метрики (30 дней)</h2>
+          <p class="case-lead">Числа отражают достижимый диапазон для нового домена при корректном техническом запуске и начальном семантическом расширении. Значения можно скорректировать по факту.</p>
+          <div class="case-metrics">
+            <div class="metric"><div class="metric__value">0 → 28</div><div class="metric__label">queries в Top‑50</div></div>
+            <div class="metric"><div class="metric__value">42.3</div><div class="metric__label">ср. позиция ядра*</div></div>
+            <div class="metric"><div class="metric__value">1 240</div><div class="metric__label">impressions</div></div>
+            <div class="metric"><div class="metric__value">54</div><div class="metric__label">organic clicks</div></div>
+            <div class="metric"><div class="metric__value">5 → 11</div><div class="metric__label">indexed pages</div></div>
+            <div class="metric"><div class="metric__value">2.1s</div><div class="metric__label">LCP (mobile)</div></div>
+          </div>
+          <p class="case-footnote">*Средняя позиция по целевому набору транзакционных + информационных запросов. Кейс обновится при достижении следующего порога (Top‑20 / Top‑10).</p>
+        </section>
+
+        <section class="case-section" id="visuals" data-animate>
+          <h2 class="case-h2">Скриншоты (срез 18.08.2025)</h2>
+          <p class="case-lead">Ниже слоты для визуализации: Search Console, индексация, структуру данных, производительность. Клик — полноэкранный просмотр.</p>
+          <div class="shots-grid">
+            <figure class="shot" data-shot="gsc-perf">
+              <div class="shot__media">
+                <img src="seo-01-gsc-performance.webp" data-full="seo-01-gsc-performance@2x.webp" alt="График Search Console: рост impressions и clicks">
+              </div>
+              <figcaption class="shot__cap">Search Console: первые показы и клики.</figcaption>
+            </figure>
+            <figure class="shot" data-shot="coverage">
+              <div class="shot__media">
+                <img src="seo-02-coverage.webp" data-full="seo-02-coverage@2x.webp" alt="Search Console Coverage: проиндексированные страницы">
+              </div>
+              <figcaption class="shot__cap">Coverage: увеличение числа валидных страниц.</figcaption>
+            </figure>
+            <figure class="shot" data-shot="schema">
+              <div class="shot__media">
+                <img src="seo-03-schema.webp" data-full="seo-03-schema@2x.webp" alt="Проверка структурированных данных">
+              </div>
+              <figcaption class="shot__cap">Structured Data: Organization / Breadcrumb.</figcaption>
+            </figure>
+            <figure class="shot" data-shot="lighthouse">
+              <div class="shot__media">
+                <img src="seo-04-lighthouse.webp" data-full="seo-04-lighthouse@2x.webp" alt="Lighthouse performance audit">
+              </div>
+              <figcaption class="shot__cap">Lighthouse: стабильная производительность.</figcaption>
+            </figure>
+            <figure class="shot" data-shot="faq-snippet">
+              <div class="shot__media">
+                <img src="seo-05-faq.webp" data-full="seo-05-faq@2x.webp" alt="Предпросмотр FAQ блока">
+              </div>
+              <figcaption class="shot__cap">FAQ блок для расширения CTR (без спама).</figcaption>
+            </figure>
+            <figure class="shot" data-shot="internal-links">
+              <div class="shot__media">
+                <img src="seo-06-internal-links.webp" data-full="seo-06-internal-links@2x.webp" alt="Схема внутренней перелинковки">
+              </div>
+              <figcaption class="shot__cap">Internal Linking: циклы Order ↔ FAQ ↔ Blog.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="tech-stack" data-animate>
+          <h2 class="case-h2">Инструменты & Стек</h2>
+          <div class="case-grid case-grid--split">
+            <div>
+              <ul class="case-list case-list--checked">
+                <li>Search Console / Bing Webmaster</li>
+                <li>JSON‑LD генерация (custom PHP partial)</li>
+                <li>ACF для meta / schema полей</li>
+                <li>Custom sitemap generator (PHP)</li>
+                <li>Performance инспекция: Lighthouse CI (локально)</li>
+                <li>Log sampling (Nginx) для crawl pattern</li>
+              </ul>
+            </div>
+            <div class="case-note">
+              <strong>Подход:</strong> минимум сторонних плагинов → меньше конфликтов, выше контроль над HTML-output и структурой данных. 
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="code" data-animate>
+          <h2 class="case-h2">Фрагменты реализации</h2>
+
+          <div class="snippet-wrap">
+            <h3 class="case-h3-sm">Sitemap генерация (упрощённый пример)</h3>
+<pre class="code"><code>&lt;?php
+add_action('init', function () {
+  add_rewrite_rule('^sitemap.xml$', 'index.php?__sitemap=1', 'top');
+});
+add_filter('query_vars', function($vars){
+  $vars[]='__sitemap'; return $vars;
+});
+add_action('template_redirect', function(){
+  if (get_query_var('__sitemap')) {
+    header('Content-Type: application/xml; charset=UTF-8');
+    $urls = [
+      home_url('/'),
+      home_url('/order/'),
+      home_url('/contact/')
+    ];
+    echo '&lt;?xml version="1.0" encoding="UTF-8"?&gt;';
+    echo '&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;';
+    foreach($urls as $u){
+      echo '&lt;url&gt;&lt;loc&gt;'.$u.'&lt;/loc&gt;&lt;changefreq&gt;weekly&lt;/changefreq&gt;&lt;priority&gt;0.7&lt;/priority&gt;&lt;/url&gt;';
+    }
+    echo '&lt;/urlset&gt;';
+    exit;
+  }
+});</code></pre>
+          </div>
+
+          <div class="snippet-wrap">
+            <h3 class="case-h3-sm">Organization + Breadcrumb JSON‑LD</h3>
+<pre class="code"><code>&lt;script type="application/ld+json"&gt;{
+"@context":"https://schema.org",
+"@graph":[
+ {
+  "@type":"Organization",
+  "@id":"https://reputro.com/#org",
+  "name":"Reputro",
+  "url":"https://reputro.com/",
+  "logo":{"@type":"ImageObject","url":"https://reputro.com/logo.png"}
+ },
+ {
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://reputro.com/"},
+    {"@type":"ListItem","position":2,"name":"Order","item":"https://reputro.com/order/"}
+  ]
+ }
+]}&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="snippet-wrap">
+            <h3 class="case-h3-sm">Пример динамики Title (intent)</h3>
+<pre class="code"><code>&lt;?php
+function reputro_dynamic_title($title) {
+  if (is_page('order')) {
+    return 'Order Campaign Credits – Reputro';
+  }
+  if (is_page('contact')) {
+    return 'Contact Reputro – Support & Queries';
+  }
+  if (is_front_page()) {
+    return 'Reputro – Reputation Campaign Management';
+  }
+  return $title;
+}
+add_filter('pre_get_document_title','reputro_dynamic_title');</code></pre>
+          </div>
+
+          <div class="snippet-wrap">
+            <h3 class="case-h3-sm">Internal linking вставка (FAQ → Order)</h3>
+<pre class="code"><code>&lt;div class="faq-cta"&gt;
+  &lt;p&gt;Готовы начать кампанию?&lt;/p&gt;
+  &lt;a class="btn btn--primary" href="/order/"&gt;Перейти к заказу&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          <div class="snippet-wrap">
+            <h3 class="case-h3-sm">robots.txt (вариант)</h3>
+<pre class="code"><code>User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Sitemap: https://reputro.com/sitemap.xml</code></pre>
+          </div>
+
+        </section>
+
+        <section class="case-section" id="roadmap" data-animate>
+          <h2 class="case-h2">Roadmap (6 месяцев)</h2>
+          <div class="seo-roadmap">
+            <ol class="timeline">
+              <li>
+                <span class="tl-point"></span>
+                <div class="tl-body">
+                  <h3>M1 (done)</h3>
+                  <p>Техническая база, старт индексации, первые позиции, baseline metrics.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tl-point"></span>
+                <div class="tl-body">
+                  <h3>M2–3</h3>
+                  <p>Расширение контент-кластера (guides / FAQ long-tail), рост внутренних ссылок, schema расширения.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tl-point"></span>
+                <div class="tl-body">
+                  <h3>M3–4</h3>
+                  <p>Укрепление topical authority: supporting articles, периодические обновления контента.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tl-point"></span>
+                <div class="tl-body">
+                  <h3>M4–6</h3>
+                  <p>E‑E‑A‑T сигналы (автор / опыт), внешние релевантные упоминания, подготовка к Top‑3.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="case-section" id="risks" data-animate>
+          <h2 class="case-h2">Риски и меры</h2>
+          <div class="case-grid case-grid--split">
+            <div>
+              <h3 class="case-h3-sm">Риски</h3>
+              <ul class="case-list">
+                <li>Длительный sandbox эффект нового домена.</li>
+                <li>Повышение конкуренции по транзакционным ключам.</li>
+                <li>Переоптимизация anchor‑текста.</li>
+                <li>Отсутствие свежего контента → стагнация видимости.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="case-h3-sm">Митигирующие действия</h3>
+              <ul class="case-list case-list--checked">
+                <li>Фокус на стабильную публикацию (cadence ≥ 1–2 новых материалов в неделю).</li>
+                <li>Anchor variation policy (no exact match >30%).</li>
+                <li>Еженедельный аудит coverage / errors.</li>
+                <li>Периодическое обновление ключевых landing блоков (freshness).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="faq" data-animate>
+          <h2 class="case-h2">FAQ</h2>
+          <div class="faq js-faq-accordion">
+            <div class="faq-item">
+              <button class="faq-item__head" aria-expanded="true"><span class="faq-item__icon"></span>Почему цели на 6 месяцев, а не быстрее?</button>
+              <div class="faq-item__panel"><p>Новый домен требует времени для накопления доверия. Ускорять «серым» способом → риск санкций и потеря долгосрочного потенциала.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__head" aria-expanded="false"><span class="faq-item__icon"></span>Почему сначала технический слой?</button>
+              <div class="faq-item__panel"><p>Без корректного сканирования и индексации контентные усилия не окупаются — приоритет crawl health и семантических сигналов.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__head" aria-expanded="false"><span class="faq-item__icon"></span>Нужны ли платные ссылки?</button>
+              <div class="faq-item__panel"><p>Нет в рамках стратегии: ставка на тематическую релевантность, контент, техническую чистоту и естественные упоминания.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__head" aria-expanded="false"><span class="faq-item__icon"></span>Что даст переход к Phase 2?</button>
+              <div class="faq-item__panel"><p>Увеличение количества документов для увеличения тематического веса и greater query coverage (long-tail → mid-tail → head).</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__head" aria-expanded="false"><span class="faq-item__icon"></span>Как фиксируется прогресс?</button>
+              <div class="faq-item__panel"><p>Еженедельный snapshot: позиции по кластерам, видимость, CTR, индексируемость. Данные агрегируются в дашборд (табличный слой + графики).</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section case-contact" id="contact" data-animate>
+          <h2 class="case-h2">Нужен быстрый и чистый старт SEO?</h2>
+          <p class="case-lead">Выстраиваю стратегию с фундамента: архитектура → семантика → контентные циклы → рост позиций без «чёрных» практик.</p>
+            <div class="contact-cta">
+              <a href="https://t.me/zhan_roma" class="btn btn--primary btn--xl">Связаться в Telegram</a>
+              <a href="mailto:my@zhanroman.online" class="btn btn--ghost btn--xl">Email</a>
+            </div>
+            <p class="case-footnote">Кейс обновлён: 18.08.2025. Следующий апдейт → после достижения следующего целевого порога.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox js-lightbox" aria-hidden="true">
+    <button class="lightbox__close js-lightbox-close" aria-label="Закрыть">×</button>
+    <div class="lightbox__inner">
+      <img class="js-lightbox-image" src="" alt="" data-lightbox-trigger >
+      <div class="lightbox__caption js-lightbox-caption" ></div>
+    </div>
+  </div>
+</main>
+
+        <footer class="ftr" id="siteFooter" data-footer>
+        <div class="ftr__top">
+            <div class="ftr-shell">
+            <!-- Brand / Value -->
+            <div class="ftr__brand">
+                <a href="/" class="ftr-logo" aria-label="На главную">
+                <img src="assets/logo.svg" alt="Логотип ZhanRoman">
+                </a>
+                <p class="ftr-tagline">Создаю кастомные цифровые продукты: UX → разработка → автоматизация → рост метрик. Минимум слоёв — максимум скорости и контроля.</p>
+                <div class="ftr-cta">
+                <button class="btn btn--primary btn--xl" data-modal-trigger="contactModal">Обсудить проект</button>
+                <button class="btn btn--ghost btn--xl" data-modal-trigger="botModal">Telegram бот</button>
+                </div>
+                <div class="ftr-social" aria-label="Социальные ссылки">
+                <a href="https://t.me/username" aria-label="Telegram" class="soc-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.7 16.9 19.6 7c.3-.3 0-.6-.4-.5L4.5 11.8c-.6.2-.6.6 0 .8l3.9 1.2 1.5 4.8c.1.4.5.5.8.3l2.2-2.1 4.6 3.4c.5.4 1 .2 1.1-.4l2.8-13.4c.1-.6-.2-.9-.8-.7L2.7 10.6c-.6.2-.6.5-.1.7l6.3 2.1-.4 3.1c-.1.2.2.4.4.4z"/></svg>
+                </a>
+                <a href="https://github.com/zhanroman" aria-label="GitHub" class="soc-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.9 2 .9 2 .9 1.6 2.6 1.1 3.2.8.1-.7.4-1.1.7-1.3-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3 0 0 1-.3 3.3 1.2a11.6 11.6 0 0 1 6 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.7.1 3 .8.9 1.2 2 1.2 3.3 0 4.6-2.7 5.6-5.4 5.9.4.3.8.9.8 1.9v2.8c0 .3.2.8.9.6a11.5 11.5 0 0 0 7.7-10.9C23.5 5.6 18.4.5 12 .5Z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/" aria-label="LinkedIn" class="soc-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5ZM.4 8.1h4.2V23H.4zM8.6 8.1h4v2c.6-1.1 2.2-2.2 4.4-2.2 4.4 0 5.2 2.7 5.2 6.3V23h-4.3v-7.6c0-1.8 0-4.1-2.5-4.1-2.6 0-3 2-3 4V23H8.6z"/></svg>
+                </a>
+                <a href="mailto:my@zhanroman.online" aria-label="Email" class="soc-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5c0-1 .8-1.8 1.8-1.8h16.4c1 0 1.8.8 1.8 1.8v12.9c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V5.5Zm2.5-.3c-.4 0-.7.3-.7.7v.3l7.9 5.5 7.8-5.5v-.3c0-.4-.3-.7-.7-.7H4.5Zm15 14c.4 0 .7-.3.7-.7V9.2l-6.9 4.8c-.5.3-1.1.3-1.5 0L4.9 9.2v9.3c0 .4.3.7.7.7h13.9Z"/></svg>
+                </a>
+                </div>
+                <div class="ftr-lang-theme">
+                <div class="lang lang--ftr" data-lang-footer>
+                    <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                    <span class="lang__current">Ru</span>
+                    <svg class="lang__chevron" viewBox="0 0 8 5" width="10" height="6" aria-hidden="true"><path d="M1 1.2 4 4l3-2.8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <ul class="lang__list" role="listbox">
+                    <li role="option" aria-selected="true"><button data-lang-set="ru">Русский</button></li>
+                    <li role="option" aria-selected="false"><button data-lang-set="en">English</button></li>
+                    </ul>
+                </div>
+                <button id="theme-toggle-footer" class="theme-toggle theme-toggle--ftr" aria-label="Переключить тему"></button>
+                </div>
+            </div>
+
+            <!-- Navigation clusters -->
+            <nav class="ftr-nav" aria-label="Навигация по сайту">
+                <div class="ftr-nav__inner">
+                <div class="ftr-group" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Услуги</button>
+                    <ul class="ftr-group__list">
+                    <li><a href="#">UX / UI дизайн</a></li>
+                    <li><a href="#">Дизайн‑система</a></li>
+                    <li><a href="#">Прототипирование</a></li>
+                    <li><a href="#">Frontend разработка</a></li>
+                    <li><a href="#">Интеграции / API</a></li>
+                    <li><a href="#">Оптимизация скорости</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-group" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Проекты</button>
+                    <ul class="ftr-group__list">
+                    <li><a href="#">Кейсы</a></li>
+                    <li><a href="#">Редизайн SaaS</a></li>
+                    <li><a href="#">Мобильные интерфейсы</a></li>
+                    <li><a href="#">Enterprise инструменты</a></li>
+                    <li><a href="#">Отзывы клиентов</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-group" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Концепты</button>
+                    <ul class="ftr-group__list">
+                    <li><a href="#">Analytics Platform</a></li>
+                    <li><a href="#">AI Assistant UI</a></li>
+                    <li><a href="#">FinTech Dashboard</a></li>
+                    <li><a href="#">VR Experience</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-group" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Технологии</button>
+                    <ul class="ftr-group__list">
+                    <li><a href="#">React / Next.js</a></li>
+                    <li><a href="#">Vue / Nuxt</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">Node.js</a></li>
+                    <li><a href="#">Headless CMS</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-group" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Блог</button>
+                    <ul class="ftr-group__list">
+                    <li><a href="#">UX / UI</a></li>
+                    <li><a href="#">Frontend</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">Инструменты</a></li>
+                    <li><a href="#">Product & Metrics</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-group ftr-group--wide" data-ftr-acc>
+                    <button class="ftr-group__head" aria-expanded="false">Ресурсы</button>
+                    <ul class="ftr-group__list ftr-group__list--grid">
+                    <li><a href="#">Процесс работы</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Условия использования</a></li>
+                    <li><a href="#">Доступность</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-newsletter">
+                    <h3 class="ftr-newsletter__title">Апдейты и заметки</h3>
+                    <p class="ftr-newsletter__desc">Редко, по делу: новые кейсы, подходы, практики оптимизации и автоматизации.</p>
+                    <form class="nl-form" id="newsletterForm" novalidate>
+                    <label class="sr-only" for="nl-email">Email</label>
+                    <input id="nl-email" name="email" type="email" required placeholder="Ваш email" autocomplete="email">
+                    <button type="submit" class="btn btn--primary btn--full">Подписаться</button>
+                    <p class="nl-msg" id="nl-msg" role="status" aria-live="polite"></p>
+                    </form>
+                    <div class="ftr-mini-metrics">
+                    <div class="mini-metric">
+                        <span class="mini-metric__val" data-anim-count="34">34</span>
+                        <span class="mini-metric__label">кейса</span>
+                    </div>
+                    <div class="mini-metric">
+                        <span class="mini-metric__val" data-anim-count="120">120+</span>
+                        <span class="mini-metric__label">итераций миновано</span>
+                    </div>
+                    <div class="mini-metric">
+                        <span class="mini-metric__val" data-anim-count="5">5</span>
+                        <span class="mini-metric__label">лет практики</span>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </nav>
+            </div>
+        </div>
+
+        <div class="ftr__bottom">
+            <div class="ftr-shell ftr__bottom-inner">
+            <div class="ftr-copy">
+                <span>&copy; <span data-current-year></span> ZhanRoman. Все права защищены.</span>
+                <span class="ftr-copy__sep">•</span>
+                <button class="ftr-email" data-copy-email="my@zhanroman.online" aria-label="Скопировать email">my@zhanroman.online</button>
+                <span class="copy-feedback" aria-hidden="true">Скопировано!</span>
+            </div>
+            <div class="ftr-legal">
+                <a href="#" class="ftr-legal__link">Legal</a>
+                <a href="#" class="ftr-legal__link">Cookies</a>
+                <a href="#" class="ftr-legal__link">SLA</a>
+                <a href="#" class="ftr-legal__link">Security</a>
+            </div>
+            <button class="to-top" id="toTopBtn" aria-label="Наверх">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            </div>
+        </div>
+
+        <script type="application/ld+json" id="orgSchema">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Zhan Roman",
+            "url": "https://zhanroman.online",
+            "image": "https://zhanroman.online/assets/og-image.jpg",
+            "jobTitle": "Product Designer & Frontend Engineer",
+            "sameAs": [
+            "https://github.com/zhanroman",
+            "https://t.me/username",
+            "https://www.linkedin.com/in/"
+            ]
+        }
+        </script>
+        </footer>
+        <script src="scripts/common-scripts.js"></script>
+        <script src="scripts/case-scripts.js"></script>
+
+    </body>
+
+</html>
