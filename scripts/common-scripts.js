@@ -313,3 +313,19 @@
     }
   });
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Функция для загрузки и вставки HTML
+    const loadComponent = (selector, url) => {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector(selector).innerHTML = data;
+            })
+            .catch(error => console.error(`Error loading ${url}:`, error));
+    };
+
+    // Загружаем шапку и подвал
+    loadComponent("#header-placeholder", "header.html");
+    loadComponent("#footer-placeholder", "footer.html");
+});
