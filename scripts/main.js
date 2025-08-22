@@ -175,10 +175,17 @@
       qsa(".mnav__acc").forEach((acc) => {
         acc.addEventListener("click", () => {
           const panel = acc.nextElementSibling;
-          const expanded = acc.getAttribute("aria-expanded") === "true";
-          acc.setAttribute("aria-expanded", String(!expanded));
-          if(panel) {
-            panel.style.maxHeight = expanded ? null : panel.scrollHeight + "px";
+          if (!panel) return; // Проверка, что панель существует
+
+          const isExpanded = acc.getAttribute("aria-expanded") === "true";
+          acc.setAttribute("aria-expanded", String(!isExpanded));
+
+          // Если панель была закрыта, открываем её, установив высоту
+          if (!isExpanded) {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } else {
+            // Иначе, если была открыта, закрываем
+            panel.style.maxHeight = null;
           }
         });
       });
@@ -398,12 +405,12 @@
         startX = 0,
         currentTranslate = 0,
         prevTranslate = 0;
-      
+
       container.addEventListener("pointerdown", (e) => {
         isDragging = true;
         startX = e.clientX;
-        track.style.transition = 'none';
-        container.style.cursor = 'grabbing';
+        track.style.transition = "none";
+        container.style.cursor = "grabbing";
         container.setPointerCapture(e.pointerId);
         prevTranslate = new DOMMatrix(getComputedStyle(track).transform).e;
       });
@@ -418,10 +425,10 @@
       const onPointerUp = () => {
         if (!isDragging) return;
         isDragging = false;
-        container.style.cursor = 'grab';
-        
+        container.style.cursor = "grab";
+
         const movedBy = currentTranslate - prevTranslate;
-        
+
         if (movedBy < -100 && currentIndex < maxIndex) {
           currentIndex++;
         }
@@ -431,14 +438,13 @@
         goTo(currentIndex);
       };
 
-      container.addEventListener('pointerup', onPointerUp);
-      container.addEventListener('pointerleave', onPointerUp);
-
+      container.addEventListener("pointerup", onPointerUp);
+      container.addEventListener("pointerleave", onPointerUp);
 
       readMetrics();
       goTo(0, false);
     }
-    
+
     const processTrack = document.getElementById("processTrack");
     const progressBar = document.getElementById("processProgressBar");
     if (processTrack && progressBar) {
@@ -456,7 +462,6 @@
       updateProgress();
     }
 
-
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const tiltEls = document.querySelectorAll("[data-tilt]");
       tiltEls.forEach((el) => {
@@ -467,7 +472,8 @@
           el.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 10}deg) scale(1.03)`;
         });
         el.addEventListener("mouseleave", () => {
-          el.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+          el.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
         });
       });
     }
@@ -505,7 +511,7 @@
           if (p.x > w + 10) p.x = -10;
           if (p.y < -10) p.y = h + 10;
           if (p.y > h + 10) p.y = -10;
-          
+
           ctx.beginPath();
           ctx.fillStyle = `rgba(255, 255, 255, ${p.o})`;
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -513,15 +519,18 @@
         });
         requestAnimationFrame(tick);
       };
-      
-      const observer = new IntersectionObserver(entries => {
-        if(entries[0].isIntersecting) {
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
             resize();
             tick();
             observer.disconnect();
-        }
-      }, {threshold: 0.1});
-      
+          }
+        },
+        { threshold: 0.1 }
+      );
+
       observer.observe(canvas);
       window.addEventListener("resize", resize);
     }
@@ -546,10 +555,13 @@
 
     function openModal(modal) {
       const modalContainer = modal.querySelector(".modal-container");
-      const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
       const firstFocusableElement = focusableElements[0];
-      const lastFocusableElement = focusableElements[focusableElements.length - 1];
-      
+      const lastFocusableElement =
+        focusableElements[focusableElements.length - 1];
+
       const triggerRect = lastClickedTrigger.getBoundingClientRect();
       const modalRect = modalContainer.getBoundingClientRect();
 
@@ -581,11 +593,11 @@
           fill: "forwards",
         }
       );
-      
+
       activeModalAnimation.onfinish = () => {
         firstFocusableElement?.focus();
       };
-      
+
       document.body.classList.add("modal-active");
       modal.setAttribute("aria-hidden", "false");
       modal.classList.add("is-open");
@@ -596,7 +608,7 @@
 
     function closeModal(modal) {
       document.body.classList.remove("modal-active");
-      
+
       if (activeModalAnimation) {
         activeModalAnimation.reverse();
         activeModalAnimation.onfinish = () => {
@@ -623,20 +635,23 @@
         closeModal(e.currentTarget);
       }
     }
-    
-    function trapFocus(e){
-      const openModalEl = document.querySelector('.modal-wrapper.is-open');
+
+    function trapFocus(e) {
+      const openModalEl = document.querySelector(".modal-wrapper.is-open");
       if (!openModalEl) return;
-      
-      const focusableElements = openModalEl.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+
+      const focusableElements = openModalEl.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
       const firstFocusableElement = focusableElements[0];
-      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+      const lastFocusableElement =
+        focusableElements[focusableElements.length - 1];
 
       if (e.key === "Escape") {
-         closeModal(openModalEl);
+        closeModal(openModalEl);
       }
-      
-      if (e.key === 'Tab') {
+
+      if (e.key === "Tab") {
         if (e.shiftKey) {
           if (document.activeElement === firstFocusableElement) {
             lastFocusableElement.focus();
@@ -661,9 +676,9 @@
         .then((data) => {
           const element = document.querySelector(selector);
           if (element) {
-            const tempDiv = document.createElement('div');
+            const tempDiv = document.createElement("div");
             tempDiv.innerHTML = data;
-            
+
             while (tempDiv.firstChild) {
               element.parentNode.insertBefore(tempDiv.firstChild, element);
             }

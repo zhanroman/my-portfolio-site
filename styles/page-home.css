@@ -628,6 +628,7 @@
 @media (max-width: 767px) {
   .featured-works {
     padding: 56px 0;
+    overflow: hidden;
   }
   .featured-works__footer,
   .featured-works__nav {
