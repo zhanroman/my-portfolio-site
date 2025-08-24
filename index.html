@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
 
   <body>
@@ -1137,7 +1138,709 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Стандартные решения подводят ваш бизнес?
+            </h1>
+            <p class="hero__lead">
+              Прорабатываю интерфейсы, ускоряю загрузку, автоматизирую рутину и
+              закладываю основу под рост. Работаю на результат: скорость,
+              понятная структура, меньше ручного труда. Я создаю уникальные
+              инструменты и интерфейсы, которые работают. Полная автоматизация,
+              интеграции и кастомные решения под ваши задачи.
+            </p>
+            <div class="hero__actions">
+              <button
+                class="btn btn--primary btn--lg"
+                data-modal-trigger="contactModal"
+              >
+                Связаться
+              </button>
+              <a
+                class="btn btn--ghost btn--lg"
+                href="/cases/wordpress-performance-theideal"
+                >Смотреть кейс</a
+              >
+              <button
+                type="button"
+                class="btn btn--ghost btn--lg"
+                data-modal-trigger="aiAssistantModal"
+              >
+                AI&nbsp;помощник
+              </button>
+            </div>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero-grid">
+              <div class="hero-grid__layer"></div>
+              <div class="hero-grid__layer"></div>
+              <div class="hero-grid__layer"></div>
+              <span class="hero-grid__spark"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+      <section class="capabilities" id="capabilities">
+        <div class="capabilities__inner">
+          <ul class="capabilities__grid">
+            <li class="capability-card" style="--i: 0">
+              <div class="capability-card__icon" style="--icon-bg: #ffc4f8">
+                ⚡
+              </div>
+              <div>
+                <h3 class="capability-card__title">Ускорение сайта</h3>
+                <p class="capability-card__desc">
+                  Вывожу показатели скорости и стабильности в “зелёную” зону за
+                  1–2 недели.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 1">
+              <div class="capability-card__icon" style="--icon-bg: #ffeb80">
+                🚀
+              </div>
+              <div>
+                <h3 class="capability-card__title">Быстрый запуск</h3>
+                <p class="capability-card__desc">
+                  Рабочая версия сайта или сервиса за считанные дни без лишнего
+                  “мусора”.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 2">
+              <div class="capability-card__icon" style="--icon-bg: #9ff8e7">
+                🧩
+              </div>
+              <div>
+                <h3 class="capability-card__title">Автоматизация</h3>
+                <p class="capability-card__desc">
+                  Скрипты, формы, генерация документов — снимаю ручные операции.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 3">
+              <div class="capability-card__icon" style="--icon-bg: #b3d7ff">
+                💳
+              </div>
+              <div>
+                <h3 class="capability-card__title">Расчёты и оплата</h3>
+                <p class="capability-card__desc">
+                  Динамические калькуляторы, Stripe/платёжные сценарии, порядок
+                  в данных.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 4">
+              <div class="capability-card__icon" style="--icon-bg: #ffd6a5">
+                🔍
+              </div>
+              <div>
+                <h3 class="capability-card__title">SEO фундамент</h3>
+                <p class="capability-card__desc">
+                  Нулевой домен → индексация, первые позиции, структура без
+                  “серых” схем.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 5">
+              <div class="capability-card__icon" style="--icon-bg: #e4c4ff">
+                🛒
+              </div>
+              <div>
+                <h3 class="capability-card__title">E‑commerce поддержка</h3>
+                <p class="capability-card__desc">
+                  Каталог, акции, интеграции (Insales / WordPress) — системно и
+                  без хаоса.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 6">
+              <div class="capability-card__icon" style="--icon-bg: #c7f9cc">
+                🌐
+              </div>
+              <div>
+                <h3 class="capability-card__title">Мультиязык</h3>
+                <p class="capability-card__desc">
+                  Переводы, переключатели, единый стиль, без “ломаний” верстки.
+                </p>
+              </div>
+            </li>
+            <li class="capability-card" style="--i: 7">
+              <div class="capability-card__icon" style="--icon-bg: #ffb3c6">
+                🧱
+              </div>
+              <div>
+                <h3 class="capability-card__title">Чистая структура</h3>
+                <p class="capability-card__desc">
+                  Минимум плагинов, понятные файлы, легко поддерживать и
+                  расширять.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FEATURED WORKS (scroll-snap instead of JS slider) -->
+      <section class="featured-works" aria-label="Основные кейсы">
+        <div class="featured-works__inner">
+          <h2 class="sec-title" style="margin: 0 0 18px">Основные кейсы</h2>
+          <div class="fw-track">
+            <div class="fw-slide">
+              <a href="/cases/wordpress-performance-theideal" class="work-card">
+                <figure>
+                  <img
+                    src="assets/thumbs/perf-sprint.webp"
+                    alt="Ускорение: theideal.ru"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="work-card__overlay">
+                  <span class="work-card__title">Ускорение</span>
+                  <span class="work-card__tag">28% → 92%</span>
+                </div>
+              </a>
+            </div>
+            <div class="fw-slide">
+              <a href="/cases/reputro-launch" class="work-card">
+                <figure>
+                  <img
+                    src="assets/thumbs/reputro-launch.webp"
+                    alt="Запуск Reputro за 3 дня"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="work-card__overlay">
+                  <span class="work-card__title">Запуск 3 дня</span>
+                  <span class="work-card__tag">0 правок</span>
+                </div>
+              </a>
+            </div>
+            <div class="fw-slide">
+              <a href="/cases/reputro-seo-month1" class="work-card">
+                <figure>
+                  <img
+                    src="assets/thumbs/reputro-seo.webp"
+                    alt="SEO месяц 1 Reputro"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="work-card__overlay">
+                  <span class="work-card__title">SEO старт</span>
+                  <span class="work-card__tag">0→28 запросов</span>
+                </div>
+              </a>
+            </div>
+            <div class="fw-slide">
+              <a href="/cases/automation-retailcrm-forms" class="work-card">
+                <figure>
+                  <img
+                    src="assets/thumbs/automation-forms.webp"
+                    alt="Автоматизация документов"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="work-card__overlay">
+                  <span class="work-card__title">Документы</span>
+                  <span class="work-card__tag">−85% времени</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="fw-hint">Свайп / прокрутка</div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="sec highlights" id="highlights">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Коротко в цифрах</h2>
+            <p class="sec-lead">
+              Показатели, которые важны для владельца бизнеса.
+            </p>
+          </div>
+          <div class="highlight-grid">
+            <article class="highlight">
+              <header class="highlight__head">Скорость</header>
+              <div class="highlight__value">92%</div>
+              <p class="highlight__desc">Оценка PageSpeed Mobile (было 28%)</p>
+              <a
+                href="/cases/wordpress-performance-theideal"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">LCP</header>
+              <div class="highlight__value">2.1s</div>
+              <p class="highlight__desc">Сокращено с ~5.4s (главный экран)</p>
+              <a
+                href="/cases/wordpress-performance-theideal"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">Запуск</header>
+              <div class="highlight__value">3д</div>
+              <p class="highlight__desc">Рабочий сайт Reputro без доработок</p>
+              <a href="/cases/reputro-launch" class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">Документы</header>
+              <div class="highlight__value">85%</div>
+              <p class="highlight__desc">Экономия времени на пакет форм</p>
+              <a
+                href="/cases/automation-retailcrm-forms"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAINS -->
+      <section class="sec pains" id="pains">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">С чем обычно приходят</h2>
+            <p class="sec-lead">
+              Реальные ситуации. Решаю их системно, а не “латанием”.
+            </p>
+          </div>
+          <div class="pains-grid">
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>01</span></div>
+              <h3 class="pain-card__title">Сайт медленно грузится</h3>
+              <p class="pain-card__text">
+                Много плагинов, тяжёлые изображения, “тяжёлый” конструктор.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> аудит, чистка, кеш, оптимизация
+                медиа — показатели в зелёной зоне.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>02</span></div>
+              <h3 class="pain-card__title">Ручные документы</h3>
+              <p class="pain-card__text">
+                Google Docs по 25–30 минут на пакет, ошибки в форматах.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> шаблоны, условия, единый стиль —
+                время падает в разы.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>03</span></div>
+              <h3 class="pain-card__title">Новый домен без позиций</h3>
+              <p class="pain-card__text">
+                Нет структуры, мало страниц, не индексируется.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> тех. основа, кластеризация,
+                внутренние ссылки — первые запросы видны в выдаче.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>04</span></div>
+              <h3 class="pain-card__title">Ручной подсчёт цен</h3>
+              <p class="pain-card__text">
+                Долгие ответы клиентам, путаница в тарифах.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> динамический калькулятор + оплата —
+                быстрее подтверждение.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>05</span></div>
+              <h3 class="pain-card__title">Хаос в интернет‑магазине</h3>
+              <p class="pain-card__text">
+                Каталог, интеграции, рассылки — всё разрознено.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> порядок в каталоге, автоматизация
+                повторов, чёткие обновления.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>06</span></div>
+              <h3 class="pain-card__title">Долго править страницы</h3>
+              <p class="pain-card__text">
+                Любая мелочь требует долгой цепочки.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> упрощаю структуру, сокращаю плагины
+                — правки быстрее.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="sec process" id="process">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Как работаю</h2>
+            <p class="sec-lead">
+              Можно подключиться на любом шаге, но лучшие результаты — когда
+              шаги идут связкой.
+            </p>
+          </div>
+          <div class="process-track">
+            <div class="process-step">
+              <div class="process-step__index">1</div>
+              <h3>Диагностика</h3>
+              <p>Проверяю скорость, структуру, риски.</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step__index">2</div>
+              <h3>Архитектура</h3>
+              <p>Выстраиваю сетку, сущности, основу SEO.</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step__index">3</div>
+              <h3>Сборка</h3>
+              <p>Чистый фронтенд, темы, формулы, интеграции.</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step__index">4</div>
+              <h3>Ускорение</h3>
+              <p>Снижаю вес, оптимизирую бандл и медиа.</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step__index">5</div>
+              <h3>Измерение</h3>
+              <p>События, дашборды, базовые сравнения.</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step__index">6</div>
+              <h3>Рост</h3>
+              <p>Контент‑кластеры, обновления, автоматизация.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODELS -->
+      <section class="sec models" id="models">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Форматы</h2>
+            <p class="sec-lead">
+              Подбираем формат под вашу задачу: запуск, ускорение, рост или
+              экономия операций.
+            </p>
+          </div>
+          <div class="model-grid">
+            <div class="model-card">
+              <div class="model-card__top">
+                <h3>Быстрый запуск</h3>
+                <p>Рабочая версия без лишнего веса.</p>
+              </div>
+              <ul class="model-card__list">
+                <li>От 3 дней</li>
+                <li>Настройка форм и калькуляторов</li>
+                <li>Базовая скорость и индексация</li>
+                <li>Готово к оплате</li>
+              </ul>
+              <div class="model-card__cta">
+                <button
+                  class="btn btn--ghost btn--sm"
+                  data-modal-trigger="contactModal"
+                >
+                  Обсудить
+                </button>
+              </div>
+            </div>
+            <div class="model-card model-card--accent">
+              <div class="model-card__badge">Часто</div>
+              <div class="model-card__top">
+                <h3>Спринт ускорения</h3>
+                <p>Скорость и стабильность выше.</p>
+              </div>
+              <ul class="model-card__list">
+                <li>Аудит + план</li>
+                <li>Оптимизация медиа</li>
+                <li>Чистка плагинов</li>
+                <li>Мониторинг</li>
+              </ul>
+              <div class="model-card__cta">
+                <button
+                  class="btn btn--primary btn--sm"
+                  data-modal-trigger="contactModal"
+                >
+                  Запросить
+                </button>
+              </div>
+            </div>
+            <div class="model-card">
+              <div class="model-card__top">
+                <h3>SEO фундамент</h3>
+                <p>Нулевой домен → первые переходы.</p>
+              </div>
+              <ul class="model-card__list">
+                <li>Структура запросов</li>
+                <li>Разметка данных</li>
+                <li>Внутренние ссылки</li>
+                <li>Первые показатели</li>
+              </ul>
+              <div class="model-card__cta">
+                <button
+                  class="btn btn--ghost btn--sm"
+                  data-modal-trigger="contactModal"
+                >
+                  Созвон
+                </button>
+              </div>
+            </div>
+            <div class="model-card">
+              <div class="model-card__top">
+                <h3>Автоматизация</h3>
+                <p>Сокращение ручного времени.</p>
+              </div>
+              <ul class="model-card__list">
+                <li>Документы / формы</li>
+                <li>Расчёт цены</li>
+                <li>API / Webhooks готово</li>
+                <li>Логи / контроль</li>
+              </ul>
+              <div class="model-card__cta">
+                <button
+                  class="btn btn--ghost btn--sm"
+                  data-modal-trigger="contactModal"
+                >
+                  Оценить
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section class="sec stack" id="stack">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Инструменты</h2>
+            <p class="sec-lead">
+              Использую только то, что помогает, а не усложняет.
+            </p>
+          </div>
+          <div class="stack-mosaic">
+            <div class="stack-item">
+              <span class="stack-item__icon">LS</span
+              ><span class="stack-item__name">OpenLS</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">TW</span
+              ><span class="stack-item__name">Tailwind</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">WP</span
+              ><span class="stack-item__name">ACF</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">S</span
+              ><span class="stack-item__name">Stripe</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">A</span
+              ><span class="stack-item__name">Скрипты</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">I</span
+              ><span class="stack-item__name">Insales</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">T</span
+              ><span class="stack-item__name">Tilda</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">Σ</span
+              ><span class="stack-item__name">Schema</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">⚡</span
+              ><span class="stack-item__name">Vitals</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">D</span
+              ><span class="stack-item__name">Docs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG PREVIEW -->
+      <section class="sec blog-preview" id="blog">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Из практики</h2>
+            <p class="sec-lead">
+              Короткие материалы: скорость, запуск, автоматизация, рост.
+            </p>
+          </div>
+          <div class="blog-cards">
+            <article class="bcard">
+              <a
+                href="/blog/performance-sprint-checklist"
+                class="bcard__cover"
+                aria-label="Открыть"
+              >
+                <div
+                  class="bcard__img bcard__img--gradient"
+                  aria-hidden="true"
+                ></div>
+              </a>
+              <div class="bcard__body">
+                <h3 class="bcard__title">
+                  <a href="/blog/performance-sprint-checklist"
+                    >Спринт ускорения: чеклист</a
+                  >
+                </h3>
+                <p class="bcard__excerpt">
+                  Последовательность шагов для выхода из “красной” зоны.
+                </p>
+                <span class="bcard__meta">Скорость • 6 мин чтения</span>
+              </div>
+            </article>
+            <article class="bcard">
+              <a
+                href="/blog/clean-wp-architecture"
+                class="bcard__cover"
+                aria-label="Открыть"
+              >
+                <div
+                  class="bcard__img bcard__img--gradient2"
+                  aria-hidden="true"
+                ></div>
+              </a>
+              <div class="bcard__body">
+                <h3 class="bcard__title">
+                  <a href="/blog/clean-wp-architecture">Чистая структура WP</a>
+                </h3>
+                <p class="bcard__excerpt">
+                  Что убрать и как упростить поддержку.
+                </p>
+                <span class="bcard__meta">Структура • 5 мин</span>
+              </div>
+            </article>
+            <article class="bcard">
+              <a
+                href="/blog/seo-month1-foundation"
+                class="bcard__cover"
+                aria-label="Открыть"
+              >
+                <div
+                  class="bcard__img bcard__img--gradient3"
+                  aria-hidden="true"
+                ></div>
+              </a>
+              <div class="bcard__body">
+                <h3 class="bcard__title">
+                  <a href="/blog/seo-month1-foundation">SEO с нуля: месяц 1</a>
+                </h3>
+                <p class="bcard__excerpt">
+                  Что даёт быстрый старт без “серых” методов.
+                </p>
+                <span class="bcard__meta">SEO • 4 мин</span>
+              </div>
+            </article>
+          </div>
+          <div class="blog-preview__cta">
+            <a href="/blog" class="btn btn--ghost">Все статьи →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="sec newsletter" id="newsletter">
+        <div class="sec-shell">
+          <div class="newsletter-box">
+            <div class="newsletter-box__content">
+              <h2>Редкие письма</h2>
+              <p>
+                Только практические выводы: ускорение, запуск, автоматизация,
+                рост. Без “воды”.
+              </p>
+              <form class="nlform" id="homeNlForm" novalidate>
+                <label class="sr-only" for="homeNlEmail">Email</label>
+                <input
+                  id="homeNlEmail"
+                  type="email"
+                  placeholder="you@company.com"
+                  required
+                  autocomplete="email"
+                />
+                <button class="btn btn--primary" type="submit">
+                  Подписаться
+                </button>
+                <span
+                  class="nlform__msg"
+                  id="homeNlMsg"
+                  aria-live="polite"
+                ></span>
+              </form>
+            </div>
+            <div class="newsletter-box__meta">
+              <div class="nl-stat">
+                <span class="nl-stat__val">34</span>
+                <span class="nl-stat__label">кейса</span>
+              </div>
+              <div class="nl-stat">
+                <span class="nl-stat__val">120+</span>
+                <span class="nl-stat__label">итераций</span>
+              </div>
+              <div class="nl-stat">
+                <span class="nl-stat__val">5</span>
+                <span class="nl-stat__label">лет опыта</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="sec final-cta" id="start">
+        <div class="sec-shell">
+          <div class="final-cta__wrap">
+            <h2 class="final-cta__title">Нужно ускорить или запустить?</h2>
+            <p class="final-cta__text">
+              Сформирую план, внедрю и покажу цифры. Скорость, запуск, SEO или
+              автоматизация — начнём с простого списка задач.
+            </p>
+            <div class="final-cta__actions">
+              <button
+                class="btn btn--primary btn--xl"
+                data-modal-trigger="contactModal"
+              >
+                Начать
+              </button>
+              <a
+                class="btn btn--ghost btn--xl"
+                href="https://t.me/zhan_roma"
+                target="_blank"
+                rel="noopener"
+                >Telegram</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="ftr">
       <div class="ftr__main">
