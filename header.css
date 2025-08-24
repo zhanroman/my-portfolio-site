@@ -267,7 +267,7 @@ body {
 }
 .mega-media-card:hover {
   transform: translateY(-4px);
-  border-color: var(--c-border-strong);
+  border-color: var(--c-border);
   box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.2);
 }
 .mmc__thumb {
@@ -540,7 +540,7 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
 }
 
 .btn {
-  border: 1px solid var(--c-border); /* ИСПРАВЛЕНИЕ: рамка по умолчанию */
+  border: 1px solid var(--c-border);
   background: var(--c-bg);
   color: var(--c-text);
   border-radius: var(--radius-md);
@@ -573,9 +573,6 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
 }
 .btn--primary:hover {
   background: var(--c-accent-hover);
-}
-.btn-ai {
-  padding: 0 20px;
 }
 
 /* Burger Menu Icon */
@@ -828,6 +825,84 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   gap: 24px;
   overflow-y: auto;
 }
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.chat-message {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+}
+.chat-message.ai {
+  align-self: flex-start;
+}
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-accent-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.chat-bubble {
+  padding: 14px 18px;
+  background: var(--c-bg);
+  border-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-xs);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--c-text-soft);
+}
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+.chat-input-area input {
+  flex-grow: 1;
+  height: 48px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--c-text);
+  transition: all 0.2s;
+}
+.chat-input-area input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 25%, transparent);
+}
+.chat-input-area button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--c-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--c-accent-fg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.chat-input-area button:hover {
+  background: var(--c-accent-hover);
+}
+.chat-input-area button svg {
+  width: 20px;
+  height: 20px;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -840,9 +915,72 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   .hdr__tools {
     margin-left: auto;
   }
+
   /* Скрываем лишние кнопки в шапке на мобильных */
   .hdr__tools .lang,
-  .hdr__tools .btn-ai {
+  .hdr__tools .btn-ai,
+  .hdr__tools .theme-toggle {
     display: none;
+  }
+}
+
+/* Mobile Modal Styles */
+@media (max-width: 767px) {
+  .modal-container {
+    max-height: 95vh;
+    max-height: 95svh;
+    padding: 24px;
+    width: 100%;
+  }
+  .modal-header {
+    padding: 32px 0 16px;
+  }
+  .modal-header h2 {
+    font-size: 20px;
+  }
+  .modal-header p {
+    font-size: 15px;
+  }
+  .modal-body {
+    padding: 0 0 16px;
+  }
+}
+
+/* ==========================================================================
+   Mobile Mega Menu Styles Fixes
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Улучшаем внутренние отступы в выпадающих панелях */
+  .mnav__panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Уменьшаем отступы между заголовками и ссылками */
+  .mnav .mega__col {
+    gap: 12px;
+  }
+  .mnav .mega__title {
+    margin-bottom: 4px;
+    padding-left: 0;
+  }
+  .mnav .mega__links {
+    gap: 4px; /* Уменьшаем расстояние между пунктами меню */
+  }
+  .mnav .mega__links a {
+    padding: 10px 0;
+  }
+
+  /* Выстраиваем концепты в один столбик */
+  .mnav .concepts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Добавляем отступ для новой кнопки "Все концепты" */
+  .mnav__view-all-btn {
+    margin-top: 16px;
+    width: 100%;
   }
 }

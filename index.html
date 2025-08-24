@@ -809,6 +809,21 @@
               </button>
               <div class="mnav__panel">
                 <div class="mnav__panel-content">
+                  <div class="mega__col mega__col--media">
+                    <a
+                      href="/projects/saas/platform-redesign"
+                      class="mega-media-card"
+                    >
+                      <div class="mmc__thumb">
+                        <span class="mmc__badge">Новый кейс</span>
+                      </div>
+                      <div class="mmc__body">
+                        <h4>Редизайн SaaS-платформы</h4>
+                        <p>Рост ключевых активаций на +42%.</p>
+                        <span class="mmc__cta">Смотреть кейс →</span>
+                      </div>
+                    </a>
+                  </div>
                   <div class="mega__col">
                     <h3 class="mega__title">Категории</h3>
                     <ul class="mega__links">
@@ -849,7 +864,49 @@
               </button>
               <div class="mnav__panel">
                 <div class="mnav__panel-content">
-                  <p><a href="/concepts">Все концепты</a></p>
+                  <div class="concepts-grid">
+                    <a href="/concepts/analytics-platform" class="concept-card"
+                      ><div
+                        class="concept-card__thumb"
+                        style="
+                          background-image: linear-gradient(
+                            135deg,
+                            #667eea 0%,
+                            #764ba2 100%
+                          );
+                        "
+                      ></div>
+                      <div class="concept-card__body">
+                        <h4 class="concept-card__title">
+                          Платформа для аналитики
+                        </h4>
+                        <p class="concept-card__desc">Интерфейс дашборда</p>
+                      </div></a
+                    >
+                    <a href="/concepts/mobile-banking" class="concept-card"
+                      ><div
+                        class="concept-card__thumb"
+                        style="
+                          background-image: linear-gradient(
+                            135deg,
+                            #f794a4 0%,
+                            #fdd6bd 100%
+                          );
+                        "
+                      ></div>
+                      <div class="concept-card__body">
+                        <h4 class="concept-card__title">Мобильный банк</h4>
+                        <p class="concept-card__desc">
+                          UX-исследование и UI-кит
+                        </p>
+                      </div></a
+                    >
+                  </div>
+                  <a
+                    href="/concepts"
+                    class="btn btn--primary mnav__view-all-btn"
+                    >Все концепты</a
+                  >
                 </div>
               </div>
             </li>
@@ -859,7 +916,32 @@
               </button>
               <div class="mnav__panel">
                 <div class="mnav__panel-content">
-                  <p><a href="/tech">Все технологии</a></p>
+                  <div class="mega__col">
+                    <h3 class="mega__title">Frontend</h3>
+                    <ul class="mega__links">
+                      <li>
+                        <a href="/tech/frontend/react-nextjs"
+                          >React / Next.js</a
+                        >
+                      </li>
+                      <li>
+                        <a href="/tech/frontend/vue-nuxtjs">Vue / Nuxt.js</a>
+                      </li>
+                      <li>
+                        <a href="/tech/frontend/typescript">TypeScript</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega__col">
+                    <h3 class="mega__title">Дизайн и CMS</h3>
+                    <ul class="mega__links">
+                      <li><a href="/tech/design/figma">Figma</a></li>
+                      <li>
+                        <a href="/tech/design/design-systems">Дизайн-системы</a>
+                      </li>
+                      <li><a href="/tech/cms/headless">Headless CMS</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </li>
@@ -869,7 +951,31 @@
               </button>
               <div class="mnav__panel">
                 <div class="mnav__panel-content">
-                  <p><a href="/blog">Перейти в блог</a></p>
+                  <div class="mega-blog__featured">
+                    <h3 class="mega__title">Свежая статья</h3>
+                    <a
+                      href="/blog/state-of-frontend-2025"
+                      class="featured-post"
+                    >
+                      <div class="featured-post__thumb"></div>
+                      <div class="featured-post__content">
+                        <h4>State of Frontend 2025</h4>
+                        <p>Главные тренды, фреймворки и&nbsp;инструменты.</p>
+                        <span class="mmc__cta">Читать полностью →</span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="mega__col">
+                    <h3 class="mega__title">Рубрики</h3>
+                    <ul class="mega__links">
+                      <li><a href="/blog/category/ux-ui">UX/UI Дизайн</a></li>
+                      <li>
+                        <a href="/blog/category/frontend"
+                          >Frontend разработка</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </li>
@@ -1017,8 +1123,9 @@
               class="btn btn-ai"
               data-modal-trigger="aiAssistantModal"
             >
-              AI Pulse</button
-            ><button
+              AI Pulse
+            </button>
+            <button
               type="button"
               class="btn btn--primary"
               data-modal-trigger="contactModal"
