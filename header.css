@@ -112,6 +112,7 @@ body {
 .logo svg {
   height: 28px;
   width: auto;
+  z-index: 1001;
 }
 
 /* Desktop Navigation */

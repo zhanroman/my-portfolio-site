@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="main.css" />
@@ -694,7 +695,7 @@
             class="btn btn-ai"
             data-modal-trigger="aiAssistantModal"
           >
-            AI Pulse
+            AI Помощник
           </button>
           <button
             type="button"
@@ -1124,7 +1125,7 @@
               class="btn btn-ai"
               data-modal-trigger="aiAssistantModal"
             >
-              AI Pulse
+              AI Помощник
             </button>
             <button
               type="button"
@@ -1147,31 +1148,37 @@
               Стандартные решения подводят ваш бизнес?
             </h1>
             <p class="hero__lead">
-              Веб-сервисы, интерфейсы, интеграции и автоматизация — всё под ваши
-              цели, чтобы ускорить работу, снизить издержки и увеличить прибыль.
+              Я&nbsp;создаю веб-сервисы, рисую интерфейсы, разрабатываю
+              интеграции и&nbsp;автоматизацию&nbsp;&mdash; всё под ваши цели,
+              чтобы ускорить работу, снизить издержки и&nbsp;увеличить прибыль.
             </p>
             <div class="hero__actions">
               <button
                 class="btn btn--primary btn--lg"
                 data-modal-trigger="contactModal"
               >
-                Связаться
+                Написать мне
               </button>
               <button
                 type="button"
                 class="btn btn--ghost btn--lg"
                 data-modal-trigger="aiAssistantModal"
               >
-                AI&nbsp;помощник
+                Смотреть кейсы
               </button>
             </div>
           </div>
           <div class="hero__visual" aria-hidden="true">
-            <div class="hero-grid">
-              <div class="hero-grid__layer"></div>
-              <div class="hero-grid__layer"></div>
-              <div class="hero-grid__layer"></div>
-              <span class="hero-grid__spark"></span>
+            <div id="lottie">
+              <script>
+                var animation = lottie.loadAnimation({
+                  container: document.getElementById("lottie"),
+                  renderer: "svg",
+                  loop: true,
+                  autoplay: true,
+                  path: "/assets/animation.json",
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -1182,96 +1189,54 @@
         <div class="capabilities__inner">
           <ul class="capabilities__grid">
             <li class="capability-card" style="--i: 0">
-              <div class="capability-card__icon" style="--icon-bg: #ffc4f8">
+              <div class="capability-card__icon">
                 ⚡
               </div>
               <div>
-                <h3 class="capability-card__title">Ускорение сайта</h3>
+                <h3 class="capability-card__title">Скорость и запуск</h3>
                 <p class="capability-card__desc">
-                  Вывожу показатели скорости и стабильности в “зелёную” зону за
-                  1–2 недели.
+                  Ускоряю сайты и запускаю рабочие версии сервисов за считанные
+                  дни.
                 </p>
               </div>
             </li>
+
             <li class="capability-card" style="--i: 1">
-              <div class="capability-card__icon" style="--icon-bg: #ffeb80">
-                🚀
-              </div>
-              <div>
-                <h3 class="capability-card__title">Быстрый запуск</h3>
-                <p class="capability-card__desc">
-                  Рабочая версия сайта или сервиса за считанные дни без лишнего
-                  “мусора”.
-                </p>
-              </div>
-            </li>
-            <li class="capability-card" style="--i: 2">
-              <div class="capability-card__icon" style="--icon-bg: #9ff8e7">
+              <div class="capability-card__icon">
                 🧩
               </div>
               <div>
-                <h3 class="capability-card__title">Автоматизация</h3>
+                <h3 class="capability-card__title">
+                  Автоматизация
+                </h3>
                 <p class="capability-card__desc">
-                  Скрипты, формы, генерация документов — снимаю ручные операции.
+                  Автоматизация рутинных процессов — скрипты, формы, калькуляторы.
                 </p>
               </div>
             </li>
-            <li class="capability-card" style="--i: 3">
-              <div class="capability-card__icon" style="--icon-bg: #b3d7ff">
-                💳
-              </div>
-              <div>
-                <h3 class="capability-card__title">Расчёты и оплата</h3>
-                <p class="capability-card__desc">
-                  Динамические калькуляторы, Stripe/платёжные сценарии, порядок
-                  в данных.
-                </p>
-              </div>
-            </li>
-            <li class="capability-card" style="--i: 4">
-              <div class="capability-card__icon" style="--icon-bg: #ffd6a5">
-                🔍
-              </div>
-              <div>
-                <h3 class="capability-card__title">SEO фундамент</h3>
-                <p class="capability-card__desc">
-                  Нулевой домен → индексация, первые позиции, структура без
-                  “серых” схем.
-                </p>
-              </div>
-            </li>
-            <li class="capability-card" style="--i: 5">
-              <div class="capability-card__icon" style="--icon-bg: #e4c4ff">
+
+            <li class="capability-card" style="--i: 2">
+              <div class="capability-card__icon">
                 🛒
               </div>
               <div>
-                <h3 class="capability-card__title">E‑commerce поддержка</h3>
+                <h3 class="capability-card__title">E-commerce</h3>
                 <p class="capability-card__desc">
-                  Каталог, акции, интеграции (Insales / WordPress) — системно и
-                  без хаоса.
+                  Insales, WordPress, Shopify. Калькуляторы и платежные сценарии
+                  (Stripe и другие).
                 </p>
               </div>
             </li>
-            <li class="capability-card" style="--i: 6">
-              <div class="capability-card__icon" style="--icon-bg: #c7f9cc">
+
+            <li class="capability-card" style="--i: 3">
+              <div class="capability-card__icon">
                 🌐
               </div>
               <div>
-                <h3 class="capability-card__title">Мультиязык</h3>
+                <h3 class="capability-card__title">Масштабирование</h3>
                 <p class="capability-card__desc">
-                  Переводы, переключатели, единый стиль, без “ломаний” верстки.
-                </p>
-              </div>
-            </li>
-            <li class="capability-card" style="--i: 7">
-              <div class="capability-card__icon" style="--icon-bg: #ffb3c6">
-                🧱
-              </div>
-              <div>
-                <h3 class="capability-card__title">Чистая структура</h3>
-                <p class="capability-card__desc">
-                  Минимум плагинов, понятные файлы, легко поддерживать и
-                  расширять.
+                  Индексация, структура. Мультиязычные сайты без поломок и с
+                  единым стилем.
                 </p>
               </div>
             </li>
@@ -1282,121 +1247,67 @@
       <!-- FEATURED WORKS (scroll-snap instead of JS slider) -->
       <section class="featured-works" aria-label="Основные кейсы">
         <div class="featured-works__inner">
-          <h2 class="sec-title" style="margin: 0 0 18px">Основные кейсы</h2>
-          <div class="fw-track">
-            <div class="fw-slide">
-              <a href="/cases/wordpress-performance-theideal" class="work-card">
-                <figure>
-                  <img
-                    src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/toss.webp"
-                    alt="Ускорение: theideal.ru"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="work-card__overlay">
-                  <span class="work-card__title">Ускорение</span>
-                  <span class="work-card__tag">28% → 92%</span>
-                </div>
-              </a>
-            </div>
-            <div class="fw-slide">
-              <a href="/cases/reputro-launch" class="work-card">
-                <figure>
-                  <img
-                    src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/wise.webp"
-                    alt="Запуск Reputro за 3 дня"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="work-card__overlay">
-                  <span class="work-card__title">Запуск 3 дня</span>
-                  <span class="work-card__tag">0 правок</span>
-                </div>
-              </a>
-            </div>
-            <div class="fw-slide">
-              <a href="/cases/reputro-seo-month1" class="work-card">
-                <figure>
-                  <img
-                    src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/cnn.webp"
-                    alt="SEO месяц 1 Reputro"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="work-card__overlay">
-                  <span class="work-card__title">SEO старт</span>
-                  <span class="work-card__tag">0→28 запросов</span>
-                </div>
-              </a>
-            </div>
-            <div class="fw-slide">
-              <a href="/cases/automation-retailcrm-forms" class="work-card">
-                <figure>
-                  <img
-                    src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/gmarket.webp"
-                    alt="Автоматизация документов"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="work-card__overlay">
-                  <span class="work-card__title">Документы</span>
-                  <span class="work-card__tag">−85% времени</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="fw-hint">Свайп / прокрутка</div>
-        </div>
-      </section>
 
-      <!-- HIGHLIGHTS -->
-      <section class="sec highlights" id="highlights">
-        <div class="sec-shell">
-          <div class="sec-head">
-            <h2 class="sec-title">Коротко в цифрах</h2>
-            <p class="sec-lead">
-              Показатели, которые важны для владельца бизнеса.
-            </p>
-          </div>
-          <div class="highlight-grid">
-            <article class="highlight">
-              <header class="highlight__head">Скорость</header>
-              <div class="highlight__value">92%</div>
-              <p class="highlight__desc">Оценка PageSpeed Mobile (было 28%)</p>
-              <a
-                href="/cases/wordpress-performance-theideal"
-                class="highlight__link"
-                >Подробнее →</a
-              >
-            </article>
-            <article class="highlight">
-              <header class="highlight__head">LCP</header>
-              <div class="highlight__value">2.1s</div>
-              <p class="highlight__desc">Сокращено с ~5.4s (главный экран)</p>
-              <a
-                href="/cases/wordpress-performance-theideal"
-                class="highlight__link"
-                >Подробнее →</a
-              >
-            </article>
-            <article class="highlight">
-              <header class="highlight__head">Запуск</header>
-              <div class="highlight__value">3д</div>
-              <p class="highlight__desc">Рабочий сайт Reputro без доработок</p>
-              <a href="/cases/reputro-launch" class="highlight__link"
-                >Подробнее →</a
-              >
-            </article>
-            <article class="highlight">
-              <header class="highlight__head">Документы</header>
-              <div class="highlight__value">85%</div>
-              <p class="highlight__desc">Экономия времени на пакет форм</p>
-              <a
-                href="/cases/automation-retailcrm-forms"
-                class="highlight__link"
-                >Подробнее →</a
-              >
-            </article>
+          <div class="fw-grid">
+            <a href="/cases/wordpress-performance-theideal" class="work-card">
+              <figure>
+                <img
+                  src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/toss.webp"
+                  alt="Ускорение: theideal.ru"
+                  loading="lazy"
+                  draggable="false"
+                />
+              </figure>
+              <div class="work-card__overlay">
+                <span class="work-card__title">Ускорение</span>
+                <span class="work-card__tag">28% → 92%</span>
+              </div>
+            </a>
+
+            <a href="/cases/reputro-launch" class="work-card">
+              <figure>
+                <img
+                  src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/wise.webp"
+                  alt="Запуск Reputro за 3 дня"
+                  loading="lazy"
+                  draggable="false"
+                />
+              </figure>
+              <div class="work-card__overlay">
+                <span class="work-card__title">Запуск 3 дня</span>
+                <span class="work-card__tag">0 правок</span>
+              </div>
+            </a>
+
+            <a href="/cases/reputro-seo-month1" class="work-card">
+              <figure>
+                <img
+                  src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/cnn.webp"
+                  alt="SEO месяц 1 Reputro"
+                  loading="lazy"
+                  draggable="false"
+                />
+              </figure>
+              <div class="work-card__overlay">
+                <span class="work-card__title">SEO старт</span>
+                <span class="work-card__tag">0→28 запросов</span>
+              </div>
+            </a>
+
+            <a href="/cases/automation-retailcrm-forms" class="work-card">
+              <figure>
+                <img
+                  src="https://assets-v2.lottiefiles.com/home-page-assets/use-case/gmarket.webp"
+                  alt="Автоматизация документов"
+                  loading="lazy"
+                  draggable="false"
+                />
+              </figure>
+              <div class="work-card__overlay">
+                <span class="work-card__title">Документы</span>
+                <span class="work-card__tag">−85% времени</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -1405,9 +1316,10 @@
       <section class="sec pains" id="pains">
         <div class="sec-shell">
           <div class="sec-head">
-            <h2 class="sec-title">С чем обычно приходят</h2>
+            <h2 class="sec-title">Типовые ситуации в проектах:</h2>
             <p class="sec-lead">
-              Реальные ситуации. Решаю их системно, а не “латанием”.
+              Вместо временных костылей — делаю так, чтобы сайт и сервис
+              работали стабильно.
             </p>
           </div>
           <div class="pains-grid">
@@ -1477,6 +1389,80 @@
                 — правки быстрее.
               </div>
             </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>07</span></div>
+              <h3 class="pain-card__title">Долго править страницы</h3>
+              <p class="pain-card__text">
+                Любая мелочь требует долгой цепочки.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> упрощаю структуру, сокращаю плагины
+                — правки быстрее.
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-card__icon"><span>08</span></div>
+              <h3 class="pain-card__title">Долго править страницы</h3>
+              <p class="pain-card__text">
+                Любая мелочь требует долгой цепочки.
+              </p>
+              <div class="pain-card__solution">
+                <strong>Что делаю:</strong> упрощаю структуру, сокращаю плагины
+                — правки быстрее.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="sec highlights" id="highlights">
+        <div class="sec-shell">
+          <div class="sec-head">
+            <h2 class="sec-title">Коротко в цифрах</h2>
+            <p class="sec-lead">
+              Показатели, которые важны для владельца бизнеса.
+            </p>
+          </div>
+          <div class="highlight-grid">
+            <article class="highlight">
+              <header class="highlight__head">Скорость</header>
+              <div class="highlight__value">92%</div>
+              <p class="highlight__desc">Оценка PageSpeed Mobile (было 28%)</p>
+              <a
+                href="/cases/wordpress-performance-theideal"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">LCP</header>
+              <div class="highlight__value">2.1s</div>
+              <p class="highlight__desc">Сокращено с ~5.4s (главный экран)</p>
+              <a
+                href="/cases/wordpress-performance-theideal"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">Запуск</header>
+              <div class="highlight__value">3д</div>
+              <p class="highlight__desc">Рабочий сайт Reputro без доработок</p>
+              <a href="/cases/reputro-launch" class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
+            <article class="highlight">
+              <header class="highlight__head">Документы</header>
+              <div class="highlight__value">85%</div>
+              <p class="highlight__desc">Экономия времени на пакет форм</p>
+              <a
+                href="/cases/automation-retailcrm-forms"
+                class="highlight__link"
+                >Подробнее →</a
+              >
+            </article>
           </div>
         </div>
       </section>
@@ -2173,6 +2159,7 @@
         </div>
       </div>
     </div>
+
     <div class="modal-wrapper" id="contactModal" aria-hidden="true">
       <div class="modal-overlay"></div>
       <div
