@@ -129,7 +129,7 @@ html[data-theme="dark"] {
 }
 .hero__title {
   margin: 0;
-  font-size: clamp(40px, 6.6vw, 70px);
+  font-size: clamp(40px, 4.6vw, 55px);
   line-height: 1.02;
   font-weight: 700;
   letter-spacing: -1.2px;
@@ -147,9 +147,9 @@ html[data-theme="dark"] {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -12px;
+  bottom: -22px;
   width: 78px;
-  height: 5px;
+  height: 2px;
   background: var(--grad-accent);
   border-radius: 6px;
   filter: drop-shadow(0 0 6px rgba(0, 157, 144, 0.4));
@@ -167,7 +167,7 @@ html[data-theme="dark"] {
   }
 }
 .hero__lead {
-  font-size: clamp(16px, 2.1vw, 20px);
+  font-size: clamp(16px, 2.1vw, 18px);
   max-width: 720px;
   margin: 0;
   line-height: 1.55;
@@ -353,7 +353,7 @@ html[data-theme="dark"] {
   padding: 0;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .capability-card {
   --i: 0;
@@ -443,13 +443,7 @@ html[data-theme="dark"] {
   padding: 6px 4px 8px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  mask: linear-gradient(
-    90deg,
-    transparent 0,
-    var(--c-bg) 6%,
-    var(--c-bg) 94%,
-    transparent 100%
-  );
+
 }
 .fw-track::-webkit-scrollbar {
   display: none;
