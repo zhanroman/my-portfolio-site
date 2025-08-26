@@ -2622,5 +2622,93 @@
         });
       });
     </script>
+    <script>
+      // --- Логика для AI Ассистента с Gemini ---
+      document.addEventListener("DOMContentLoaded", () => {
+        // Находим элементы нашего чата
+        const aiModal = document.getElementById("aiAssistantModal");
+        if (!aiModal) return;
+
+        const chatMessages = aiModal.querySelector(".chat-messages");
+        const chatInput = aiModal.querySelector(".chat-input-area input");
+        const sendButton = aiModal.querySelector(".chat-input-area button");
+
+        // Функция для добавления сообщения в чат
+        const addMessage = (sender, text) => {
+          const messageDiv = document.createElement("div");
+          messageDiv.className = `chat-message ${sender}`;
+
+          const avatarDiv = document.createElement("div");
+          avatarDiv.className = "chat-avatar";
+          avatarDiv.textContent = sender === "ai" ? "AI" : "Вы";
+
+          const bubbleDiv = document.createElement("div");
+          bubbleDiv.className = "chat-bubble";
+          bubbleDiv.textContent = text;
+
+          messageDiv.appendChild(avatarDiv);
+          messageDiv.appendChild(bubbleDiv);
+          chatMessages.appendChild(messageDiv);
+
+          // Автоматически прокручиваем вниз
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+
+        // Функция отправки сообщения
+        const handleSendMessage = async () => {
+          const userMessage = chatInput.value.trim();
+          if (!userMessage) return;
+
+          // 1. Отображаем сообщение пользователя
+          addMessage("user", userMessage);
+          chatInput.value = "";
+          sendButton.disabled = true;
+
+          // 2. Показываем индикатор "печатает..."
+          addMessage("ai typing", "печатает...");
+
+          try {
+            // 3. Отправляем запрос на нашу серверную функцию
+            const apiUrl =
+              "https://my-portfolio-886i.onrender.com/frontend/api/gemini";
+            const apiResponse = await fetch(apiUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ prompt: userMessage }),
+            });
+
+            if (!apiResponse.ok) {
+              throw new Error("Ошибка сети или сервера");
+            }
+
+            const data = await apiResponse.json();
+
+            // 4. Убираем "печатает..." и показываем ответ Gemini
+            chatMessages.querySelector(".typing")?.remove();
+            addMessage("ai", data.response);
+          } catch (error) {
+            console.error("Ошибка при обращении к Gemini:", error);
+            chatMessages.querySelector(".typing")?.remove();
+            addMessage(
+              "ai",
+              "К сожалению, произошла ошибка. Попробуйте позже."
+            );
+          } finally {
+            sendButton.disabled = false;
+            chatInput.focus();
+          }
+        };
+
+        // Вешаем обработчики событий
+        sendButton.addEventListener("click", handleSendMessage);
+        chatInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            handleSendMessage();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
