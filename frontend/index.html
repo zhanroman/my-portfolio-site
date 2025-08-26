@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
@@ -2635,13 +2636,10 @@
         let chatHistory = [];
 
         const systemPrompt = `
-Ты — AI-ассистент сайта ZhanRoman.
-Твоя задача — помогать по вопросам цифровых продуктов, автоматизации, веб-разработки, ускорения сайтов, UI/UX, SEO, e-commerce, интеграции и поддержке.
-Если вопрос не по этим темам — вежливо откажи и укажи свою специализацию: «Извините, я работаю как AI-консультант по вопросам цифровых продуктов, автоматизации, веб-разработки и оптимизации бизнеса. По другим темам, к сожалению, не могу помочь.»
-Отвечай понятно владельцу бизнеса, используй практические советы.
-  `.trim();
+Ты — AI-ассистент на сайте zhanroman.online Твоя задача — помогать пользователям по вопросам создания и развития цифровых продуктов, веб-сервисов, ускорения сайтов, автоматизации бизнес-процессов, интеграций, e-commerce, SEO, UI/UX-дизайна, оптимизации и поддержке проектов. Ты консультант по этим направлениям и даешь практические советы, рекомендации, предлагаешь решения и варианты сотрудничества. Если вопрос пользователя не касается этих тем (например, о природе, кулинарии, политике и т.д.), ответь вежливо и кратко: «Извините, я работаю как AI-консультант по вопросам цифровых продуктов, автоматизации, веб-разработки и оптимизации бизнеса. По другим темам, к сожалению, не могу помочь.» Главная цель — выявить слабые места в продукте или проекте пользователя, предложить конкретные решения, объяснить пользу этих решений для бизнеса, а также рассказать о форматах сотрудничества (консультация, аудит, разработка, поддержка). Будь доброжелательным, лаконичным, используй понятный язык для владельца бизнеса или менеджера. Не используй сложные технические термины без пояснения. Отвечай кратко, максимум 2–3 предложения, только по сути вопроса. Не используй длинных инструкций, списков, подробных пошаговых описаний. Не давай ненужных деталей. Контекст сайта: - Услуги: разработка веб-сервисов, UI/UX-дизайн, автоматизация, интеграции, ускорение сайтов, SEO, e-commerce. - Проекты: MVP, комплексные решения, поддержка, оптимизация. - Технологии: HTML, CSS, JS, WordPress, 1С-Битрикс, Tilda, Webflow, API, CRM-интеграции, GitHub. - Цель: ускорить запуск, снизить издержки, увеличить прибыль, автоматизировать рутину, повысить стабильность и масштабируемость бизнеса. Правила общения: - Отвечай только на вопросы, связанные с услугами и темами сайта. - Если вопрос не по теме — вежливо откажи и укажи свою специализацию. - Помогай выявить проблемы, предлагай решения, объясняй выгоды для бизнеса. - Ориентируйся на практические, понятные советы.
+`.trim();
 
-        // Добавление сообщения
+        // Добавление сообщения в чат и историю
         const addMessage = (sender, text) => {
           const messageDiv = document.createElement("div");
           messageDiv.className = `chat-message ${sender}`;
@@ -2652,22 +2650,31 @@
 
           const bubbleDiv = document.createElement("div");
           bubbleDiv.className = "chat-bubble";
-          bubbleDiv.textContent = text;
+
+          // Форматируем ответ AI через Markdown
+          if (sender === "ai") {
+            // marked.parse определяет HTML из Markdown-строки
+            bubbleDiv.innerHTML = window.marked ? marked.parse(text) : text;
+          } else {
+            bubbleDiv.textContent = text;
+          }
 
           messageDiv.appendChild(avatarDiv);
           messageDiv.appendChild(bubbleDiv);
           chatMessages.appendChild(messageDiv);
           chatMessages.scrollTop = chatMessages.scrollHeight;
 
-          // Обновляем историю
-          chatHistory.push({
-            role: sender === "ai" ? "assistant" : "user",
-            text,
-          });
-          if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10); // максимум 10 последних сообщений
+          // Обновляем историю (только user и ai, без "typing")
+          if (sender === "user" || sender === "ai") {
+            chatHistory.push({
+              role: sender === "ai" ? "assistant" : "user",
+              text,
+            });
+            if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10);
+          }
         };
 
-        // Отправка на сервер
+        // Отправка сообщения
         const handleSendMessage = async () => {
           const userMessage = chatInput.value.trim();
           if (!userMessage) return;
@@ -2677,7 +2684,7 @@
           sendButton.disabled = true;
 
           // Индикатор "печатает..."
-          addMessage("ai typing", "печатает...");
+          addMessage("ai", "печатает...");
 
           // Формируем промпт с историей
           let historyText = chatHistory
@@ -2688,7 +2695,7 @@
           const fullPrompt = systemPrompt + "\n" + historyText;
 
           try {
-            // Запрос на backend
+            // Запрос к backend Gemini
             const apiUrl = "https://retailcrm-proxy.onrender.com/api/gemini";
             const apiResponse = await fetch(apiUrl, {
               method: "POST",
@@ -2703,10 +2710,18 @@
 
             const data = await apiResponse.json();
 
-            chatMessages.querySelector(".ai.typing")?.remove();
+            // Удаляем индикатор "печатает..."
+            const typingMsg = Array.from(
+              chatMessages.querySelectorAll(".chat-message")
+            ).find(
+              (msg) =>
+                msg.querySelector(".chat-bubble")?.textContent === "печатает..."
+            );
+            typingMsg?.remove();
+
             addMessage("ai", data.response);
 
-            // Отправляем переписку на почту владельцу сайта (асинхронно)
+            // Отправляем всю переписку на email владельца сайта (асинхронно)
             await fetch(
               "https://retailcrm-proxy.onrender.com/api/send-chat-email",
               {
@@ -2717,7 +2732,14 @@
             );
           } catch (error) {
             console.error("Ошибка при обращении к Gemini:", error);
-            chatMessages.querySelector(".ai.typing")?.remove();
+            // Удаляем индикатор "печатает..."
+            const typingMsg = Array.from(
+              chatMessages.querySelectorAll(".chat-message")
+            ).find(
+              (msg) =>
+                msg.querySelector(".chat-bubble")?.textContent === "печатает..."
+            );
+            typingMsg?.remove();
             addMessage(
               "ai",
               "К сожалению, произошла ошибка. Попробуйте позже."
