@@ -2623,9 +2623,7 @@
       });
     </script>
     <script>
-      // --- Логика для AI Ассистента с Gemini ---
       document.addEventListener("DOMContentLoaded", () => {
-        // Находим элементы нашего чата
         const aiModal = document.getElementById("aiAssistantModal");
         if (!aiModal) return;
 
@@ -2633,7 +2631,17 @@
         const chatInput = aiModal.querySelector(".chat-input-area input");
         const sendButton = aiModal.querySelector(".chat-input-area button");
 
-        // Функция для добавления сообщения в чат
+        // История чата
+        let chatHistory = [];
+
+        const systemPrompt = `
+Ты — AI-ассистент сайта ZhanRoman.
+Твоя задача — помогать по вопросам цифровых продуктов, автоматизации, веб-разработки, ускорения сайтов, UI/UX, SEO, e-commerce, интеграции и поддержке.
+Если вопрос не по этим темам — вежливо откажи и укажи свою специализацию: «Извините, я работаю как AI-консультант по вопросам цифровых продуктов, автоматизации, веб-разработки и оптимизации бизнеса. По другим темам, к сожалению, не могу помочь.»
+Отвечай понятно владельцу бизнеса, используй практические советы.
+  `.trim();
+
+        // Добавление сообщения
         const addMessage = (sender, text) => {
           const messageDiv = document.createElement("div");
           messageDiv.className = `chat-message ${sender}`;
@@ -2649,48 +2657,67 @@
           messageDiv.appendChild(avatarDiv);
           messageDiv.appendChild(bubbleDiv);
           chatMessages.appendChild(messageDiv);
-
-          // Автоматически прокручиваем вниз
           chatMessages.scrollTop = chatMessages.scrollHeight;
+
+          // Обновляем историю
+          chatHistory.push({
+            role: sender === "ai" ? "assistant" : "user",
+            text,
+          });
+          if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10); // максимум 10 последних сообщений
         };
 
-        // Функция отправки сообщения
+        // Отправка на сервер
         const handleSendMessage = async () => {
           const userMessage = chatInput.value.trim();
           if (!userMessage) return;
 
-          // 1. Отображаем сообщение пользователя
           addMessage("user", userMessage);
           chatInput.value = "";
           sendButton.disabled = true;
 
-          // 2. Показываем индикатор "печатает..."
+          // Индикатор "печатает..."
           addMessage("ai typing", "печатает...");
 
+          // Формируем промпт с историей
+          let historyText = chatHistory
+            .map((m) =>
+              m.role === "user" ? `Пользователь: ${m.text}` : `AI: ${m.text}`
+            )
+            .join("\n");
+          const fullPrompt = systemPrompt + "\n" + historyText;
+
           try {
-            // 3. Отправляем запрос на нашу серверную функцию
-            const apiUrl =
-              "https://retailcrm-proxy.onrender.com/api/gemini";
+            // Запрос на backend
+            const apiUrl = "https://retailcrm-proxy.onrender.com/api/gemini";
             const apiResponse = await fetch(apiUrl, {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ prompt: userMessage }),
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                prompt: fullPrompt,
+                history: chatHistory,
+              }),
             });
 
-            if (!apiResponse.ok) {
-              throw new Error("Ошибка сети или сервера");
-            }
+            if (!apiResponse.ok) throw new Error("Ошибка сети или сервера");
 
             const data = await apiResponse.json();
 
-            // 4. Убираем "печатает..." и показываем ответ Gemini
-            chatMessages.querySelector(".typing")?.remove();
+            chatMessages.querySelector(".ai.typing")?.remove();
             addMessage("ai", data.response);
+
+            // Отправляем переписку на почту владельцу сайта (асинхронно)
+            await fetch(
+              "https://retailcrm-proxy.onrender.com/api/send-chat-email",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chatHistory }),
+              }
+            );
           } catch (error) {
             console.error("Ошибка при обращении к Gemini:", error);
-            chatMessages.querySelector(".typing")?.remove();
+            chatMessages.querySelector(".ai.typing")?.remove();
             addMessage(
               "ai",
               "К сожалению, произошла ошибка. Попробуйте позже."
@@ -2701,7 +2728,6 @@
           }
         };
 
-        // Вешаем обработчики событий
         sendButton.addEventListener("click", handleSendMessage);
         chatInput.addEventListener("keydown", (e) => {
           if (e.key === "Enter") {
