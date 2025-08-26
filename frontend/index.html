@@ -1145,10 +1145,10 @@
       <section class="hero" id="top">
         <div class="hero__inner">
           <div class="hero__content">
-            <h1 class="hero__title">
+            <h1 class="hero__title" data-i18n="main.hero.title">
               Стандартные решения подводят ваш бизнес?
             </h1>
-            <p class="hero__lead">
+            <p class="hero__lead" data-i18n="main.hero.lead">
               Я&nbsp;создаю веб-сервисы, рисую интерфейсы, разрабатываю
               интеграции и&nbsp;автоматизацию&nbsp;&mdash; всё под ваши цели,
               чтобы ускорить работу, снизить издержки и&nbsp;увеличить прибыль.
@@ -2767,6 +2767,41 @@
             handleSendMessage();
           }
         });
+      });
+    </script>
+    <script>
+      function animateTextChange(el, newText) {
+        el.classList.add("lang-fade");
+        setTimeout(() => {
+          el.textContent = newText;
+          el.classList.remove("lang-fade");
+        }, 300); // 300ms = время transition в CSS
+      }
+
+      function setLang(lang) {
+        localStorage.setItem("site-lang", lang);
+        fetch(`./lang.${lang}.json`)
+          .then((res) => res.json())
+          .then((dict) => {
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+              const key = el.getAttribute("data-i18n");
+              if (dict[key] && el.textContent !== dict[key]) {
+                animateTextChange(el, dict[key]);
+              }
+            });
+            document.querySelectorAll(".lang__current").forEach((el) => {
+              el.textContent = lang === "ru" ? "Ru" : "En";
+            });
+          });
+      }
+
+      document.querySelectorAll("[data-lang-set]").forEach((btn) => {
+        btn.addEventListener("click", () => setLang(btn.dataset.langSet));
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const lang = localStorage.getItem("site-lang") || "ru";
+        setLang(lang);
       });
     </script>
   </body>

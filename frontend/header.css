@@ -905,6 +905,47 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   height: 20px;
 }
 
+/* Дополнительные стили для чата AI-помощника */
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.user .chat-bubble {
+  background: var(--c-accent);
+  color: #fff; /* или var(--c-accent-fg) */
+}
+
+.chat-message.user .chat-avatar {
+  display: none; /* Свой аватар можно скрыть */
+}
+
+/* Индикатор "печатает..." */
+.chat-message.typing .chat-bubble {
+  font-style: italic;
+  opacity: 0.7;
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: "печатает.";
+  }
+  40% {
+    content: "печатает..";
+  }
+  60%,
+  100% {
+    content: "печатает...";
+  }
+}
+
+.chat-input-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .nav {
