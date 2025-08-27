@@ -830,6 +830,7 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-end;
 }
 .chat-message {
   display: flex;
@@ -884,8 +885,8 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 25%, transparent);
 }
 .chat-input-area button {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
   background: var(--c-accent);
   border: none;
