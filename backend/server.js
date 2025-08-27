@@ -10,6 +10,8 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 app.use(cors());
 app.use(express.json());
 
+// --- СУЩЕСТВУЮЩИЕ ЭНДПОИНТЫ ---
+
 // Эндпоинт для чата Gemini
 app.post("/api/gemini", async (req, res) => {
   try {
@@ -65,6 +67,73 @@ app.post("/api/send-chat-email", async (req, res) => {
   } catch (error) {
     console.error("Ошибка при отправке email:", error);
     res.status(500).json({ error: "Не удалось отправить переписку на email" });
+  }
+});
+
+// --- НОВЫЙ ЭНДПОИНТ ДЛЯ КОНТАКТНОЙ ФОРМЫ ---
+app.post("/api/send-contact-form", async (req, res) => {
+  try {
+    const { name, contact_method, telegram, whatsapp, email, callable } =
+      req.body;
+
+    if (!name || !contact_method) {
+      return res.status(400).json({ error: "Не заполнены обязательные поля" });
+    }
+
+    // Определяем контактные данные
+    let contactDetail = "";
+    switch (contact_method) {
+      case "telegram":
+        contactDetail = `Telegram: ${telegram}`;
+        break;
+      case "whatsapp":
+        contactDetail = `WhatsApp: ${whatsapp}`;
+        break;
+      case "email":
+        contactDetail = `Email: ${email}`;
+        break;
+    }
+
+    // Формируем красивый текст письма
+    let emailText = `
+      Новая заявка с сайта-портфолио ZhanRoman!
+      ------------------------------------------
+      Имя клиента: ${name}
+      
+      Выбранный способ связи: ${contact_method.charAt(0).toUpperCase() + contact_method.slice(1)}
+      Контактные данные: ${contactDetail}
+    `;
+
+    // Добавляем информацию о звонке, если это WhatsApp
+    if (contact_method === "whatsapp") {
+      emailText += `\n      Разрешил(а) звонить: ${callable ? "Да" : "Нет"}`;
+    }
+
+    emailText += `
+      ------------------------------------------
+      Письмо сгенерировано автоматически.
+    `;
+
+    // Используем тот же транспорт для отправки почты
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER, // ваша почта Gmail
+        pass: process.env.EMAIL_PASS, // пароль приложения Gmail
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Сайт-портфолио" <${process.env.EMAIL_USER}>`,
+      to: "zhanroman2610@gmail.com", // Ваша почта для получения заявок
+      subject: `Новая заявка от клиента: ${name}`,
+      text: emailText,
+    });
+
+    res.status(200).json({ message: "Форма успешно отправлена!" });
+  } catch (error) {
+    console.error("Ошибка при отправке контактной формы:", error);
+    res.status(500).json({ error: "Не удалось отправить заявку." });
   }
 });
 

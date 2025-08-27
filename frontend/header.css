@@ -1026,3 +1026,369 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   СТИЛИ ДЛЯ НОВОГО МОДАЛЬНОГО ОКНА СВЯЗИ
+   ========================================================================== */
+
+/* Обновляем контейнер модального окна */
+.modal-container.contact-modal {
+  max-width: 860px; /* Делаем шире для двух колонок */
+  padding: 0;
+  overflow: hidden; /* Скрываем все, что выходит за скругленные углы */
+}
+
+.contact-modal__content {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr; /* Делим на две колонки */
+}
+
+/* Левая часть: Форма */
+.contact-modal__form-section {
+  padding: 40px;
+  background-color: var(--c-bg);
+}
+
+.contact-modal__form-section .modal-header {
+  padding: 0 0 24px 0;
+  text-align: left;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-text-soft);
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+  height: 48px;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--c-text);
+  transition: all 0.2s;
+  width: 100%;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 25%, transparent);
+}
+
+/* Стилизация переключателей (Telegram, WhatsApp, Email) */
+.contact-method-selector {
+  display: flex;
+  background-color: var(--c-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  border: 1px solid var(--c-border);
+}
+.contact-method-selector input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.contact-method-selector label {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--c-text-soft);
+  transition: all 0.3s var(--ease-standard);
+}
+.contact-method-selector input[type="radio"]:checked + label {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  box-shadow: var(--shadow-md);
+}
+
+/* Контейнер для динамических полей ввода */
+.dynamic-input-container {
+  min-height: 120px; /* Предотвращает "прыжок" высоты окна */
+}
+.dynamic-input-container .input-group {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CSS-магия для показа нужного поля */
+#contact-telegram:checked ~ .dynamic-input-container #input-group-telegram {
+  display: flex;
+}
+#contact-whatsapp:checked ~ .dynamic-input-container #input-group-whatsapp {
+  display: flex;
+}
+#contact-email:checked ~ .dynamic-input-container #input-group-email {
+  display: flex;
+}
+
+/* Чекбокс */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+.checkbox-group label {
+  font-size: 13px;
+  color: var(--c-text-soft);
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Правая часть: Мои контакты */
+.contact-modal__info-section {
+  background-color: var(--c-bg-alt);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.info-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--c-text-soft);
+  margin: 0 0 24px;
+}
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  background-color: var(--c-bg);
+  border: 1px solid var(--c-border);
+  transition: all 0.3s;
+}
+.contact-links a:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--c-accent);
+}
+.contact-link__icon {
+  font-size: 20px;
+}
+.contact-link__text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.contact-link__text strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--c-text);
+}
+.contact-link__text small {
+  font-size: 13px;
+  color: var(--c-text-soft);
+}
+.copy-btn {
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-soft);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.copy-btn:hover {
+  background-color: var(--c-accent);
+  color: #fff;
+}
+.copy-btn.copied {
+  background-color: #28a745; /* Зеленый цвет успеха */
+  color: #fff;
+  content: "✓";
+}
+
+.form-disclaimer {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--c-text-soft);
+  opacity: 0.8;
+}
+.form-disclaimer a {
+  color: var(--c-accent);
+  text-decoration: none;
+}
+.form-disclaimer a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивность модального окна */
+@media (max-width: 768px) {
+  .contact-modal__content {
+    grid-template-columns: 1fr; /* В одну колонку на мобильных */
+  }
+  .contact-modal__form-section,
+  .contact-modal__info-section {
+  }
+}
+
+/* ==========================================================================
+   ФИНАЛЬНЫЕ СТИЛИ ДЛЯ ИНПУТОВ И КНОПОК В МОДАЛЬНОМ ОКНЕ
+   ========================================================================== */
+
+/* Применяем стили ко всем текстовым полям внутри модального окна */
+.contact-modal input[type="text"],
+.contact-modal input[type="tel"],
+.contact-modal input[type="email"] {
+  height: 48px;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--c-text);
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.contact-modal input[type="text"]:focus,
+.contact-modal input[type="tel"]:focus,
+.contact-modal input[type="email"]:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 25%, transparent);
+}
+
+/* Красивые стили для чекбокса */
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--c-border);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.copy-btn.copied {
+  background-color: #28a745; /* Зеленый цвет успеха */
+  color: #fff;
+  border-color: #28a745;
+}
+
+/* ==========================================================================
+   СТИЛИЗОВАННЫЙ СКРОЛЛ ДЛЯ МОДАЛЬНОГО ОКНА НА МОБИЛЬНЫХ
+   ========================================================================== */
+
+/* Применяем стили только для экранов шириной 768px и меньше */
+@media (max-width: 768px) {
+  /* 1. Ограничиваем высоту самого контейнера модального окна */
+  .modal-container.contact-modal {
+    /* Высота не более 85% от высоты видимой части экрана */
+    max-height: 85vh;
+    max-height: 85svh; /* Новая единица для более точного расчета на мобильных */
+
+    /* Превращаем контейнер во flex-колонку, чтобы управлять вложенными блоками */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. Делаем прокручиваемой только контентную часть */
+  .contact-modal__content {
+    overflow-y: auto; /* Показывает скролл только когда контент не помещается */
+    overflow-x: hidden;
+    flex-grow: 1; /* Разрешаем этому блоку растягиваться, занимая доступное место */
+  }
+
+  /* 3. Стилизуем сам скроллбар (для Chrome, Safari, Edge) */
+  .contact-modal__content::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+  }
+
+  .contact-modal__content::-webkit-scrollbar-track {
+    background: var(--c-bg-alt); /* Цвет трека (фона) скроллбара */
+    border-radius: 10px;
+  }
+
+  .contact-modal__content::-webkit-scrollbar-thumb {
+    background-color: var(--c-border); /* Цвет самого ползунка */
+    border-radius: 10px; /* Скругляем углы */
+    border: 2px solid var(--c-bg-alt); /* Создаем отступ от краев трека */
+    transition: background-color 0.2s;
+  }
+
+  .contact-modal__content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--c-accent); /* Меняем цвет ползунка при наведении */
+  }
+
+  /* 4. Стили для Firefox */
+  .contact-modal__content {
+    scrollbar-width: thin; /* Делаем скроллбар тонким */
+    scrollbar-color: var(--c-border) var(--c-bg-alt); /* Цвет ползунка и трека */
+  }
+}
