@@ -11,16 +11,55 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 app.use(cors());
 app.use(express.json());
 
-// --- Эндпоинт для чата Gemini ---
+// --- ИСПРАВЛЕННЫЙ ЭНДПОИНТ ДЛЯ ЧАТА GEMINI ---
 app.post("/api/gemini", async (req, res) => {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const { prompt } = req.body;
-    if (!prompt) {
+
+    // Получаем все данные с фронтенда: системный промпт, историю и новое сообщение
+    const { systemPrompt, history, userMessage } = req.body;
+
+    if (!userMessage) {
       return res.status(400).json({ error: "Сообщение не может быть пустым" });
     }
-    const result = await model.generateContent(prompt);
+
+    // Собираем полную историю для модели Gemini
+    // Важно: системный промпт должен идти первым
+    const fullHistory = [
+      { role: "user", parts: [{ text: systemPrompt }] },
+      {
+        role: "assistant",
+        parts: [
+          {
+            text: "Здравствуйте! Я AI-ассистент. Чем могу помочь вашему бизнесу?",
+          },
+        ],
+      },
+    ];
+
+    // Добавляем предыдущие сообщения из chatHistory
+    if (history && Array.isArray(history)) {
+      history.forEach((msg) => {
+        // Преобразуем формат { role: 'user', text: '...' } в формат Gemini
+        fullHistory.push({
+          role: msg.role === "assistant" ? "model" : "user",
+          parts: [{ text: msg.text }],
+        });
+      });
+    }
+
+    // Инициализируем чат с полной историей
+    const chat = model.startChat({
+      history: fullHistory,
+      generationConfig: {
+        maxOutputTokens: 200, // Ограничиваем длину ответа
+      },
+    });
+
+    // Отправляем только новое сообщение пользователя
+    const result = await chat.sendMessage(userMessage);
     const text = result.response.text();
+
     res.status(200).json({ response: text });
   } catch (error) {
     console.error("Ошибка в /api/gemini:", error);
