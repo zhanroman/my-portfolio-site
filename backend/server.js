@@ -42,7 +42,7 @@ app.post("/api/gemini", async (req, res) => {
       history.forEach((msg) => {
         // Преобразуем формат { role: 'user', text: '...' } в формат Gemini
         fullHistory.push({
-          role: msg.role === "assistant" ? "model" : "user",
+          role: msg.role === 'ai' ? 'model' : 'user',
           parts: [{ text: msg.text }],
         });
       });
