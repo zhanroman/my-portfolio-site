@@ -1160,13 +1160,12 @@
               >
                 Написать мне
               </button>
-              <button
-                type="button"
+              <a
+                href="/cases"
                 class="btn btn--ghost btn--lg"
-                data-modal-trigger="aiAssistantModal"
               >
                 Смотреть кейсы
-              </button>
+              </a>
             </div>
           </div>
           <div class="hero__visual" aria-hidden="true">
@@ -1497,7 +1496,7 @@
               <div class="model-card__cta">
                 <button
                   class="btn btn--ghost btn--sm"
-                  data-modal-trigger="contactModal"
+                  data-modal-trigger="mvpModal"
                 >
                   Обсудить MVP
                 </button>
@@ -1520,7 +1519,7 @@
               <div class="model-card__cta">
                 <button
                   class="btn btn--primary btn--sm"
-                  data-modal-trigger="contactModal"
+                  data-modal-trigger="auditModal"
                 >
                   Заказать аудит
                 </button>
@@ -1542,7 +1541,7 @@
               <div class="model-card__cta">
                 <button
                   class="btn btn--ghost btn--sm"
-                  data-modal-trigger="contactModal"
+                  data-modal-trigger="turnkeyModal"
                 >
                   Рассчитать проект
                 </button>
@@ -1562,7 +1561,7 @@
               <div class="model-card__cta">
                 <button
                   class="btn btn--ghost btn--sm"
-                  data-modal-trigger="contactModal"
+                  data-modal-trigger="supportModal"
                 >
                   Обсудить поддержку
                 </button>
@@ -2131,7 +2130,7 @@
                 href="https://t.me/zhan_roma"
                 target="_blank"
                 rel="noopener"
-                >Telegram</a
+                >Написать в Telegram</a
               >
             </div>
           </div>
@@ -2501,13 +2500,13 @@
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
-
         <div class="contact-modal__content">
           <div class="contact-modal__form-section">
             <div class="modal-header">
-              <h2 id="contactModalTitle">Давайте обсудим ваш проект</h2>
+              <h2 id="contactModalTitle">Завершающий шаг</h2>
               <p>
-                Расскажите, как с вами связаться, и я отвечу в ближайшее время.
+                Оставьте ваши контактные данные, и я свяжусь с вами в ближайшее
+                время для детального обсуждения.
               </p>
             </div>
             <form class="contact-form" id="mainContactForm">
@@ -2522,6 +2521,19 @@
                 />
               </div>
 
+              <div
+                class="form-group"
+                id="prefilled-group"
+              >
+                <label>Детали заявки</label>
+                <textarea
+                  id="prefilled-details"
+                  name="prefilled_details"
+                  rows="4"
+                  readonly
+                ></textarea>
+              </div>
+
               <div class="form-group">
                 <label>Удобный способ связи</label>
                 <div class="contact-method-selector">
@@ -2533,7 +2545,6 @@
                     checked
                   />
                   <label for="contact-telegram">Telegram</label>
-
                   <input
                     type="radio"
                     name="contact_method"
@@ -2541,7 +2552,6 @@
                     value="whatsapp"
                   />
                   <label for="contact-whatsapp">WhatsApp</label>
-
                   <input
                     type="radio"
                     name="contact_method"
@@ -2596,7 +2606,6 @@
                   />
                 </div>
               </div>
-
               <button
                 type="submit"
                 class="btn btn--primary btn--lg form-submit-btn"
@@ -2605,19 +2614,18 @@
               </button>
             </form>
           </div>
-
           <div class="contact-modal__info-section">
             <h3 class="info-title">Или свяжитесь напрямую</h3>
             <ul class="contact-links">
               <li>
                 <a href="mailto:my@zhanroman.online">
                   <span class="contact-link__icon">📧</span>
-                  <span class="contact-link__text"
-                    ><strong>Написать на почту</strong>
+                  <span class="contact-link__text">
+                    <strong>Написать на почту</strong>
                     <small data-copy-text="my@zhanroman.online"
                       >my@zhanroman.online</small
-                    ></span
-                  >
+                    >
+                  </span>
                   <button
                     type="button"
                     class="copy-btn"
@@ -2631,10 +2639,10 @@
               <li>
                 <a href="https://t.me/zhan_roma" target="_blank" rel="noopener">
                   <span class="contact-link__icon">✈️</span>
-                  <span class="contact-link__text"
-                    ><strong>Написать в Telegram</strong>
-                    <small data-copy-text="@zhan_roma">@zhan_roma</small></span
-                  >
+                  <span class="contact-link__text">
+                    <strong>Написать в Telegram</strong>
+                    <small data-copy-text="@zhan_roma">@zhan_roma</small>
+                  </span>
                   <button
                     type="button"
                     class="copy-btn"
@@ -2647,15 +2655,15 @@
               </li>
               <li>
                 <a
-                  href="https://wa.me/+84585694951"
+                  href="https://wa.me/YOUR_NUMBER_HERE"
                   target="_blank"
                   rel="noopener"
                 >
                   <span class="contact-link__icon">💬</span>
-                  <span class="contact-link__text"
-                    ><strong>Написать в WhatsApp</strong>
-                    <small>Быстрый ответ</small></span
-                  >
+                  <span class="contact-link__text">
+                    <strong>Написать в WhatsApp</strong>
+                    <small>Быстрый ответ</small>
+                  </span>
                 </a>
               </li>
             </ul>
@@ -2671,446 +2679,321 @@
       </div>
     </div>
 
+    <div class="modal-wrapper" id="mvpModal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mvpModalTitle"
+      >
+        <button class="modal-close" aria-label="Закрыть окно">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h2 id="mvpModalTitle">🚀 Обсудим ваш MVP-проект</h2>
+          <p>
+            Ответьте на пару вопросов, чтобы я мог подготовиться к нашему
+            разговору и предложить лучшие решения.
+          </p>
+        </div>
+        <div class="modal-body">
+          <form class="context-form" id="mvpForm">
+            <div class="form-group">
+              <label for="mvp-idea">Кратко опишите вашу идею</label>
+              <textarea
+                id="mvp-idea"
+                name="idea"
+                rows="3"
+                placeholder="Например: сервис для подбора ветеринаров онлайн..."
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label>Ориентировочный бюджет</label>
+              <div class="segmented-control">
+                <input
+                  type="radio"
+                  id="budget1"
+                  name="budget"
+                  value="<150k"
+                  checked
+                /><label for="budget1">до 150 тыс. ₽</label>
+                <input
+                  type="radio"
+                  id="budget2"
+                  name="budget"
+                  value="150-300k"
+                /><label for="budget2">150-300 тыс. ₽</label>
+                <input
+                  type="radio"
+                  id="budget3"
+                  name="budget"
+                  value=">300k"
+                /><label for="budget3">> 300 тыс. ₽</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">
+              Перейти к отправке
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-wrapper" id="auditModal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auditModalTitle"
+      >
+        <button class="modal-close" aria-label="Закрыть окно">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h2 id="auditModalTitle">📈 Заявка на аудит и оптимизацию</h2>
+          <p>
+            Давайте найдем, где ваш сайт теряет скорость, клиентов и деньги.
+            Укажите адрес сайта и что вас беспокоит.
+          </p>
+        </div>
+        <div class="modal-body">
+          <form class="context-form" id="auditForm">
+            <div class="form-group">
+              <label for="audit-url">Адрес вашего сайта</label>
+              <input
+                type="url"
+                id="audit-url"
+                name="site_url"
+                placeholder="https://example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Что вас больше всего беспокоит?</label>
+              <div class="checkbox-pills">
+                <input
+                  type="checkbox"
+                  id="problem1"
+                  name="problems"
+                  value="speed"
+                /><label for="problem1">🐢 Медленная загрузка</label>
+                <input
+                  type="checkbox"
+                  id="problem2"
+                  name="problems"
+                  value="conversion"
+                /><label for="problem2">📉 Низкая конверсия</label>
+                <input
+                  type="checkbox"
+                  id="problem3"
+                  name="problems"
+                  value="seo"
+                /><label for="problem3">🔍 Плохое SEO</label>
+                <input
+                  type="checkbox"
+                  id="problem4"
+                  name="problems"
+                  value="bugs"
+                /><label for="problem4">🐞 Ошибки и баги</label>
+                <input
+                  type="checkbox"
+                  id="problem5"
+                  name="problems"
+                  value="design"
+                /><label for="problem5">🎨 Устаревший дизайн</label>
+                <input
+                  type="checkbox"
+                  id="problem6"
+                  name="problems"
+                  value="mobile"
+                /><label for="problem6">📱 Плохая моб. версия</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">
+              Отправить заявку
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-wrapper" id="turnkeyModal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="turnkeyModalTitle"
+      >
+        <button class="modal-close" aria-label="Закрыть окно">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h2 id="turnkeyModalTitle">💡 Разработка проекта под ключ</h2>
+          <p>
+            Отметьте, какие этапы для вас наиболее актуальны, чтобы мы могли
+            начать предметный разговор.
+          </p>
+        </div>
+        <div class="modal-body">
+          <form class="context-form" id="turnkeyForm">
+            <ul class="turnkey-checklist">
+              <li>
+                <label
+                  ><input type="checkbox" name="stages" value="analytics" />
+                  <span class="item-text"
+                    ><strong>Аналитика и стратегия</strong
+                    ><small>Исследуем рынок, конкурентов и ЦА</small></span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="stages" value="prototype" />
+                  <span class="item-text"
+                    ><strong>Прототип и UX-дизайн</strong
+                    ><small
+                      >Проектируем логику и пользовательский опыт</small
+                    ></span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="stages" value="ui_design" />
+                  <span class="item-text"
+                    ><strong>UI-дизайн и брендинг</strong
+                    ><small>Создаем визуал, который запомнится</small></span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="stages" value="development" />
+                  <span class="item-text"
+                    ><strong>Разработка и тестирование</strong
+                    ><small>Пишем надежный код и проверяем его</small></span
+                  ></label
+                >
+              </li>
+            </ul>
+            <button type="submit" class="btn btn--primary btn--lg">
+              Назначить встречу
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-wrapper" id="supportModal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="supportModalTitle"
+      >
+        <button class="modal-close" aria-label="Закрыть окно">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h2 id="supportModalTitle">🛠️ Поддержка и развитие проекта</h2>
+          <p>
+            Выберите удобный для вас формат, чтобы ваш проект всегда работал
+            стабильно и развивался.
+          </p>
+        </div>
+        <div class="modal-body">
+          <form class="context-form" id="supportForm">
+            <div class="support-options">
+              <input
+                type="radio"
+                name="support_type"
+                id="hourly"
+                value="hourly"
+                checked
+              />
+              <label for="hourly" class="support-card">
+                <h4>Разовые задачи</h4>
+                <p class="price">от 2500 ₽/час</p>
+                <ul>
+                  <li>Срочные исправления</li>
+                  <li>Доработка функционала</li>
+                  <li>Консультации</li>
+                </ul>
+              </label>
+              <input
+                type="radio"
+                name="support_type"
+                id="retainer"
+                value="retainer"
+              />
+              <label for="retainer" class="support-card accent">
+                <h4>Абонентская поддержка</h4>
+                <p class="price">от 30 000 ₽/мес</p>
+                <ul>
+                  <li>Гарантированное время</li>
+                  <li>Регулярные обновления</li>
+                  <li>Плановое развитие</li>
+                </ul>
+              </label>
+            </div>
+            <div class="modal-actions">
+              <button type="submit" class="btn btn--primary btn--lg">
+                Обсудить условия
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const animateValue = (obj, start, end, duration) => {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min(
-              (timestamp - startTimestamp) / duration,
-              1
-            );
-            // Используем ease-out для плавного замедления в конце
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-            const currentValue = Math.floor(
-              easedProgress * (end - start) + start
-            );
-
-            // Получаем префикс и суффикс из оригинального текста
-            const originalText = obj.innerText;
-            const prefix = originalText.match(/^\D*/)?.[0] || "";
-            const suffix = originalText.match(/\D*$/)?.[0] || "";
-
-            obj.innerHTML = prefix + currentValue + suffix;
-
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            }
-          };
-          window.requestAnimationFrame(step);
-        };
-
-        const observer = new IntersectionObserver(
-          (entries, observer) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const element = entry.target;
-                const targetValue = parseInt(element.dataset.value, 10);
-
-                if (!isNaN(targetValue)) {
-                  animateValue(element, 0, targetValue, 2000); // Анимация длится 2 секунды
-                }
-
-                observer.unobserve(element); // Отключаем наблюдение после анимации
-              }
-            });
-          },
-          {
-            threshold: 0.5, // Анимация начнется, когда элемент виден на 50%
-          }
-        );
-
-        const valueElements = document.querySelectorAll(".highlight__value");
-        valueElements.forEach((el) => {
-          observer.observe(el);
-        });
-      });
-    </script>
-    <script>
-      // --- Lightbox for Testimonial Screenshots ---
-      document.addEventListener("DOMContentLoaded", () => {
-        const lightboxTriggers = document.querySelectorAll(
-          "[data-lightbox-src]"
-        );
-        const lightboxModal = document.getElementById("testimonialLightbox");
-
-        if (!lightboxModal || lightboxTriggers.length === 0) {
-          return;
-        }
-
-        const lightboxImage = lightboxModal.querySelector("img");
-        const closeButtons = lightboxModal.querySelectorAll(
-          "[data-lightbox-close]"
-        );
-
-        const openLightbox = (imageSrc) => {
-          lightboxImage.setAttribute("src", imageSrc);
-          lightboxModal.setAttribute("aria-hidden", "false");
-          lightboxModal.classList.add("is-visible");
-          document.body.style.overflow = "hidden"; // Блокируем скролл фона
-        };
-
-        const closeLightbox = () => {
-          lightboxModal.setAttribute("aria-hidden", "true");
-          lightboxModal.classList.remove("is-visible");
-          document.body.style.overflow = ""; // Возвращаем скролл
-        };
-
-        lightboxTriggers.forEach((trigger) => {
-          trigger.addEventListener("click", (e) => {
-            e.preventDefault();
-            const imageSrc = trigger.dataset.lightboxSrc;
-            if (imageSrc) {
-              openLightbox(imageSrc);
-            }
-          });
-        });
-
-        closeButtons.forEach((button) => {
-          button.addEventListener("click", closeLightbox);
-        });
-
-        // Закрытие по клавише Escape
-        window.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            lightboxModal.classList.contains("is-visible")
-          ) {
-            closeLightbox();
-          }
-        });
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const aiModal = document.getElementById("aiAssistantModal");
-        if (!aiModal) return;
-
-        const chatMessages = aiModal.querySelector(".chat-messages");
-        const chatInput = aiModal.querySelector(".chat-input-area input");
-        const sendButton = aiModal.querySelector(".chat-input-area button");
-
-        // История чата
-        let chatHistory = [];
-
-        const systemPrompt = `
-Ты — AI-ассистент на сайте zhanroman.online. Твоя задача — помогать пользователям по вопросам создания и развития цифровых продуктов, веб-сервисов, ускорения сайтов, автоматизации бизнес-процессов, интеграций, e-commerce, SEO, UI/UX-дизайна, оптимизации и поддержки проектов. Общайся по-человечески, дружелюбно и с эмпатией, избегай сухих или формальных ответов. Избегай слишком роботизированного звучания: вместо канцелярита используй простую речь, показывай понимание и желание помочь.
-Начинай диалог с уточняющих открытых вопросов, чтобы вовлечь пользователя и помочь ему раскрыть проблему. Сначала концентрируйся на понимании ситуации: что именно не работает, когда это началось, как влияет на бизнес. Давай небольшую пользу сразу — простые гипотезы, пояснения, подсказки, которые показывают экспертность.
-Услуги и сотрудничество упоминай только тогда, когда проблема уже ясна и пользователь видит, что ты понимаешь его ситуацию. В этот момент мягко переходи к закрытию: скажи, что задача понятна и её можно решить, предложи передать информацию владельцу сайта и вежливо попроси имя и контакт для связи.
-Если вопрос пользователя не касается этих тем (например, кулинария, политика, природа), отвечай вежливо и кратко: «Извините, я консультирую только по вопросам цифровых продуктов, автоматизации, веб-разработки и оптимизации бизнеса.»
-Главная цель — вовлечь клиента в разговор, выявить слабые места, показать ценность возможного решения, и затем закрыть на сделку через передачу контакта владельцу сайта. Отвечай кратко и по сути, максимум 2–3 предложения.
-Контекст сайта: услуги — разработка веб-сервисов, UI/UX-дизайн, автоматизация, интеграции, ускорение сайтов, SEO, e-commerce; проекты — MVP, комплексные решения, поддержка, оптимизация; технологии — HTML, CSS, JS, WordPress, 1С-Битрикс, Tilda, Webflow, API, CRM-интеграции, GitHub; цель — ускорить запуск, снизить издержки, увеличить прибыль, автоматизировать рутину, повысить стабильность и масштабируемость бизнеса.
-Правила общения: 1) начинай с открытых вопросов, 2) слушай и уточняй, 3) давай небольшую пользу сразу, 4) только после понимания проблемы предлагай помощь владельца сайта и проси контакты, 5) если вопрос не по теме — вежливо отказывайся.
-`.trim();
-
-        // Добавление сообщения
-        const addMessage = (sender, text) => {
-          const messageDiv = document.createElement("div");
-          messageDiv.className =
-            `chat-message ${sender}` +
-            (text === "печатает..." ? " typing" : "");
-
-          const avatarDiv = document.createElement("div");
-          avatarDiv.className = "chat-avatar";
-          avatarDiv.textContent = sender === "ai" ? "AI" : "Вы";
-
-          const bubbleDiv = document.createElement("div");
-          bubbleDiv.className = "chat-bubble";
-
-          // Форматируем ответ AI через Markdown
-          if (sender === "ai" && text !== "печатает...") {
-            bubbleDiv.innerHTML = window.marked ? marked.parse(text) : text;
-          } else {
-            bubbleDiv.textContent = text;
-          }
-
-          messageDiv.appendChild(avatarDiv);
-          messageDiv.appendChild(bubbleDiv);
-          chatMessages.appendChild(messageDiv);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-
-          // В историю чата НЕ добавляем "печатает..."
-          if (
-            sender === "user" ||
-            (sender === "ai" && text !== "печатает...")
-          ) {
-            chatHistory.push({
-              role: sender === "ai" ? "assistant" : "user",
-              text,
-            });
-            if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10);
-          }
-        };
-
-        // Удалить индикатор "печатает..."
-        const removeTypingIndicator = () => {
-          // Найти все сообщения AI с классом typing и текстом "печатает..."
-          const typingMessages = chatMessages.querySelectorAll(
-            ".chat-message.ai.typing"
-          );
-          typingMessages.forEach((msg) => {
-            const bubble = msg.querySelector(".chat-bubble");
-            if (bubble && bubble.textContent === "печатает...") {
-              msg.remove();
-            }
-          });
-        };
-
-        // Отправка сообщения
-        const handleSendMessage = async () => {
-          const userMessage = chatInput.value.trim();
-          if (!userMessage) return;
-
-          addMessage("user", userMessage);
-          chatInput.value = "";
-          sendButton.disabled = true;
-
-          // Индикатор "печатает..."
-          addMessage("ai", "печатает...");
-
-          // Формируем промпт с историей
-          let historyText = chatHistory
-            .map((m) =>
-              m.role === "user" ? `Пользователь: ${m.text}` : `AI: ${m.text}`
-            )
-            .join("\n");
-          const fullPrompt = systemPrompt + "\n" + historyText;
-
-          try {
-            // Запрос к backend Gemini
-            const apiUrl = "https://retailcrm-proxy.onrender.com/api/gemini";
-            const apiResponse = await fetch(apiUrl, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                prompt: fullPrompt,
-                history: chatHistory,
-              }),
-            });
-
-            if (!apiResponse.ok) throw new Error("Ошибка сети или сервера");
-
-            const data = await apiResponse.json();
-
-            // Удаляем индикатор "печатает..."
-            removeTypingIndicator();
-
-            addMessage("ai", data.response);
-
-            // Отправляем всю переписку на email владельца сайта (асинхронно)
-            await fetch(
-              "https://retailcrm-proxy.onrender.com/api/send-chat-email",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ chatHistory }),
-              }
-            );
-          } catch (error) {
-            console.error("Ошибка при обращении к Gemini:", error);
-            removeTypingIndicator();
-            addMessage(
-              "ai",
-              "К сожалению, произошла ошибка. Попробуйте позже."
-            );
-          } finally {
-            sendButton.disabled = false;
-            chatInput.focus();
-          }
-        };
-
-        sendButton.addEventListener("click", handleSendMessage);
-        chatInput.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") {
-            handleSendMessage();
-          }
-        });
-      });
-    </script>
-    <script>
-      function animateTextChange(el, newText) {
-        el.classList.add("lang-fade");
-        setTimeout(() => {
-          el.textContent = newText;
-          el.classList.remove("lang-fade");
-        }, 300); // 300ms = время transition в CSS
-      }
-
-      function setLang(lang) {
-        localStorage.setItem("site-lang", lang);
-        fetch(`./lang.${lang}.json`)
-          .then((res) => res.json())
-          .then((dict) => {
-            document.querySelectorAll("[data-i18n]").forEach((el) => {
-              const key = el.getAttribute("data-i18n");
-              if (dict[key] && el.textContent !== dict[key]) {
-                animateTextChange(el, dict[key]);
-              }
-            });
-            document.querySelectorAll(".lang__current").forEach((el) => {
-              el.textContent = lang === "ru" ? "Ru" : "En";
-            });
-          });
-      }
-
-      document.querySelectorAll("[data-lang-set]").forEach((btn) => {
-        btn.addEventListener("click", () => setLang(btn.dataset.langSet));
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const lang = localStorage.getItem("site-lang") || "ru";
-        setLang(lang);
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Находим модальное окно по его ID. Если его нет, скрипт не будет работать дальше.
-        const contactModal = document.getElementById("contactModal");
-        if (!contactModal) {
-          console.error(
-            'Ошибка: Модальное окно с id="contactModal" не найдено на странице.'
-          );
-          return;
-        }
-
-        // --- Находим все необходимые элементы внутри модального окна ---
-        const form = contactModal.querySelector("#mainContactForm");
-        const submitButton = form.querySelector(".form-submit-btn");
-        const contactMethodRadios = contactModal.querySelectorAll(
-          'input[name="contact_method"]'
-        );
-
-        // Объект с группами полей ввода для удобного доступа
-        const inputGroups = {
-          telegram: contactModal.querySelector("#input-group-telegram"),
-          whatsapp: contactModal.querySelector("#input-group-whatsapp"),
-          email: contactModal.querySelector("#input-group-email"),
-        };
-
-        // Объект с самими полями ввода для управления атрибутом required
-        const contactInputs = {
-          telegram: contactModal.querySelector("#telegram-input"),
-          whatsapp: contactModal.querySelector("#whatsapp-input"),
-          email: contactModal.querySelector("#email-input"),
-        };
-
-        /**
-         * Эта функция обновляет видимость полей и устанавливает атрибут 'required'
-         * только на то поле, которое сейчас активно.
-         * @param {string} selectedValue - Значение выбранного способа связи ('telegram', 'whatsapp', 'email').
-         */
-        function updateFormState(selectedValue) {
-          // 1. Управляем атрибутом 'required' для валидации
-          Object.values(contactInputs).forEach((input) => {
-            if (input) input.removeAttribute("required");
-          });
-          if (contactInputs[selectedValue]) {
-            contactInputs[selectedValue].setAttribute("required", "true");
-          }
-
-          // 2. Управляем видимостью полей
-          Object.values(inputGroups).forEach((group) => {
-            if (group) group.style.display = "none";
-          });
-          const groupToShow = inputGroups[selectedValue];
-          if (groupToShow) {
-            groupToShow.style.display = "flex";
-          }
-        }
-
-        // Назначаем обработчики на переключатели
-        contactMethodRadios.forEach((radio) => {
-          radio.addEventListener("change", (event) => {
-            updateFormState(event.target.value);
-          });
-        });
-
-        // Устанавливаем правильное состояние формы при первой загрузке
-        const initiallyChecked = contactModal.querySelector(
-          'input[name="contact_method"]:checked'
-        );
-        if (initiallyChecked) {
-          updateFormState(initiallyChecked.value);
-        }
-
-        // --- Логика отправки формы на бэкенд ---
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault(); // Предотвращаем стандартную перезагрузку страницы
-
-          const originalButtonText = submitButton.textContent;
-          submitButton.textContent = "Отправка...";
-          submitButton.disabled = true;
-
-          const formData = new FormData(form);
-          const data = Object.fromEntries(formData.entries());
-
-          try {
-            const response = await fetch(
-              "https://retailcrm-proxy.onrender.com/api/send-contact-form",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-              }
-            );
-
-            if (!response.ok) {
-              // Если сервер ответил ошибкой, создаем свою ошибку
-              throw new Error(
-                `Сервер ответил с ошибкой: ${response.statusText}`
-              );
-            }
-
-            // В случае успеха
-            submitButton.textContent = "Отправлено!";
-            setTimeout(() => {
-              form.reset(); // Очищаем форму
-              submitButton.disabled = false;
-              submitButton.textContent = originalButtonText;
-              // Возвращаем форму в состояние по умолчанию
-              if (initiallyChecked) {
-                updateFormState(initiallyChecked.value);
-              }
-            }, 2500);
-          } catch (error) {
-            console.error("Ошибка при отправке формы:", error);
-            submitButton.textContent = "Ошибка! Попробуйте снова";
-            submitButton.disabled = false; // Разблокируем кнопку при ошибке
-            setTimeout(() => {
-              submitButton.textContent = originalButtonText;
-            }, 3000);
-          }
-        });
-
-        // --- Логика для кнопок "Копировать" ---
-        const copyButtons = contactModal.querySelectorAll(".copy-btn");
-        copyButtons.forEach((button) => {
-          button.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const textToCopy = button.dataset.copyText;
-            navigator.clipboard
-              .writeText(textToCopy)
-              .then(() => {
-                const originalContent = button.innerHTML;
-                button.innerHTML = "✓";
-                button.classList.add("copied");
-
-                setTimeout(() => {
-                  button.innerHTML = originalContent;
-                  button.classList.remove("copied");
-                }, 2000);
-              })
-              .catch((err) => {
-                console.error("Ошибка копирования:", err);
-                alert("Не удалось скопировать.");
-              });
-          });
-        });
-      });
-    </script>
   </body>
 </html>
