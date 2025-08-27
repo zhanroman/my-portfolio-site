@@ -422,9 +422,7 @@
     }
 
     // --- Логика AI-чата ---
-    /**
-     * @description Инициализирует логику интерактивного AI-чата в модальном окне.
-     */
+
     function initAiChat() {
       const aiModal = qs("#aiAssistantModal");
       if (!aiModal) return;
@@ -433,9 +431,16 @@
       const chatInput = qs(".chat-input-area input", aiModal);
       const sendButton = qs(".chat-input-area button", aiModal);
 
+      if (!chatMessages || !chatInput || !sendButton) {
+        console.error(
+          "Ошибка в AI-чате: не найдены все необходимые элементы (chat-messages, input или button)."
+        );
+        return;
+      }
+
       let chatHistory = [];
 
-      // --- ПОЛНЫЙ СИСТЕМНЫЙ ПРОМПТ ДЛЯ AI-АССИСТЕНТА ---
+      // --- ВОССТАНОВЛЕННЫЙ ПОЛНЫЙ СИСТЕМНЫЙ ПРОМПТ ДЛЯ AI-АССИСТЕНТА ---
       const systemPrompt = `
 Ты — AI-ассистент на сайте zhanroman.online. Твоя задача — помогать пользователям по вопросам создания и развития цифровых продуктов, веб-сервисов, ускорения сайтов, автоматизации бизнес-процессов, интеграций, e-commerce, SEO, UI/UX-дизайна, оптимизации и поддержки проектов. Общайся по-человечески, дружелюбно и с эмпатией, избегай сухих или формальных ответов. Избегай слишком роботизированного звучания: вместо канцелярита используй простую речь, показывай понимание и желание помочь.
 Начинай диалог с уточняющих открытых вопросов, чтобы вовлечь пользователя и помочь ему раскрыть проблему. Сначала концентрируйся на понимании ситуации: что именно не работает, когда это началось, как влияет на бизнес. Давай небольшую пользу сразу — простые гипотезы, пояснения, подсказки, которые показывают экспертность.
@@ -460,13 +465,9 @@
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        // Добавляем в историю только реальные сообщения
         if (text !== "печатает...") {
-          // Важно: в истории сохраняем только сообщения пользователя и ассистента, без системного промпта
-          if (sender === "user" || sender === "ai") {
-            chatHistory.push({ role: sender, text });
-            if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10); // Ограничиваем историю
-          }
+          chatHistory.push({ role: sender, text });
+          if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10);
         }
       };
 
@@ -475,11 +476,12 @@
         if (!userMessage) return;
 
         addMessage("user", userMessage);
+        const currentChatHistory = [...chatHistory];
+
         chatInput.value = "";
         sendButton.disabled = true;
 
         try {
-          // Теперь отправляем все данные на бэкенд
           const response = await fetch(
             "https://retailcrm-proxy.onrender.com/api/gemini",
             {
@@ -487,17 +489,20 @@
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
                 systemPrompt: systemPrompt,
-                history: chatHistory.slice(0, -1), // Отправляем историю без последнего сообщения пользователя
+                history: currentChatHistory.slice(0, -1),
                 userMessage: userMessage,
               }),
             }
           );
 
-          if (!response.ok) throw new Error("Ошибка сети");
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || "Ошибка сети");
+          }
+
           const data = await response.json();
           addMessage("ai", data.response);
 
-          // Асинхронно отправляем лог на почту
           fetch("https://retailcrm-proxy.onrender.com/api/send-chat-email", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -513,11 +518,15 @@
       };
 
       sendButton.addEventListener("click", handleSendMessage);
-      chatInput.addEventListener(
-        "keydown",
-        (e) => e.key === "Enter" && handleSendMessage()
-      );
+      chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSendMessage();
+        }
+      });
     }
+
+    initAiChat();
 
     // --- ВОССТАНОВЛЕННАЯ ЛОГИКА ПЕРЕВОДА (i18n) С ПЛАВНОЙ АНИМАЦИЕЙ ---
     const animateTextChange = (el, newText) => {

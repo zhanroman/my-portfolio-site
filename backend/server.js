@@ -14,49 +14,41 @@ app.use(express.json());
 // --- ИСПРАВЛЕННЫЙ ЭНДПОИНТ ДЛЯ ЧАТА GEMINI ---
 app.post("/api/gemini", async (req, res) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-    // Получаем все данные с фронтенда: системный промпт, историю и новое сообщение
     const { systemPrompt, history, userMessage } = req.body;
 
     if (!userMessage) {
       return res.status(400).json({ error: "Сообщение не может быть пустым" });
     }
 
-    // Собираем полную историю для модели Gemini
-    // Важно: системный промпт должен идти первым
-    const fullHistory = [
-      { role: "user", parts: [{ text: systemPrompt }] },
-      {
-        role: "assistant",
-        parts: [
-          {
-            text: "Здравствуйте! Я AI-ассистент. Чем могу помочь вашему бизнесу?",
-          },
-        ],
-      },
-    ];
+    // 1. Используем systemInstruction для передачи системного промпта.
+    // Это самый правильный и надежный способ задать поведение модели.
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+      systemInstruction: systemPrompt,
+    });
 
-    // Добавляем предыдущие сообщения из chatHistory
+    // 2. Формируем историю диалога в формате, который требует API Gemini.
+    // История должна быть чистой, без дублирования системных промптов или приветствий.
+    const conversationHistory = [];
     if (history && Array.isArray(history)) {
       history.forEach((msg) => {
-        // Преобразуем формат { role: 'user', text: '...' } в формат Gemini
-        fullHistory.push({
-          role: msg.role === 'ai' ? 'model' : 'user',
+        conversationHistory.push({
+          // Корректно преобразуем роли: 'ai' на 'model'
+          role: msg.role === "ai" ? "model" : "user",
           parts: [{ text: msg.text }],
         });
       });
     }
 
-    // Инициализируем чат с полной историей
+    // 3. Инициализируем сессию чата с полученной историей.
     const chat = model.startChat({
-      history: fullHistory,
+      history: conversationHistory,
       generationConfig: {
-        maxOutputTokens: 200, // Ограничиваем длину ответа
+        maxOutputTokens: 200, // Ограничение длины ответа
       },
     });
 
-    // Отправляем только новое сообщение пользователя
+    // 4. Отправляем новое сообщение от пользователя.
     const result = await chat.sendMessage(userMessage);
     const text = result.response.text();
 
