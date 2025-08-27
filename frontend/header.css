@@ -1518,6 +1518,7 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  padding: 24px;
 }
 .support-card {
   border: 1px solid var(--c-border);
@@ -1544,7 +1545,6 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   color: var(--c-text-soft);
 }
 .support-card.accent {
-  border-color: var(--c-accent);
   background-color: color-mix(in srgb, var(--c-accent) 5%, var(--c-bg));
 }
 @media (max-width: 576px) {
@@ -1607,7 +1607,7 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   width: 22px;
   height: 22px;
   border: 2px solid var(--c-border);
-  border-radius: 50%;
+  border-radius: 4px;
   transition: all 0.2s;
   flex-shrink: 0;
 }

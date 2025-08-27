@@ -1008,7 +1008,7 @@ html[data-theme="dark"] {
   gap: 20px;
   background: var(--c-bg);
   border: 1px solid var(--c-border);
-  border-radius: var(--rad-xl);
+  border-radius: 24px;
   padding: 24px;
   transition:
     transform 0.4s var(--ease-out),
@@ -1036,7 +1036,6 @@ html[data-theme="dark"] {
 .testimonial-card__footer {
   padding-top: 20px;
   border-top: 1px solid var(--c-border);
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -1048,6 +1047,7 @@ html[data-theme="dark"] {
   align-items: center;
   gap: 12px;
   text-align: left;
+  padding-bottom: 12px;
 }
 
 .testimonial-card__avatar {
@@ -1298,6 +1298,15 @@ html[data-theme="dark"] {
     transform 1.2s var(--ease-out),
     filter 1.2s;
 }
+
+.bcard__img img {
+  width: 100%; /* растягиваем по ширине */
+  height: 100%; /* растягиваем по высоте родителя */
+  object-fit: cover; /* как background-size: cover */
+  object-position: center; /* центрируем изображение */
+  display: block; /* убираем лишние пробелы вокруг img */
+}
+
 .bcard__img--gradient2 {
   background: linear-gradient(120deg, #ffe6b0, #ffc4dd, #d2c4ff);
 }
