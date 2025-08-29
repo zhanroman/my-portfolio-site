@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Базовая SEO-настройка</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../footer.css" />
+    <link rel="stylesheet" href="services.css" />
+</head>
+
+<body>
+    <header id="siteHeader" class="hdr">
+        <div class="hdr__inner">
+            <a href="/" class="logo" aria-label="На главную">
+                <svg xmlns="http://www.w3.org/2000/svg" width="140" height="28" viewBox="0 0 140 28" fill="none">
+                    <g clip-path="url(#clip0_header_logo)">
+                        <path
+                            d="M21.9873 0.00634766H6C2.68629 0.00634766 0 2.69264 0 6.00635V21.9936C0 25.3074 2.68629 27.9936 6 27.9936H21.9873C25.301 27.9936 27.9873 25.3074 27.9873 21.9936V6.00635C27.9873 2.69264 25.301 0.00634766 21.9873 0.00634766Z"
+                            fill="#00DDB3" />
+                        <path
+                            d="M12.7077 4.33828C14.9209 4.05405 17.1784 3.97347 18.8161 4.40175C19.6264 4.6137 20.5458 5.01629 21.1189 5.84414C21.7576 6.76695 21.7196 7.83883 21.3464 8.80214C20.9906 9.72058 20.2905 10.6795 19.3308 11.6889C18.3546 12.7156 17.0276 13.878 15.3093 15.1957C13.2394 16.783 11.7412 18.0884 10.7029 19.1469C9.64215 20.2282 9.15091 20.9626 8.97044 21.4008C8.9672 21.4087 8.96461 21.4168 8.96165 21.4242C9.08467 21.4603 9.27739 21.5033 9.56712 21.5287C10.8746 21.6431 12.9586 21.3313 15.1882 20.7338C17.3884 20.1441 19.5248 19.3327 20.8972 18.5814L22.3406 21.2191C20.6929 22.121 18.3142 23.0099 15.9665 23.6391C13.6482 24.2604 11.1508 24.6862 9.3054 24.5248C8.43079 24.4483 7.34528 24.2144 6.61107 23.4467C5.71244 22.5071 5.76579 21.2848 6.18919 20.2562C6.59154 19.2788 7.40603 18.2121 8.5554 17.0404C9.72757 15.8455 11.3455 14.4453 13.4792 12.809C15.1238 11.5478 16.3196 10.4901 17.1511 9.61562C17.9987 8.7241 18.3924 8.10063 18.5417 7.71523C18.5746 7.63032 18.5907 7.56917 18.5993 7.52773C18.528 7.48069 18.3697 7.39436 18.0544 7.31191C17.0075 7.03819 15.2373 7.04612 13.0915 7.32167C10.9984 7.59049 8.73047 8.08864 6.79173 8.65761L5.94408 5.77089C8.01835 5.16214 10.4418 4.62931 12.7077 4.33828Z"
+                            fill="white" />
+                        <path
+                            d="M32.9883 20.5641V18.4317L38.8293 9.88334H33.0068V7.584H42.0187V9.71645L36.1406 18.2648H42.0373V20.5641H32.9883Z"
+                            fill="currentColor" />
+                        <path
+                            d="M44.168 20.5641V7.21313H46.9495V12.5535C47.2461 12.0838 47.6479 11.7067 48.1547 11.4224C48.6616 11.1381 49.255 10.9959 49.9349 10.9959C50.726 10.9959 51.3874 11.1628 51.919 11.4966C52.4505 11.8303 52.8523 12.3186 53.1243 12.9615C53.3962 13.5919 53.5322 14.3584 53.5322 15.2608V20.5641H50.7693V15.5204C50.7693 14.8281 50.621 14.2904 50.3243 13.9072C50.04 13.5239 49.5826 13.3323 48.9521 13.3323C48.5812 13.3323 48.2413 13.425 47.9322 13.6105C47.6232 13.7959 47.3821 14.0617 47.2091 14.4078C47.036 14.7416 46.9495 15.1434 46.9495 15.6131V20.5641H44.168Z"
+                            fill="currentColor" />
+                        <path
+                            d="M59.0368 20.7866C58.258 20.7866 57.609 20.663 57.0898 20.4158C56.583 20.1685 56.2059 19.8348 55.9587 19.4144C55.7238 18.9818 55.6064 18.5058 55.6064 17.9866C55.6064 17.4303 55.7424 16.942 56.0143 16.5217C56.2986 16.0891 56.7375 15.7491 57.3309 15.5019C57.9242 15.2423 58.6722 15.1125 59.5746 15.1125H61.8368C61.8368 14.6922 61.7812 14.346 61.6699 14.0741C61.571 13.8021 61.4042 13.5981 61.1693 13.4621C60.9344 13.3262 60.613 13.2582 60.205 13.2582C59.7724 13.2582 59.4077 13.3447 59.111 13.5178C58.8143 13.6908 58.6289 13.9628 58.5547 14.3337H55.8845C55.9463 13.6661 56.1627 13.0851 56.5335 12.5906C56.9167 12.0961 57.4236 11.7067 58.0541 11.4224C58.6845 11.1381 59.4077 10.9959 60.2236 10.9959C61.1136 10.9959 61.8863 11.1443 62.5415 11.4409C63.1966 11.7253 63.7035 12.1456 64.062 12.7019C64.4328 13.2582 64.6183 13.9504 64.6183 14.7787V20.5641H62.3004L61.9666 19.2105C61.8306 19.4454 61.6699 19.6617 61.4845 19.8595C61.2991 20.0449 61.0827 20.2118 60.8355 20.3601C60.5883 20.4961 60.3163 20.6012 60.0196 20.6754C59.7229 20.7495 59.3953 20.7866 59.0368 20.7866ZM59.7229 18.6727C60.0196 18.6727 60.2792 18.6233 60.5017 18.5244C60.7242 18.4255 60.9159 18.2895 61.0766 18.1164C61.2373 17.9434 61.3671 17.7456 61.466 17.5231C61.5772 17.2882 61.6576 17.0348 61.707 16.7628V16.7442H59.9084C59.5993 16.7442 59.3397 16.7875 59.1295 16.8741C58.9318 16.9482 58.7834 17.0595 58.6845 17.2078C58.5856 17.3562 58.5362 17.5292 58.5362 17.727C58.5362 17.9372 58.5856 18.1164 58.6845 18.2648C58.7958 18.4008 58.9379 18.5058 59.111 18.58C59.2964 18.6418 59.5004 18.6727 59.7229 18.6727Z"
+                            fill="currentColor" />
+                        <path
+                            d="M66.9297 20.5641V11.2184H69.3588L69.5813 12.7204C69.8657 12.2012 70.2674 11.7871 70.7866 11.478C71.3058 11.1566 71.9363 10.9959 72.678 10.9959C73.4568 10.9959 74.112 11.1628 74.6436 11.4966C75.1751 11.8303 75.5769 12.3125 75.8489 12.9429C76.1332 13.561 76.2754 14.3213 76.2754 15.2237V20.5641H73.5125V15.4833C73.5125 14.8034 73.3641 14.278 73.0674 13.9072C72.7831 13.5239 72.3257 13.3323 71.6952 13.3323C71.3244 13.3323 70.9844 13.425 70.6754 13.6105C70.3787 13.7835 70.1438 14.037 69.9707 14.3707C69.7977 14.7045 69.7111 15.1063 69.7111 15.576V20.5641H66.9297Z"
+                            fill="currentColor" />
+                        <path
+                            d="M78.6289 20.5641V7.584H83.6726C84.7234 7.584 85.5949 7.76944 86.2872 8.1403C86.9918 8.49879 87.511 8.98091 87.8448 9.58665C88.1909 10.1924 88.364 10.8661 88.364 11.6078C88.364 12.3001 88.1971 12.9491 87.8633 13.5548C87.5419 14.1606 87.0351 14.6489 86.3428 15.0197C85.6505 15.3906 84.7543 15.576 83.6541 15.576H81.4103V20.5641H78.6289ZM85.3229 20.5641L82.7084 14.8899H85.6938L88.4752 20.5641H85.3229ZM81.4103 13.5734H83.5057C84.198 13.5734 84.7048 13.4065 85.0262 13.0727C85.36 12.739 85.5269 12.2877 85.5269 11.7191C85.5269 11.1628 85.36 10.7239 85.0262 10.4025C84.7048 10.0688 84.198 9.90188 83.5057 9.90188H81.4103V13.5734Z"
+                            fill="currentColor" />
+                        <path
+                            d="M94.3974 20.7866C93.495 20.7866 92.6852 20.5765 91.9682 20.1562C91.2512 19.7359 90.6826 19.161 90.2623 18.4317C89.842 17.6899 89.6318 16.8493 89.6318 15.9098C89.6318 14.9456 89.842 14.0988 90.2623 13.3694C90.6826 12.6277 91.2512 12.0467 91.9682 11.6264C92.6976 11.2061 93.5073 10.9959 94.3974 10.9959C95.3122 10.9959 96.1281 11.2061 96.8451 11.6264C97.5621 12.0467 98.1307 12.6277 98.551 13.3694C98.9713 14.0988 99.1815 14.9394 99.1815 15.8913C99.1815 16.8431 98.9713 17.6899 98.551 18.4317C98.1307 19.161 97.5621 19.7359 96.8451 20.1562C96.1281 20.5765 95.3122 20.7866 94.3974 20.7866ZM94.3974 18.376C94.7682 18.376 95.0958 18.2833 95.3802 18.0979C95.6768 17.9125 95.9117 17.6343 96.0848 17.2635C96.2579 16.8926 96.3444 16.4352 96.3444 15.8913C96.3444 15.3473 96.2579 14.8899 96.0848 14.5191C95.9117 14.1482 95.683 13.8701 95.3987 13.6847C95.1144 13.4992 94.7868 13.4065 94.4159 13.4065C94.0451 13.4065 93.7113 13.4992 93.4146 13.6847C93.1303 13.8701 92.9016 14.1482 92.7285 14.5191C92.5554 14.8899 92.4689 15.3473 92.4689 15.8913C92.4689 16.4352 92.5554 16.8926 92.7285 17.2635C92.9016 17.6343 93.1303 17.9125 93.4146 18.0979C93.7113 18.2833 94.0389 18.376 94.3974 18.376Z"
+                            fill="currentColor" />
+                        <path
+                            d="M101.318 20.5641V11.2184H103.747L103.988 12.4237C104.285 11.9911 104.674 11.6449 105.156 11.3853C105.651 11.1257 106.219 10.9959 106.862 10.9959C107.32 10.9959 107.734 11.0577 108.105 11.1813C108.475 11.2926 108.803 11.4657 109.087 11.7005C109.372 11.9231 109.607 12.2074 109.792 12.5535C110.151 12.0714 110.608 11.6944 111.164 11.4224C111.721 11.1381 112.326 10.9959 112.981 10.9959C113.822 10.9959 114.514 11.1628 115.058 11.4966C115.615 11.8303 116.029 12.3125 116.301 12.9429C116.573 13.5734 116.709 14.3398 116.709 15.2423V20.5641H113.946V15.4833C113.946 14.8034 113.81 14.278 113.538 13.9072C113.278 13.5239 112.858 13.3323 112.277 13.3323C111.906 13.3323 111.578 13.425 111.294 13.6105C111.01 13.7959 110.787 14.0555 110.626 14.3893C110.478 14.7231 110.404 15.1248 110.404 15.5946V20.5641H107.641V15.4833C107.641 14.8034 107.505 14.278 107.233 13.9072C106.961 13.5239 106.522 13.3323 105.917 13.3323C105.57 13.3323 105.255 13.425 104.971 13.6105C104.699 13.7959 104.483 14.0555 104.322 14.3893C104.174 14.7231 104.099 15.1248 104.099 15.5946V20.5641H101.318Z"
+                            fill="currentColor" />
+                        <path
+                            d="M122.217 20.7866C121.439 20.7866 120.79 20.663 120.27 20.4158C119.763 20.1685 119.386 19.8348 119.139 19.4144C118.904 18.9818 118.787 18.5058 118.787 17.9866C118.787 17.4303 118.923 16.942 119.195 16.5217C119.479 16.0891 119.918 15.7491 120.511 15.5019C121.105 15.2423 121.853 15.1125 122.755 15.1125H125.017C125.017 14.6922 124.962 14.346 124.85 14.0741C124.752 13.8021 124.585 13.5981 124.35 13.4621C124.115 13.3262 123.793 13.2582 123.386 13.2582C122.953 13.2582 122.588 13.3447 122.291 13.5178C121.995 13.6908 121.809 13.9628 121.735 14.3337H119.065C119.127 13.6661 119.343 13.0851 119.714 12.5906C120.097 12.0961 120.604 11.7067 121.235 11.4224C121.865 11.1381 122.588 10.9959 123.404 10.9959C124.294 10.9959 125.067 11.1443 125.722 11.4409C126.377 11.7253 126.884 12.1456 127.242 12.7019C127.613 13.2582 127.799 13.9504 127.799 14.7787V20.5641H125.481L125.147 19.2105C125.011 19.4454 124.85 19.6617 124.665 19.8595C124.48 20.0449 124.263 20.2118 124.016 20.3601C123.769 20.4961 123.497 20.6012 123.2 20.6754C122.903 20.7495 122.576 20.7866 122.217 20.7866ZM122.903 18.6727C123.2 18.6727 123.46 18.6233 123.682 18.5244C123.905 18.4255 124.096 18.2895 124.257 18.1164C124.418 17.9434 124.548 17.7456 124.646 17.5231C124.758 17.2882 124.838 17.0348 124.888 16.7628V16.7442H123.089C122.78 16.7442 122.52 16.7875 122.31 16.8741C122.112 16.9482 121.964 17.0595 121.865 17.2078C121.766 17.3562 121.717 17.5292 121.717 17.727C121.717 17.9372 121.766 18.1164 121.865 18.2648C121.976 18.4008 122.118 18.5058 122.291 18.58C122.477 18.6418 122.681 18.6727 122.903 18.6727Z"
+                            fill="currentColor" />
+                        <path
+                            d="M130.11 20.5641V11.2184H132.539L132.762 12.7204C133.046 12.2012 133.448 11.7871 133.967 11.478C134.486 11.1566 135.117 10.9959 135.859 10.9959C136.637 10.9959 137.293 11.1628 137.824 11.4966C138.356 11.8303 138.758 12.3125 139.029 12.9429C139.314 13.561 139.456 14.3213 139.456 15.2237V20.5641H136.693V15.4833C136.693 14.8034 136.545 14.278 136.248 13.9072C135.964 13.5239 135.506 13.3323 134.876 13.3323C134.505 13.3323 134.165 13.425 133.856 13.6105C133.559 13.7835 133.324 14.037 133.151 14.3707C132.978 14.7045 132.892 15.1063 132.892 15.576V20.5641H130.11Z"
+                            fill="currentColor" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_header_logo">
+                            <rect width="140" height="28" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+            <nav class="nav" aria-label="Главное меню">
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item has-panel" role="none">
+                        <button class="nav__btn" data-menu-id="services" role="menuitem" aria-haspopup="true"
+                            aria-expanded="false">
+                            Услуги
+                            <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5"
+                                viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav__item has-panel" role="none">
+                        <button class="nav__btn" data-menu-id="projects" role="menuitem" aria-haspopup="true"
+                            aria-expanded="false">
+                            Проекты
+                            <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5"
+                                viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav__item has-panel" role="none">
+                        <button class="nav__btn" data-menu-id="concepts" role="menuitem" aria-haspopup="true"
+                            aria-expanded="false">
+                            Концепты
+                            <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5"
+                                viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav__item has-panel" role="none">
+                        <button class="nav__btn" data-menu-id="tech" role="menuitem" aria-haspopup="true"
+                            aria-expanded="false">
+                            Технологии
+                            <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5"
+                                viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav__item has-panel" role="none">
+                        <button class="nav__btn" data-menu-id="blog" role="menuitem" aria-haspopup="true"
+                            aria-expanded="false">
+                            Блог
+                            <svg class="nav__chevron" xmlns="http://www.w3.org/2000/svg" width="8" height="5"
+                                viewBox="0 0 8 5" fill="none" aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a class="nav__btn nav__btn--plain" role="menuitem" href="/contacts">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mega-container" id="mega-container" aria-hidden="true">
+                <div class="mega" id="mega-services" role="dialog" aria-label="Услуги">
+                    <div class="mega__cols">
+                        <div class="mega__col">
+                            <h3 class="mega__title">UX / UI</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/services/ux-ui/prototyping-cjm">Прототипирование и CJM</a>
+                                </li>
+                                <li>
+                                    <a href="/services/ux-ui/ui-kits">UI-киты для стартапов</a>
+                                </li>
+                                <li>
+                                    <a href="/services/ux-ui/design-systems">Разработка дизайн-систем</a>
+                                </li>
+                                <li>
+                                    <a href="/services/ux-ui/interface-audit">Аудит и улучшение интерфейсов</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Продакшн</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/services/development/frontend">Frontend (React / Vue)</a>
+                                </li>
+                                <li>
+                                    <a href="/services/development/headless-cms">Интеграция с Headless CMS</a>
+                                </li>
+                                <li>
+                                    <a href="/services/development/no-code">No-code (Webflow, Tilda)</a>
+                                </li>
+                                <li>
+                                    <a href="/services/development/performance-optimization">Оптимизация скорости
+                                        загрузки</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Поддержка</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/services/support/analytics">Настройка аналитики</a>
+                                </li>
+                                <li>
+                                    <a href="/services/support/cro">A/B тестирование и CRO</a>
+                                </li>
+                                <li>
+                                    <a href="/services/support/tech-support">Техническая поддержка</a>
+                                </li>
+                                <li>
+                                    <a href="/services/support/automation">Автоматизация процессов</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mega" id="mega-projects" role="dialog" aria-label="Проекты">
+                    <div class="mega__cols mega__cols--featured">
+                        <div class="mega__col mega__col--media">
+                            <a href="/projects/saas/platform-redesign" class="mega-media-card">
+                                <div class="mmc__thumb">
+                                    <span class="mmc__badge">Новый кейс</span>
+                                </div>
+                                <div class="mmc__body">
+                                    <h4>Редизайн SaaS-платформы</h4>
+                                    <p>
+                                        Рост ключевых активаций на +42% после запуска новой
+                                        воронки.
+                                    </p>
+                                    <span class="mmc__cta">Смотреть кейс →</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Категории</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/projects/category/b2b-enterprise">B2B и Enterprise</a>
+                                </li>
+                                <li>
+                                    <a href="/projects/category/marketplace">Маркетплейсы</a>
+                                </li>
+                                <li>
+                                    <a href="/projects/category/edtech-medtech">EdTech & MedTech</a>
+                                </li>
+                                <li><a href="/projects/category/fintech">FinTech</a></li>
+                                <li><a href="/projects/category/saas">SaaS</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Дополнительно</h3>
+                            <ul class="mega__links">
+                                <li><a href="/projects">Все проекты</a></li>
+                                <li><a href="/projects/grid">Сетка кейсов</a></li>
+                                <li><a href="/testimonials">Отзывы клиентов</a></li>
+                                <li><a href="/process">Мой рабочий процесс</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mega" id="mega-concepts" role="dialog" aria-label="Концепты">
+                    <div class="concepts-grid">
+                        <a href="/concepts/analytics-platform" class="concept-card">
+                            <div class="concept-card__thumb" style="
+                    background-image: linear-gradient(
+                      135deg,
+                      #667eea 0%,
+                      #764ba2 100%
+                    );
+                  "></div>
+                            <div class="concept-card__body">
+                                <h4 class="concept-card__title">Платформа для аналитики</h4>
+                                <p class="concept-card__desc">Интерфейс дашборда</p>
+                            </div>
+                        </a>
+                        <a href="/concepts/mobile-banking" class="concept-card">
+                            <div class="concept-card__thumb" style="
+                    background-image: linear-gradient(
+                      135deg,
+                      #f794a4 0%,
+                      #fdd6bd 100%
+                    );
+                  "></div>
+                            <div class="concept-card__body">
+                                <h4 class="concept-card__title">Мобильный банк</h4>
+                                <p class="concept-card__desc">UX-исследование и UI-кит</p>
+                            </div>
+                        </a>
+                        <a href="/concepts/ai-assistant" class="concept-card">
+                            <div class="concept-card__thumb" style="
+                    background-image: linear-gradient(
+                      135deg,
+                      #89f7fe 0%,
+                      #66a6ff 100%
+                    );
+                  "></div>
+                            <div class="concept-card__body">
+                                <h4 class="concept-card__title">AI Ассистент</h4>
+                                <p class="concept-card__desc">Проектирование диалогов</p>
+                            </div>
+                        </a>
+                        <a href="/concepts/vr-app" class="concept-card">
+                            <div class="concept-card__thumb" style="
+                    background-image: linear-gradient(
+                      135deg,
+                      #ffdde1 0%,
+                      #ee9ca7 100%
+                    );
+                  "></div>
+                            <div class="concept-card__body">
+                                <h4 class="concept-card__title">VR-приложение</h4>
+                                <p class="concept-card__desc">Пользовательские сценарии</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="mega" id="mega-tech" role="dialog" aria-label="Технологии">
+                    <div class="mega__cols">
+                        <div class="mega__col">
+                            <h3 class="mega__title">Frontend</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/tech/frontend/react-nextjs">React / Next.js</a>
+                                </li>
+                                <li><a href="/tech/frontend/vue-nuxtjs">Vue / Nuxt.js</a></li>
+                                <li><a href="/tech/frontend/typescript">TypeScript</a></li>
+                                <li>
+                                    <a href="/tech/frontend/state-management">State Management</a>
+                                </li>
+                                <li><a href="/tech/frontend/testing">Тестирование</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Дизайн и CMS</h3>
+                            <ul class="mega__links">
+                                <li>
+                                    <a href="/tech/design/figma">Figma (Auto Layout, Variables)</a>
+                                </li>
+                                <li>
+                                    <a href="/tech/design/design-systems">Дизайн-системы</a>
+                                </li>
+                                <li>
+                                    <a href="/tech/cms/headless">Headless CMS (Strapi, Sanity)</a>
+                                </li>
+                                <li><a href="/tech/design/no-code">No-code (Webflow)</a></li>
+                                <li><a href="/tech/design/storybook">Storybook</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega__col">
+                            <h3 class="mega__title">Инструменты и DevOps</h3>
+                            <ul class="mega__links">
+                                <li><a href="/tech/tools/nodejs">Node.js</a></li>
+                                <li>
+                                    <a href="/tech/tools/hosting-vercel-netlify">Vercel / Netlify</a>
+                                </li>
+                                <li>
+                                    <a href="/tech/tools/ci-cd">CI/CD (Github Actions)</a>
+                                </li>
+                                <li><a href="/tech/tools/graphql">GraphQL</a></li>
+                                <li>
+                                    <a href="/tech/tools/analytics-optimization">Аналитика и оптимизация</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mega" id="mega-blog" role="dialog" aria-label="Блог">
+                    <div class="mega-blog-layout">
+                        <div class="mega-blog__featured">
+                            <h3 class="mega__title">Свежая статья</h3>
+                            <a href="/blog/state-of-frontend-2025" class="featured-post">
+                                <div class="featured-post__thumb"></div>
+                                <div class="featured-post__content">
+                                    <h4>State of Frontend 2025</h4>
+                                    <p>
+                                        Главные тренды, фреймворки и&nbsp;инструменты, на которые
+                                        стоит обратить внимание в&nbsp;этом году.
+                                    </p>
+                                    <span class="mmc__cta">Читать полностью →</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mega-blog__lists">
+                            <div class="mega__col">
+                                <h3 class="mega__title">Рубрики</h3>
+                                <ul class="mega__links">
+                                    <li><a href="/blog/category/ux-ui">UX/UI Дизайн</a></li>
+                                    <li>
+                                        <a href="/blog/category/frontend">Frontend разработка</a>
+                                    </li>
+                                    <li><a href="/blog/category/tools">Инструменты</a></li>
+                                    <li>
+                                        <a href="/blog/category/productivity">Продуктивность</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega__col">
+                                <h3 class="mega__title">Популярное</h3>
+                                <ul class="mega__links">
+                                    <li>
+                                        <a href="/blog/how-i-build-design-systems">Как я строю дизайн-системы</a>
+                                    </li>
+                                    <li>
+                                        <a href="/blog/web-vitals-guide">Web Vitals: Полное руководство</a>
+                                    </li>
+                                    <li>
+                                        <a href="/blog/js-vs-css-animations">Анимации в интерфейсе: JS vs CSS</a>
+                                    </li>
+                                    <li>
+                                        <a href="/blog/best-headless-cms">Лучшие Headless CMS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hdr__tools">
+                <button id="theme-toggle" class="theme-toggle" title="Сменить тему">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg><svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="lang" data-lang>
+                    <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                        <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <g clip-path="url(#clip0_lang_header)">
+                                <path d="M3.33984 5.33325L7.33984 9.33325" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M2.67188 9.33325L6.67188 5.33325L8.00521 3.33325" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M1.33984 3.33325H9.33984" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M4.67188 1.33325H5.33854" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14.6725 14.6667L11.3392 8L8.00586 14.6667" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.33984 12H13.3398" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_lang_header">
+                                    <rect width="16" height="16" fill="white" transform="translate(0.00585938)" />
+                                </clipPath>
+                            </defs>
+                        </svg><span class="lang__current">Ru</span><svg class="lang__chevron"
+                            xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none"
+                            aria-hidden="true">
+                            <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <ul class="lang__list" role="listbox" aria-label="Смена языка">
+                        <li role="option" aria-selected="true">
+                            <button data-lang-set="ru">Русский</button>
+                        </li>
+                        <li role="option" aria-selected="false">
+                            <button data-lang-set="en">English</button>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-ai" data-modal-trigger="aiAssistantModal">
+                    AI Помощник
+                </button>
+                <button type="button" class="btn btn--primary" data-modal-trigger="contactModal">
+                    Связаться
+                </button>
+                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="mobilePanel">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobilePanel" class="mnav" aria-hidden="true">
+            <div class="mnav__header">
+                <button class="mnav__close" aria-label="Закрыть меню">✕</button>
+            </div>
+            <div class="mnav__scroll-area">
+                <ul class="mnav__list">
+                    <li class="mnav__group">
+                        <button class="mnav__acc" aria-expanded="false">
+                            Услуги <span class="acc__chevron"></span>
+                        </button>
+                        <div class="mnav__panel">
+                            <div class="mnav__panel-content">
+                                <div class="mega__col">
+                                    <h3 class="mega__title">UX / UI</h3>
+                                    <ul class="mega__links">
+                                        <li>
+                                            <a href="/services/ux-ui/prototyping-cjm">Прототипирование и CJM</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/ux-ui/ui-kits">UI-киты для стартапов</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/ux-ui/design-systems">Разработка дизайн-систем</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/ux-ui/interface-audit">Аудит и улучшение интерфейсов</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Продакшн</h3>
+                                    <ul class="mega__links">
+                                        <li>
+                                            <a href="/services/development/frontend">Frontend (React / Vue)</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/development/headless-cms">Интеграция с Headless CMS</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/development/no-code">No-code (Webflow, Tilda)</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/development/performance-optimization">Оптимизация
+                                                скорости загрузки</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Поддержка</h3>
+                                    <ul class="mega__links">
+                                        <li>
+                                            <a href="/services/support/analytics">Настройка аналитики</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/support/cro">A/B тестирование и CRO</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/support/tech-support">Техническая поддержка</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/support/automation">Автоматизация процессов</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mnav__group">
+                        <button class="mnav__acc" aria-expanded="false">
+                            Проекты <span class="acc__chevron"></span>
+                        </button>
+                        <div class="mnav__panel">
+                            <div class="mnav__panel-content">
+                                <div class="mega__col mega__col--media">
+                                    <a href="/projects/saas/platform-redesign" class="mega-media-card">
+                                        <div class="mmc__thumb">
+                                            <span class="mmc__badge">Новый кейс</span>
+                                        </div>
+                                        <div class="mmc__body">
+                                            <h4>Редизайн SaaS-платформы</h4>
+                                            <p>Рост ключевых активаций на +42%.</p>
+                                            <span class="mmc__cta">Смотреть кейс →</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Категории</h3>
+                                    <ul class="mega__links">
+                                        <li>
+                                            <a href="/projects/category/b2b-enterprise">B2B и Enterprise</a>
+                                        </li>
+                                        <li>
+                                            <a href="/projects/category/marketplace">Маркетплейсы</a>
+                                        </li>
+                                        <li>
+                                            <a href="/projects/category/edtech-medtech">EdTech & MedTech</a>
+                                        </li>
+                                        <li><a href="/projects/category/fintech">FinTech</a></li>
+                                        <li><a href="/projects/category/saas">SaaS</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Дополнительно</h3>
+                                    <ul class="mega__links">
+                                        <li><a href="/projects">Все проекты</a></li>
+                                        <li><a href="/projects/grid">Сетка кейсов</a></li>
+                                        <li><a href="/testimonials">Отзывы клиентов</a></li>
+                                        <li><a href="/process">Мой рабочий процесс</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mnav__group">
+                        <button class="mnav__acc" aria-expanded="false">
+                            Концепты <span class="acc__chevron"></span>
+                        </button>
+                        <div class="mnav__panel">
+                            <div class="mnav__panel-content">
+                                <div class="concepts-grid">
+                                    <a href="/concepts/analytics-platform" class="concept-card">
+                                        <div class="concept-card__thumb" style="
+                          background-image: linear-gradient(
+                            135deg,
+                            #667eea 0%,
+                            #764ba2 100%
+                          );
+                        "></div>
+                                        <div class="concept-card__body">
+                                            <h4 class="concept-card__title">
+                                                Платформа для аналитики
+                                            </h4>
+                                            <p class="concept-card__desc">Интерфейс дашборда</p>
+                                        </div>
+                                    </a>
+                                    <a href="/concepts/mobile-banking" class="concept-card">
+                                        <div class="concept-card__thumb" style="
+                          background-image: linear-gradient(
+                            135deg,
+                            #f794a4 0%,
+                            #fdd6bd 100%
+                          );
+                        "></div>
+                                        <div class="concept-card__body">
+                                            <h4 class="concept-card__title">Мобильный банк</h4>
+                                            <p class="concept-card__desc">
+                                                UX-исследование и UI-кит
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/concepts" class="btn btn--primary mnav__view-all-btn">Все концепты</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mnav__group">
+                        <button class="mnav__acc" aria-expanded="false">
+                            Технологии <span class="acc__chevron"></span>
+                        </button>
+                        <div class="mnav__panel">
+                            <div class="mnav__panel-content">
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Frontend</h3>
+                                    <ul class="mega__links">
+                                        <li>
+                                            <a href="/tech/frontend/react-nextjs">React / Next.js</a>
+                                        </li>
+                                        <li>
+                                            <a href="/tech/frontend/vue-nuxtjs">Vue / Nuxt.js</a>
+                                        </li>
+                                        <li>
+                                            <a href="/tech/frontend/typescript">TypeScript</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Дизайн и CMS</h3>
+                                    <ul class="mega__links">
+                                        <li><a href="/tech/design/figma">Figma</a></li>
+                                        <li>
+                                            <a href="/tech/design/design-systems">Дизайн-системы</a>
+                                        </li>
+                                        <li><a href="/tech/cms/headless">Headless CMS</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mnav__group">
+                        <button class="mnav__acc" aria-expanded="false">
+                            Блог <span class="acc__chevron"></span>
+                        </button>
+                        <div class="mnav__panel">
+                            <div class="mnav__panel-content">
+                                <div class="mega-blog__featured">
+                                    <h3 class="mega__title">Свежая статья</h3>
+                                    <a href="/blog/state-of-frontend-2025" class="featured-post">
+                                        <div class="featured-post__thumb"></div>
+                                        <div class="featured-post__content">
+                                            <h4>State of Frontend 2025</h4>
+                                            <p>Главные тренды, фреймворки и&nbsp;инструменты.</p>
+                                            <span class="mmc__cta">Читать полностью →</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mega__col">
+                                    <h3 class="mega__title">Рубрики</h3>
+                                    <ul class="mega__links">
+                                        <li><a href="/blog/category/ux-ui">UX/UI Дизайн</a></li>
+                                        <li>
+                                            <a href="/blog/category/frontend">Frontend разработка</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mnav__group">
+                        <a class="mnav__link" href="/contacts">Контакты</a>
+                    </li>
+                </ul>
+                <div class="mnav__controls">
+                    <button id="theme-toggle-mobile" class="theme-toggle" title="Сменить тему">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg><svg class="theme-toggle__icon theme-toggle__icon--moon"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <div class="lang" data-lang-mobile>
+                        <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                            <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <g clip-path="url(#clip0_lang_mobile)">
+                                    <path d="M3.33984 5.33325L7.33984 9.33325" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M2.67188 9.33325L6.67188 5.33325L8.00521 3.33325" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.33984 3.33325H9.33984" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4.67188 1.33325H5.33854" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.6725 14.6667L11.3392 8L8.00586 14.6667" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M9.33984 12H13.3398" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_lang_mobile">
+                                        <rect width="16" height="16" fill="white" transform="translate(0.00585938)" />
+                                    </clipPath>
+                                </defs>
+                            </svg><span class="lang__current">Ru</span><svg class="lang__chevron"
+                                xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none"
+                                aria-hidden="true">
+                                <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="lang__list" role="listbox">
+                            <li role="option" aria-selected="true">
+                                <button data-lang-set="ru">Русский</button>
+                            </li>
+                            <li role="option" aria-selected="false">
+                                <button data-lang-set="en">English</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mnav__footer">
+                <div class="mnav__actions">
+                    <button type="button" class="btn btn-ai" data-modal-trigger="aiAssistantModal">
+                        AI Помощник
+                    </button>
+                    <button type="button" class="btn btn--primary" data-modal-trigger="contactModal">
+                        Связаться
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="perf-service-page-v3">
+
+        <section class="sec perf-hero-v3">
+            <div class="sec-shell perf-hero-v3__shell">
+                <div class="perf-hero-v3__content">
+                    <span class="breadcrumb-tag">Услуги / Базовая SEO-настройка</span>
+                    <h1 class="perf-hero-v3__title">От невидимости к <span class="text-gradient">первым позициям</span>
+                    </h1>
+                    <p class="perf-hero-v3__lead">
+                        Делаю ваш сайт понятным для поисковых систем и привлекательным для целевой аудитории.
+                        Комплексная внутренняя оптимизация для стабильного роста органического трафика и привлечения
+                        клиентов из Google и Яндекс.
+                    </p>
+                    <div class="perf-hero-v3__actions">
+                        <button class="btn btn--primary btn--lg" data-modal-trigger="auditModal">
+                            Получить SEO-аудит
+                        </button>
+                    </div>
+                </div>
+                <div class="perf-hero-v3__visual">
+                    <div id="lottie-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec perf-pain">
+            <div class="sec-shell">
+                <div class="sec-head">
+                    <h2 class="sec-title">Сайт есть, а клиентов из поиска нет? Это знакомо.</h2>
+                    <p class="sec-lead">Без правильной оптимизации даже самый красивый сайт остается невидимым для
+                        поисковых систем и потенциальных клиентов.</p>
+                </div>
+                <div class="pain-gain-grid">
+                    <div class="pain-gain-card">
+                        <div class="pain-gain-card__icon">💰</div>
+                        <h3 class="pain-gain-card__title">Деньги на Директ, 0 органики</h3>
+                        <p class="pain-gain-card__desc">Весь трафик идет только с платной рекламы. Как только бюджет
+                            заканчивается — поток клиентов останавливается.</p>
+                        <div class="pain-gain-card__gain">
+                            <strong>Решение:</strong> Создание стабильного и бесплатного источника целевого трафика из
+                            поисковых систем.
+                        </div>
+                    </div>
+                    <div class="pain-gain-card">
+                        <div class="pain-gain-card__icon">📉</div>
+                        <h3 class="pain-gain-card__title">Позиции не растут</h3>
+                        <p class="pain-gain-card__desc">Сайт "застрял" на 2-3 странице выдачи по ключевым запросам, и до
+                            него просто не доходят пользователи.</p>
+                        <div class="pain-gain-card__gain">
+                            <strong>Решение:</strong> Улучшение технических и контентных факторов для выхода в ТОП-10 по
+                            целевым запросам.
+                        </div>
+                    </div>
+                    <div class="pain-gain-card">
+                        <div class="pain-gain-card__icon">👻</div>
+                        <h3 class="pain-gain-card__title">Сайт-"призрак"</h3>
+                        <p class="pain-gain-card__desc">Помимо брендовых запросов, на сайт почти никто не заходит. Он не
+                            привлекает новую, "холодную" аудиторию.</p>
+                        <div class="pain-gain-card__gain">
+                            <strong>Решение:</strong> Расширение семантики и структуры сайта для привлечения
+                            пользователей на разных стадиях воронки.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec perf-process" id="process">
+            <div class="sec-shell">
+                <div class="sec-head">
+                    <h2 class="sec-title">Как я это исправляю: фундамент для роста</h2>
+                    <p class="sec-lead">SEO — это не покупка ссылок, а построение технически безупречного и полезного
+                        для пользователя сайта.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-card__icon">🛠️</div>
+                        <h3 class="process-card__title">1. Технический аудит</h3>
+                        <p class="process-card__desc">Проверяю сайт на сотни технических ошибок, которые мешают
+                            индексации: дубли страниц, медленная скорость, проблемы с мобильной версией, битые ссылки и
+                            т.д.</p>
+                        <ul class="process-card__list">
+                            <li>Анализ скорости (Core Web Vitals)</li>
+                            <li>Проверка файла robots.txt и sitemap.xml</li>
+                            <li>Поиск ошибок сканирования</li>
+                        </ul>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-card__icon">🎯</div>
+                        <h3 class="process-card__title">2. Семантическое ядро</h3>
+                        <p class="process-card__desc">Собираю полный список ключевых запросов, по которым ваши клиенты
+                            ищут вас. Кластеризую их и распределяю по целевым страницам сайта.</p>
+                        <ul class="process-card__list">
+                            <li>Сбор и чистка ключевых слов</li>
+                            <li>Анализ конкурентов в выдаче</li>
+                            <li>Проектирование структуры сайта</li>
+                        </ul>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-card__icon">✍️</div>
+                        <h3 class="process-card__title">3. Внутренняя оптимизация</h3>
+                        <p class="process-card__desc">Привожу каждую страницу в соответствие с требованиями поисковых
+                            систем. Прописываю мета-теги, оптимизирую заголовки и тексты, настраиваю внутреннюю
+                            перелинковку.</p>
+                        <ul class="process-card__list">
+                            <li>Написание Title и Description</li>
+                            <li>Оптимизация заголовков H1-H6</li>
+                            <li>Настройка микроразметки Schema.org</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec perf-result-v3">
+            <div class="sec-shell">
+                <div class="sec-head">
+                    <h2 class="sec-title">Результат, который можно отследить</h2>
+                    <p class="sec-lead">Цель моей работы — не просто позиции, а стабильный рост целевого трафика,
+                        который конвертируется в заявки и продажи.</p>
+                </div>
+                <div class="before-after">
+                    <div class="before-after__card before-after__card--before">
+                        <h4>ДО</h4>
+                        <img src="https://i.ibb.co/9vP7c7D/seo-before.png" alt="График трафика до SEO">
+                        <div class="before-after__score">
+                            <span class="counter" data-target="10">0</span>
+                            <small>визитов/нед</small>
+                        </div>
+                    </div>
+                    <div class="before-after__arrow">→</div>
+                    <div class="before-after__card before-after__card--after">
+                        <h4>ПОСЛЕ</h4>
+                        <img src="https://i.ibb.co/FzB3FzH/seo-after.png" alt="График роста трафика после SEO">
+                        <div class="before-after__score">
+                            <span class="counter" data-target="250">0</span>
+                            <small>визитов/нед</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec perf-pricing-v3">
+            <div class="sec-shell">
+                <div class="sec-head">
+                    <h2 class="sec-title">Варианты сотрудничества</h2>
+                </div>
+                <div class="model-grid">
+                    <div class="model-card">
+                        <div class="model-card__top">
+                            <h3>Базовая SEO-настройка</h3>
+                            <p>Идеально для новых сайтов или проектов, где SEO никогда не занимались. Создаем прочный
+                                фундамент.</p>
+                        </div>
+                        <ul class="model-card__list">
+                            <li>Полный технический аудит</li>
+                            <li>Сбор семантического ядра (до 100 запросов)</li>
+                            <li>Оптимизация до 10 ключевых страниц</li>
+                            <li>Настройка Яндекс.Метрики и Google Analytics</li>
+                        </ul>
+                        <div class="model-card__cta">
+                            <button class="btn btn--ghost btn--sm" data-modal-trigger="auditModal">
+                                Заказать от 90 000 ₽
+                            </button>
+                        </div>
+                    </div>
+                    <div class="model-card model-card--accent">
+                        <div class="model-card__badge">Рекомендую</div>
+                        <div class="model-card__top">
+                            <h3>Комплексное SEO-продвижение</h3>
+                            <p>Для проектов, нацеленных на лидерство в своей нише и постоянный рост органического
+                                трафика.</p>
+                        </div>
+                        <ul class="model-card__list">
+                            <li><b>Все из базового пакета</b></li>
+                            <li>Ежемесячное расширение семантики</li>
+                            <li>Проработка контент-плана для блога</li>
+                            <li>Регулярный мониторинг позиций и отчетность</li>
+                        </ul>
+                        <div class="model-card__cta">
+                            <button class="btn btn--primary btn--sm" data-modal-trigger="contactModal">
+                                Обсудить стратегию
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec perf-case-v3">
+            <div class="sec-shell">
+                <div class="sec-head">
+                    <h2 class="sec-title">Подтвержденный опыт</h2>
+                </div>
+                <div class="case-proof-card">
+                    <div class="case-proof-card__visual">
+                        <img src="./assets/cases/card_3.png" alt="SEO-продвижение Reputro">
+                    </div>
+                    <div class="case-proof-card__content">
+                        <h3>Reputro: Первые клиенты из поиска в первый месяц</h3>
+                        <p>Провели базовую техническую оптимизацию и проработали семантику для нового SaaS-сервиса. Сайт
+                            начал получать целевой органический трафик уже через 3 недели после запуска.</p>
+                        <a href="/cases/reputro-seo-month1" class="btn btn--ghost">Смотреть полный кейс</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec final-cta">
+            <div class="sec-shell">
+                <div class="final-cta__wrap">
+                    <h2 class="final-cta__title">
+                        Готовы получать клиентов из поиска?
+                    </h2>
+                    <p class="final-cta__text">
+                        Закажите бесплатный SEO-аудит. Я проанализирую ваш сайт, покажу ключевые ошибки, мешающие росту,
+                        и предложу стратегию для выхода в ТОП поисковой выдачи.
+                    </p>
+                    <div class="final-cta__actions">
+                        <button class="btn btn--primary btn--xl" data-modal-trigger="auditModal">
+                            Получить SEO-аудит
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="ftr">
+        <div class="ftr__main">
+            <div class="ftr__brand">
+                <a href="/" class="logo" aria-label="На главную">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="140" height="28" viewBox="0 0 140 28" fill="none">
+                        <g clip-path="url(#clip0_footer_logo)">
+                            <path
+                                d="M21.9873 0.00634766H6C2.68629 0.00634766 0 2.69264 0 6.00635V21.9936C0 25.3074 2.68629 27.9936 6 27.9936H21.9873C25.301 27.9936 27.9873 25.3074 27.9873 21.9936V6.00635C27.9873 2.69264 25.301 0.00634766 21.9873 0.00634766Z"
+                                fill="#00DDB3" />
+                            <path
+                                d="M12.7077 4.33828C14.9209 4.05405 17.1784 3.97347 18.8161 4.40175C19.6264 4.6137 20.5458 5.01629 21.1189 5.84414C21.7576 6.76695 21.7196 7.83883 21.3464 8.80214C20.9906 9.72058 20.2905 10.6795 19.3308 11.6889C18.3546 12.7156 17.0276 13.878 15.3093 15.1957C13.2394 16.783 11.7412 18.0884 10.7029 19.1469C9.64215 20.2282 9.15091 20.9626 8.97044 21.4008C8.9672 21.4087 8.96461 21.4168 8.96165 21.4242C9.08467 21.4603 9.27739 21.5033 9.56712 21.5287C10.8746 21.6431 12.9586 21.3313 15.1882 20.7338C17.3884 20.1441 19.5248 19.3327 20.8972 18.5814L22.3406 21.2191C20.6929 22.121 18.3142 23.0099 15.9665 23.6391C13.6482 24.2604 11.1508 24.6862 9.3054 24.5248C8.43079 24.4483 7.34528 24.2144 6.61107 23.4467C5.71244 22.5071 5.76579 21.2848 6.18919 20.2562C6.59154 19.2788 7.40603 18.2121 8.5554 17.0404C9.72757 15.8455 11.3455 14.4453 13.4792 12.809C15.1238 11.5478 16.3196 10.4901 17.1511 9.61562C17.9987 8.7241 18.3924 8.10063 18.5417 7.71523C18.5746 7.63032 18.5907 7.56917 18.5993 7.52773C18.528 7.48069 18.3697 7.39436 18.0544 7.31191C17.0075 7.03819 15.2373 7.04612 13.0915 7.32167C10.9984 7.59049 8.73047 8.08864 6.79173 8.65761L5.94408 5.77089C8.01835 5.16214 10.4418 4.62931 12.7077 4.33828Z"
+                                fill="white" />
+                            <path
+                                d="M32.9883 20.5641V18.4317L38.8293 9.88334H33.0068V7.584H42.0187V9.71645L36.1406 18.2648H42.0373V20.5641H32.9883Z"
+                                fill="currentColor" />
+                            <path
+                                d="M44.168 20.5641V7.21313H46.9495V12.5535C47.2461 12.0838 47.6479 11.7067 48.1547 11.4224C48.6616 11.1381 49.255 10.9959 49.9349 10.9959C50.726 10.9959 51.3874 11.1628 51.919 11.4966C52.4505 11.8303 52.8523 12.3186 53.1243 12.9615C53.3962 13.5919 53.5322 14.3584 53.5322 15.2608V20.5641H50.7693V15.5204C50.7693 14.8281 50.621 14.2904 50.3243 13.9072C50.04 13.5239 49.5826 13.3323 48.9521 13.3323C48.5812 13.3323 48.2413 13.425 47.9322 13.6105C47.6232 13.7959 47.3821 14.0617 47.2091 14.4078C47.036 14.7416 46.9495 15.1434 46.9495 15.6131V20.5641H44.168Z"
+                                fill="currentColor" />
+                            <path
+                                d="M59.0368 20.7866C58.258 20.7866 57.609 20.663 57.0898 20.4158C56.583 20.1685 56.2059 19.8348 55.9587 19.4144C55.7238 18.9818 55.6064 18.5058 55.6064 17.9866C55.6064 17.4303 55.7424 16.942 56.0143 16.5217C56.2986 16.0891 56.7375 15.7491 57.3309 15.5019C57.9242 15.2423 58.6722 15.1125 59.5746 15.1125H61.8368C61.8368 14.6922 61.7812 14.346 61.6699 14.0741C61.571 13.8021 61.4042 13.5981 61.1693 13.4621C60.9344 13.3262 60.613 13.2582 60.205 13.2582C59.7724 13.2582 59.4077 13.3447 59.111 13.5178C58.8143 13.6908 58.6289 13.9628 58.5547 14.3337H55.8845C55.9463 13.6661 56.1627 13.0851 56.5335 12.5906C56.9167 12.0961 57.4236 11.7067 58.0541 11.4224C58.6845 11.1381 59.4077 10.9959 60.2236 10.9959C61.1136 10.9959 61.8863 11.1443 62.5415 11.4409C63.1966 11.7253 63.7035 12.1456 64.062 12.7019C64.4328 13.2582 64.6183 13.9504 64.6183 14.7787V20.5641H62.3004L61.9666 19.2105C61.8306 19.4454 61.6699 19.6617 61.4845 19.8595C61.2991 20.0449 61.0827 20.2118 60.8355 20.3601C60.5883 20.4961 60.3163 20.6012 60.0196 20.6754C59.7229 20.7495 59.3953 20.7866 59.0368 20.7866ZM59.7229 18.6727C60.0196 18.6727 60.2792 18.6233 60.5017 18.5244C60.7242 18.4255 60.9159 18.2895 61.0766 18.1164C61.2373 17.9434 61.3671 17.7456 61.466 17.5231C61.5772 17.2882 61.6576 17.0348 61.707 16.7628V16.7442H59.9084C59.5993 16.7442 59.3397 16.7875 59.1295 16.8741C58.9318 16.9482 58.7834 17.0595 58.6845 17.2078C58.5856 17.3562 58.5362 17.5292 58.5362 17.727C58.5362 17.9372 58.5856 18.1164 58.6845 18.2648C58.7958 18.4008 58.9379 18.5058 59.111 18.58C59.2964 18.6418 59.5004 18.6727 59.7229 18.6727Z"
+                                fill="currentColor" />
+                            <path
+                                d="M66.9297 20.5641V11.2184H69.3588L69.5813 12.7204C69.8657 12.2012 70.2674 11.7871 70.7866 11.478C71.3058 11.1566 71.9363 10.9959 72.678 10.9959C73.4568 10.9959 74.112 11.1628 74.6436 11.4966C75.1751 11.8303 75.5769 12.3125 75.8489 12.9429C76.1332 13.561 76.2754 14.3213 76.2754 15.2237V20.5641H73.5125V15.4833C73.5125 14.8034 73.3641 14.278 73.0674 13.9072C72.7831 13.5239 72.3257 13.3323 71.6952 13.3323C71.3244 13.3323 70.9844 13.425 70.6754 13.6105C70.3787 13.7835 70.1438 14.037 69.9707 14.3707C69.7977 14.7045 69.7111 15.1063 69.7111 15.576V20.5641H66.9297Z"
+                                fill="currentColor" />
+                            <path
+                                d="M78.6289 20.5641V7.584H83.6726C84.7234 7.584 85.5949 7.76944 86.2872 8.1403C86.9918 8.49879 87.511 8.98091 87.8448 9.58665C88.1909 10.1924 88.364 10.8661 88.364 11.6078C88.364 12.3001 88.1971 12.9491 87.8633 13.5548C87.5419 14.1606 87.0351 14.6489 86.3428 15.0197C85.6505 15.3906 84.7543 15.576 83.6541 15.576H81.4103V20.5641H78.6289ZM85.3229 20.5641L82.7084 14.8899H85.6938L88.4752 20.5641H85.3229ZM81.4103 13.5734H83.5057C84.198 13.5734 84.7048 13.4065 85.0262 13.0727C85.36 12.739 85.5269 12.2877 85.5269 11.7191C85.5269 11.1628 85.36 10.7239 85.0262 10.4025C84.7048 10.0688 84.198 9.90188 83.5057 9.90188H81.4103V13.5734Z"
+                                fill="currentColor" />
+                            <path
+                                d="M94.3974 20.7866C93.495 20.7866 92.6852 20.5765 91.9682 20.1562C91.2512 19.7359 90.6826 19.161 90.2623 18.4317C89.842 17.6899 89.6318 16.8493 89.6318 15.9098C89.6318 14.9456 89.842 14.0988 90.2623 13.3694C90.6826 12.6277 91.2512 12.0467 91.9682 11.6264C92.6976 11.2061 93.5073 10.9959 94.3974 10.9959C95.3122 10.9959 96.1281 11.2061 96.8451 11.6264C97.5621 12.0467 98.1307 12.6277 98.551 13.3694C98.9713 14.0988 99.1815 14.9394 99.1815 15.8913C99.1815 16.8431 98.9713 17.6899 98.551 18.4317C98.1307 19.161 97.5621 19.7359 96.8451 20.1562C96.1281 20.5765 95.3122 20.7866 94.3974 20.7866ZM94.3974 18.376C94.7682 18.376 95.0958 18.2833 95.3802 18.0979C95.6768 17.9125 95.9117 17.6343 96.0848 17.2635C96.2579 16.8926 96.3444 16.4352 96.3444 15.8913C96.3444 15.3473 96.2579 14.8899 96.0848 14.5191C95.9117 14.1482 95.683 13.8701 95.3987 13.6847C95.1144 13.4992 94.7868 13.4065 94.4159 13.4065C94.0451 13.4065 93.7113 13.4992 93.4146 13.6847C93.1303 13.8701 92.9016 14.1482 92.7285 14.5191C92.5554 14.8899 92.4689 15.3473 92.4689 15.8913C92.4689 16.4352 92.5554 16.8926 92.7285 17.2635C92.9016 17.6343 93.1303 17.9125 93.4146 18.0979C93.7113 18.2833 94.0389 18.376 94.3974 18.376Z"
+                                fill="currentColor" />
+                            <path
+                                d="M101.318 20.5641V11.2184H103.747L103.988 12.4237C104.285 11.9911 104.674 11.6449 105.156 11.3853C105.651 11.1257 106.219 10.9959 106.862 10.9959C107.32 10.9959 107.734 11.0577 108.105 11.1813C108.475 11.2926 108.803 11.4657 109.087 11.7005C109.372 11.9231 109.607 12.2074 109.792 12.5535C110.151 12.0714 110.608 11.6944 111.164 11.4224C111.721 11.1381 112.326 10.9959 112.981 10.9959C113.822 10.9959 114.514 11.1628 115.058 11.4966C115.615 11.8303 116.029 12.3125 116.301 12.9429C116.573 13.5734 116.709 14.3398 116.709 15.2423V20.5641H113.946V15.4833C113.946 14.8034 113.81 14.278 113.538 13.9072C113.278 13.5239 112.858 13.3323 112.277 13.3323C111.906 13.3323 111.578 13.425 111.294 13.6105C111.01 13.7959 110.787 14.0555 110.626 14.3893C110.478 14.7231 110.404 15.1248 110.404 15.5946V20.5641H107.641V15.4833C107.641 14.8034 107.505 14.278 107.233 13.9072C106.961 13.5239 106.522 13.3323 105.917 13.3323C105.57 13.3323 105.255 13.425 104.971 13.6105C104.699 13.7959 104.483 14.0555 104.322 14.3893C104.174 14.7231 104.099 15.1248 104.099 15.5946V20.5641H101.318Z"
+                                fill="currentColor" />
+                            <path
+                                d="M122.217 20.7866C121.439 20.7866 120.79 20.663 120.27 20.4158C119.763 20.1685 119.386 19.8348 119.139 19.4144C118.904 18.9818 118.787 18.5058 118.787 17.9866C118.787 17.4303 118.923 16.942 119.195 16.5217C119.479 16.0891 119.918 15.7491 120.511 15.5019C121.105 15.2423 121.853 15.1125 122.755 15.1125H125.017C125.017 14.6922 124.962 14.346 124.85 14.0741C124.752 13.8021 124.585 13.5981 124.35 13.4621C124.115 13.3262 123.793 13.2582 123.386 13.2582C122.953 13.2582 122.588 13.3447 122.291 13.5178C121.995 13.6908 121.809 13.9628 121.735 14.3337H119.065C119.127 13.6661 119.343 13.0851 119.714 12.5906C120.097 12.0961 120.604 11.7067 121.235 11.4224C121.865 11.1381 122.588 10.9959 123.404 10.9959C124.294 10.9959 125.067 11.1443 125.722 11.4409C126.377 11.7253 126.884 12.1456 127.242 12.7019C127.613 13.2582 127.799 13.9504 127.799 14.7787V20.5641H125.481L125.147 19.2105C125.011 19.4454 124.85 19.6617 124.665 19.8595C124.48 20.0449 124.263 20.2118 124.016 20.3601C123.769 20.4961 123.497 20.6012 123.2 20.6754C122.903 20.7495 122.576 20.7866 122.217 20.7866ZM122.903 18.6727C123.2 18.6727 123.46 18.6233 123.682 18.5244C123.905 18.4255 124.096 18.2895 124.257 18.1164C124.418 17.9434 124.548 17.7456 124.646 17.5231C124.758 17.2882 124.838 17.0348 124.888 16.7628V16.7442H123.089C122.78 16.7442 122.52 16.7875 122.31 16.8741C122.112 16.9482 121.964 17.0595 121.865 17.2078C121.766 17.3562 121.717 17.5292 121.717 17.727C121.717 17.9372 121.766 18.1164 121.865 18.2648C121.976 18.4008 122.118 18.5058 122.291 18.58C122.477 18.6418 122.681 18.6727 122.903 18.6727Z"
+                                fill="currentColor" />
+                            <path
+                                d="M130.11 20.5641V11.2184H132.539L132.762 12.7204C133.046 12.2012 133.448 11.7871 133.967 11.478C134.486 11.1566 135.117 10.9959 135.859 10.9959C136.637 10.9959 137.293 11.1628 137.824 11.4966C138.356 11.8303 138.758 12.3125 139.029 12.9429C139.314 13.561 139.456 14.3213 139.456 15.2237V20.5641H136.693V15.4833C136.693 14.8034 136.545 14.278 136.248 13.9072C135.964 13.5239 135.506 13.3323 134.876 13.3323C134.505 13.3323 134.165 13.425 133.856 13.6105C133.559 13.7835 133.324 14.037 133.151 14.3707C132.978 14.7045 132.892 15.1063 132.892 15.576V20.5641H130.11Z"
+                                fill="currentColor" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_footer_logo">
+                                <rect width="140" height="28" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <p class="ftr__tagline">
+                    Создаю кастомные цифровые продукты: UX → разработка → автоматизация
+                    → рост метрик.
+                </p>
+                <button type="button" class="btn btn--primary" data-modal-trigger="contactModal">
+                    Обсудить проект
+                </button>
+            </div>
+            <nav class="ftr__nav">
+                <div class="ftr__nav-col">
+                    <h3 class="ftr__nav-title">Услуги</h3>
+                    <ul class="ftr__nav-list">
+                        <li><a href="/services/ux-ui">UX / UI дизайн</a></li>
+                        <li><a href="/services/design-systems">Дизайн‑система</a></li>
+                        <li><a href="/services/prototyping">Прототипирование</a></li>
+                        <li>
+                            <a href="/services/frontend-development">Frontend разработка</a>
+                        </li>
+                        <li><a href="/services/integrations-api">Интеграции / API</a></li>
+                        <li><a href="/services/performance">Оптимизация скорости</a></li>
+                    </ul>
+                </div>
+                <div class="ftr__nav-col">
+                    <h3 class="ftr__nav-title">Проекты</h3>
+                    <ul class="ftr__nav-list">
+                        <li><a href="/projects">Кейсы</a></li>
+                        <li><a href="/projects/saas-redesign">Редизайн SaaS</a></li>
+                        <li>
+                            <a href="/projects/mobile-interfaces">Мобильные интерфейсы</a>
+                        </li>
+                        <li>
+                            <a href="/projects/enterprise-tools">Enterprise инструменты</a>
+                        </li>
+                        <li><a href="/testimonials">Отзывы клиентов</a></li>
+                    </ul>
+                </div>
+                <div class="ftr__nav-col">
+                    <h3 class="ftr__nav-title">Ресурсы</h3>
+                    <ul class="ftr__nav-list">
+                        <li><a href="/process">Процесс работы</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/support">Поддержка</a></li>
+                        <li>
+                            <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+                        </li>
+                        <li><a href="/legal/terms-of-use">Условия использования</a></li>
+                        <li><a href="/legal/accessibility">Доступность</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="ftr__bottom">
+            <div class="ftr__bottom-left">
+                <span class="ftr__copy">&copy; <span data-current-year></span> ZhanRoman. Все права
+                    защищены.</span>
+                <button class="ftr-email" data-copy-email="my@zhanroman.online" aria-label="Скопировать email">
+                    my@zhanroman.online
+                </button>
+                <span class="copy-feedback" aria-hidden="true">Скопировано!</span>
+            </div>
+            <div class="ftr__bottom-right">
+                <button id="theme-toggle-footer" class="theme-toggle" title="Сменить тему">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg><svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="lang" data-lang-footer>
+                    <button class="lang__btn" aria-haspopup="true" aria-expanded="false">
+                        <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <g clip-path="url(#clip0_lang_footer)">
+                                <path d="M3.33984 5.33325L7.33984 9.33325" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M2.67188 9.33325L6.67188 5.33325L8.00521 3.33325" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M1.33984 3.33325H9.33984" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M4.67188 1.33325H5.33854" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14.6725 14.6667L11.3392 8L8.00586 14.6667" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.33984 12H13.3398" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_lang_footer">
+                                    <rect width="16" height="16" fill="white" transform="translate(0.00585938)" />
+                                </clipPath>
+                            </defs>
+                        </svg><span class="lang__current">Ru</span><svg class="lang__chevron"
+                            xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none"
+                            aria-hidden="true">
+                            <path d="M1.27734 1L4.18701 3.90967L7.09668 1" stroke="currentColor" stroke-width="1.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <ul class="lang__list" role="listbox">
+                        <li role="option" aria-selected="true">
+                            <button data-lang-set="ru">Русский</button>
+                        </li>
+                        <li role="option" aria-selected="false">
+                            <button data-lang-set="en">English</button>
+                        </li>
+                    </ul>
+                </div>
+                <button class="to-top" id="toTopBtn" aria-label="Наверх">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m6 15 6-6 6 6" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-wrapper" id="aiAssistantModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+            <button class="modal-close" aria-label="Закрыть окно">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <h2 id="aiModalTitle">Как я могу Вам помочь?</h2>
+                <p>
+                    Расскажите, что тормозит ваш продукт — я помогу найти слабые места и
+                    предложу решение.
+                </p>
+            </div>
+            <div class="modal-body">
+                <div class="chat-messages">
+                    <div class="chat-message ai">
+                        <div class="chat-avatar">AI</div>
+                        <div class="chat-bubble">
+                            Что сейчас больше всего мешает вашему продукту? Вы переживаете
+                            за дизайн, скорость или рост?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" placeholder="Опишите вашу проблему..." /><button
+                        aria-label="Отправить сообщение">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper" id="contactModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-container contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+            <button class="modal-close" aria-label="Закрыть окно">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="contact-modal__content">
+                <div class="contact-modal__form-section">
+                    <div class="modal-header">
+                        <h2 id="contactModalTitle">Завершающий шаг</h2>
+                        <p>
+                            Оставьте ваши контактные данные, и я свяжусь с вами в ближайшее
+                            время для детального обсуждения.
+                        </p>
+                    </div>
+                    <form class="contact-form" id="mainContactForm">
+                        <div class="form-group">
+                            <label for="contact-name">Ваше имя</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Например, Иван" required />
+                        </div>
+
+                        <div class="form-group" id="prefilled-group">
+                            <label>Детали заявки</label>
+                            <textarea id="prefilled-details" name="prefilled_details" rows="4" readonly></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Удобный способ связи</label>
+                            <div class="contact-method-selector">
+                                <input type="radio" name="contact_method" id="contact-telegram" value="telegram"
+                                    checked />
+                                <label for="contact-telegram">Telegram</label>
+                                <input type="radio" name="contact_method" id="contact-whatsapp" value="whatsapp" />
+                                <label for="contact-whatsapp">WhatsApp</label>
+                                <input type="radio" name="contact_method" id="contact-email" value="email" />
+                                <label for="contact-email">Email</label>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-input-container">
+                            <div class="input-group" id="input-group-telegram">
+                                <label for="telegram-input">Ваш аккаунт в Telegram</label>
+                                <input type="text" id="telegram-input" name="telegram" placeholder="@username"
+                                    pattern="^@.*" title="Имя пользователя должно начинаться с @" required />
+                            </div>
+                            <div class="input-group" id="input-group-whatsapp">
+                                <label for="whatsapp-input">Ваш номер WhatsApp</label>
+                                <input type="tel" id="whatsapp-input" name="whatsapp" placeholder="+7 (999) 123-45-67"
+                                    required />
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="whatsapp-callable" name="callable" />
+                                    <label for="whatsapp-callable">Можно звонить на этот номер</label>
+                                </div>
+                            </div>
+                            <div class="input-group" id="input-group-email">
+                                <label for="email-input">Ваша почта</label>
+                                <input type="email" id="email-input" name="email" placeholder="example@mail.com"
+                                    required />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--lg form-submit-btn">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-modal__info-section">
+                    <h3 class="info-title">Или свяжитесь напрямую</h3>
+                    <ul class="contact-links">
+                        <li>
+                            <a href="mailto:my@zhanroman.online">
+                                <span class="contact-link__icon">📧</span>
+                                <span class="contact-link__text">
+                                    <strong>Написать на почту</strong>
+                                    <small data-copy-text="my@zhanroman.online">my@zhanroman.online</small>
+                                </span>
+                                <button type="button" class="copy-btn" aria-label="Скопировать почту"
+                                    data-copy-text="my@zhanroman.online">
+                                    ❐
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/zhan_roma" target="_blank" rel="noopener">
+                                <span class="contact-link__icon">✈️</span>
+                                <span class="contact-link__text">
+                                    <strong>Написать в Telegram</strong>
+                                    <small data-copy-text="@zhan_roma">@zhan_roma</small>
+                                </span>
+                                <button type="button" class="copy-btn" aria-label="Скопировать Telegram"
+                                    data-copy-text="@zhan_roma">
+                                    ❐
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/YOUR_NUMBER_HERE" target="_blank" rel="noopener">
+                                <span class="contact-link__icon">💬</span>
+                                <span class="contact-link__text">
+                                    <strong>Написать в WhatsApp</strong>
+                                    <small>Быстрый ответ</small>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="form-disclaimer">
+                        Нажимая «Отправить», вы подтверждаете, что ознакомились и согласны
+                        с
+                        <a href="/legal/privacy-policy" target="_blank">условиями обработки персональных данных</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="services.js"></script>
+
+
+</body>
+
+</html>
