@@ -79,9 +79,9 @@
           const y = window.scrollY;
           header.classList.toggle("is-scrolled", y > 40);
           if (y > 40) {
-            header.classList.toggle("hide", y > lastScroll);
+            document.body.classList.toggle("header-hidden", y > lastScroll); // <-- ИЗМЕНЕНИЕ ЗДЕСЬ
           } else {
-            header.classList.remove("hide");
+            document.body.classList.remove("header-hidden"); // <-- И ИЗМЕНЕНИЕ ЗДЕСЬ
           }
           lastScroll = y < 0 ? 0 : y;
         },

@@ -1,0 +1,351 @@
+/* ==========================================================================
+   CASES PAGE STYLES (v1.1 - Скорректирована липкая панель)
+   ========================================================================== */
+
+/* Часть стилей (переменные, кнопки, CTA) заимствована из main.css для единообразия */
+:root {
+    --section-space-y: clamp(64px, 11vh, 128px);
+    --ease-out: cubic-bezier(0.16, 0.84, 0.44, 1);
+    --grad-accent: linear-gradient(135deg, #00b9ad, #009d90 55%, #00786e);
+}
+
+/* --- Hero секция --- */
+.cases-hero {
+    padding-bottom: 40px;
+}
+
+/* --- Фильтры --- */
+.cases-filters {
+    position: sticky;
+    top: 76px;
+    /* Возвращаем исходное смещение */
+    z-index: 50;
+    background: color-mix(in srgb, var(--c-bg) 85%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--c-border);
+    margin-bottom: var(--section-space-y);
+    transition: top 0.5s var(--ease-out);
+    /* <--- Синхронизируем анимацию с шапкой */
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    background: var(--c-bg-alt);
+    border: 1px solid var(--c-border);
+    color: var(--c-text-soft);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+}
+
+.filter-btn:hover {
+    border-color: var(--c-accent);
+    color: var(--c-text);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--c-accent);
+    color: var(--c-accent-fg);
+    border-color: var(--c-accent);
+}
+
+/* --- Сетка кейсов --- */
+.cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 6vw, 80px);
+}
+
+/* --- Карточка кейса --- */
+.case-card {
+    text-decoration: none;
+    color: var(--c-text);
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.case-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-card__link {
+    display: block;
+    text-decoration: none;
+    background: var(--c-bg);
+    border: 1px solid var(--c-border);
+    border-radius: var(--rad-xl, 30px);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.case-card__link:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.case-card__visual {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.case-card__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.case-card__link:hover .case-card__visual img {
+    transform: scale(1.05);
+}
+
+.case-card__body {
+    padding: clamp(24px, 4vw, 32px);
+}
+
+.case-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.case-card__tag,
+.case-card__service {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: var(--c-bg-alt);
+    border: 1px solid var(--c-border);
+    color: var(--c-text-soft);
+}
+
+.case-card__title {
+    font-size: clamp(20px, 3vw, 24px);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    background: linear-gradient(100deg, var(--c-text) 60%, var(--c-accent) 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: opacity 0.3s var(--ease-out);
+    /* Плавность для ховера */
+}
+
+.case-card__excerpt {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--c-text-soft);
+    margin: 0;
+}
+
+.case-card__cta {
+    display: inline-block;
+    margin-top: 24px;
+    font-weight: 600;
+    color: var(--c-accent);
+}
+
+/* --- Стили для флагманского кейса --- */
+.case-card.is-featured .case-card__link {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.case-card.is-featured .case-card__visual {
+    aspect-ratio: auto;
+    height: 100%;
+}
+
+.case-card.is-featured .case-card__title {
+    font-size: clamp(24px, 4vw, 36px);
+}
+
+.case-card__metrics {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--c-border);
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-accent);
+}
+
+.metric-label {
+    font-size: 13px;
+    color: var(--c-text-soft);
+}
+
+
+/* --- Блоки-вставки --- */
+.interstitial-block {
+    padding: clamp(32px, 5vw, 64px);
+    border-radius: var(--rad-xl, 30px);
+    background: var(--c-bg-alt);
+    border: 1px solid var(--c-border);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.interstitial-block.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.interstitial-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.interstitial-lead {
+    text-align: center;
+    color: var(--c-text-soft);
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.philosophy-block .principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.principle-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.principle h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.principle p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--c-text-soft);
+    margin: 0;
+}
+
+.results-block .highlight-grid {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.results-block .highlight {
+    /* Стили из main.css должны подхватиться */
+    background: var(--c-bg);
+}
+
+/* --- Логика фильтрации --- */
+.case-card.is-hidden {
+    display: none;
+}
+
+
+/* --- Адаптивность --- */
+@media (min-width: 992px) {
+    .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-card.is-featured,
+    .interstitial-block {
+        grid-column: 1 / -1;
+        /* Растягиваем на всю ширину сетки */
+    }
+
+    .case-card.is-featured .case-card__link {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-container {
+        justify-content: center;
+    }
+}
+
+.case-card__link:hover .case-card__title {
+    opacity: 0.8;
+    /* Делаем заголовок чуть тусклее при наведении на карточку */
+}
+
+/* ==========================================================================
+   Анимация подчеркивания для кнопки "Подробнее" в кейсах
+   ========================================================================== */
+
+/* 1. Подготавливаем родительский элемент */
+.case-card__cta {
+    position: relative;
+    /* Необходимо для позиционирования псевдоэлемента */
+    padding-bottom: 4px;
+    /* Небольшой отступ снизу для линии */
+}
+
+/* 2. Создаем саму линию (изначально она невидима) */
+.case-card__cta::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-accent);
+
+    /* Начальное состояние: линия сжата до нуля по горизонтали */
+    transform: scaleX(0);
+
+    /* Указываем, что анимация должна начинаться слева */
+    transform-origin: left;
+
+    /* Задаем плавность и скорость анимации */
+    transition: transform 0.4s var(--ease-out);
+}
+
+/* 3. "Показываем" линию при наведении на всю карточку */
+.case-card__link:hover .case-card__cta::after {
+    /* Конечное состояние: линия растянута на 100% ширины */
+    transform: scaleX(1);
+}
+
+body.header-hidden .cases-filters {
+    top: 0 !important;
+}
